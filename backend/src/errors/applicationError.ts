@@ -1,4 +1,5 @@
-export class ApplicationError {
-    status: string
-    title: string
+export class ApplicationError extends Error {
+  status: string;
+  title: string;
+  code: string;
 }
