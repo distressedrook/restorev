@@ -20,7 +20,7 @@ var signupValidators = [
   }),
   body(EMAIL).isEmail(),
   body(PASSWORD).isLength({
-    min: 5,
+    min: MIN_PASSWORD_LENGTH,
   }),
   body(ROLE).isLength({
     min: 1,
