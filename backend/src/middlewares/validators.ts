@@ -1,6 +1,8 @@
 import { ApplicationError } from "../errors/applicationError";
 import { validationResult } from "express-validator";
 import { StatusCodes } from "http-status-codes";
+import { ApplicationErrorCodes } from "../errors/errorCodes";
+import { print, wrapError } from "../utils";
 
 export function requestValidator(req, res, next) {
   const vErrors = validationResult(req);
@@ -16,6 +18,17 @@ export function requestValidator(req, res, next) {
     res.send({
       errors,
     });
+    return;
+  }
+  next();
+}
+
+export function isValidRating(req, res, next) {
+  if (req.body.rating < 1 || req.body.rating > 5) {
+    let error = new ApplicationError();
+    error.status = ApplicationErrorCodes.INVALID_RATING;
+    error.message = "The rating has to be between 1 an 5";
+    res.send(wrapError([error]));
     return;
   }
   next();

@@ -6,4 +6,5 @@ export class ApplicationErrorCodes {
   static PASSWORDS_DO_NOT_MATCH = "003";
   static ID_DOES_NOT_EXIST = "004";
   static OWNER_DOES_NOT_EXIST = "007";
+  static INVALID_RATING = "008";
 }

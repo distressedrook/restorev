@@ -2,6 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import { ApplicationError } from "../errors/applicationError";
 import { ApplicationErrorCodes } from "../errors/errorCodes";
 import { IRestaurant, Restaurant } from "../models/restaurant";
+import { print } from "../utils";
 
 export class ResturantDao {
   public async create(name: string, ownerId: string): Promise<IRestaurant> {
@@ -33,7 +34,7 @@ export class ResturantDao {
       .then(function (doc) {
         if (doc === null) {
           let error = new ApplicationError();
-          error.title = "There is no user with that email";
+          error.title = "A resturant with this name does not exist.";
           error.code = ApplicationErrorCodes.RESTAURANT_DOES_NOT_EXIST;
           return Promise.reject(error);
         }
@@ -90,6 +91,21 @@ export class ResturantDao {
           return Promise.reject(error);
         }
         return doc;
+      });
+  }
+
+  public async addReview(reviewId: string, restaurantId: string) {
+    let cThis = this;
+    return Restaurant.updateOne(
+      { _id: restaurantId },
+      {
+        $push: { reviews: reviewId },
+      }
+    )
+      .exec()
+      .catch(function (err) {
+        print(err);
+        return cThis.getGenericReject(err);
       });
   }
 

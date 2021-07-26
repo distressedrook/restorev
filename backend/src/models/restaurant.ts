@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 export interface IRestaurant extends mongoose.Document {
   name: string;
   ownerId: string;
+  reviews: any[];
 }
 
 const Schema = mongoose.Schema;
@@ -10,6 +11,7 @@ const RestaurantSchema = new Schema(
   {
     name: { type: String, unique: true },
     ownerId: { type: Schema.Types.ObjectId, ref: "User" },
+    reviews: { type: [{ type: Schema.Types.ObjectId, ref: "Review" }] },
   },
   {
     collection: "restaurants",

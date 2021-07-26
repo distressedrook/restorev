@@ -22,6 +22,23 @@ export class UserController {
     return user.toJSON();
   }
 
+  public async getUser(id: string): Promise<any> {
+    return this.userDao
+      .findById(id)
+      .then(function (user) {
+        if (user == null) {
+          let error = new ApplicationError();
+          error.title = "There is no user with this id";
+          error.code = ApplicationErrorCodes.USER_DOES_NOT_EXIST;
+          return Promise.reject(error);
+        }
+        return user.toJSON();
+      })
+      .catch(function (err) {
+        return Promise.reject(err);
+      });
+  }
+
   public async authorise(email: string, password: string): Promise<any> {
     return this.userDao
       .findByEmail(email)
