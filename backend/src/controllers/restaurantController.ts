@@ -1,5 +1,6 @@
 import { ResturantDao } from "../dal/restaurantDao";
 import { ReviewDao } from "../dal/reviewDao";
+import { print } from "../utils";
 
 export class RestaurantController {
   restaurantDao = new ResturantDao();
@@ -26,5 +27,19 @@ export class RestaurantController {
     );
     await this.restaurantDao.addReview(review._id, restaurantId);
     return review.toJSON();
+  }
+
+  public async findAll(): Promise<any> {
+    return this.restaurantDao.findAllRestaurants().then(function (restaurants) {
+      return restaurants.map(function (restaurant) {
+        return restaurant.toJSON();
+      });
+    });
+  }
+
+  public async findById(id: string): Promise<any> {
+    return this.restaurantDao.findById(id).then(function (restaurant) {
+      return restaurant.toJSON();
+    });
   }
 }

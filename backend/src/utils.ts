@@ -2,6 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import { ApplicationError } from "./errors/applicationError";
 
 export function wrapSuccess(body: any): any {
+  print(body);
   return {
     success: {
       data: body,

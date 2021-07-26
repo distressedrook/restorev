@@ -42,9 +42,10 @@ export class ResturantDao {
       });
   }
 
-  public async getAllRestaurants(): Promise<IRestaurant[]> {
+  public async findAllRestaurants(): Promise<IRestaurant[]> {
     let cThis = this;
     return Restaurant.find({})
+      .populate("reviews")
       .exec()
       .catch(function (err) {
         return cThis.getGenericReject(err);
@@ -53,11 +54,12 @@ export class ResturantDao {
         if (doc == null) {
           return [];
         }
+        print(doc);
         return doc;
       });
   }
 
-  public async getRestaurants(ownerId: string): Promise<IRestaurant[]> {
+  public async findRestaurants(ownerId: string): Promise<IRestaurant[]> {
     let cThis = this;
     return Restaurant.find({ ownerId: ownerId })
       .exec()
@@ -79,6 +81,7 @@ export class ResturantDao {
   public async findById(id: string): Promise<IRestaurant> {
     let cThis = this;
     return Restaurant.findOne({ _id: id })
+      .populate("reviews")
       .exec()
       .catch(function (err) {
         return cThis.getGenericReject(err);

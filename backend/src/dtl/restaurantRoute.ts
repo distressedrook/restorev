@@ -6,13 +6,40 @@ import { StatusCodes } from "http-status-codes";
 import { RestaurantController } from "../controllers/restaurantController";
 import { isOwner, isRegular } from "../middlewares/permissionCheckers";
 import { isValidRating, requestValidator } from "../middlewares/validators";
-import { wrapError, wrapSuccess } from "../utils";
+import { print, wrapError, wrapSuccess } from "../utils";
 
 const NAME = "name";
 const OWNER_ID = "ownerId";
 const REVIEW = "review";
 const RATING = "rating";
 const VISITED_DATE = "visitedDate";
+
+function getRestaurants(req, res, next) {
+  let controller = new RestaurantController();
+  controller
+    .findAll()
+    .then(function (restaurants) {
+      print(restaurants);
+      res.send(wrapSuccess(restaurants));
+    })
+    .catch(function (error) {
+      res.status(StatusCodes.OK);
+      res.send(wrapError([error]));
+    });
+}
+
+function getRestaurantForId(req, res, next) {
+  let controller = new RestaurantController();
+  controller
+    .findById(req.params.id)
+    .then(function (restaurant) {
+      res.send(wrapSuccess(restaurant));
+    })
+    .catch(function (error) {
+      res.status(StatusCodes.OK);
+      res.send(wrapError([error]));
+    });
+}
 
 function addRestaurant(req, res, next) {
   const requestBody = req.body;
@@ -30,7 +57,6 @@ function addRestaurant(req, res, next) {
 }
 
 function addReview(req, res, next) {
-  console.log("Is it coming here?");
   const requestBody = req.body;
   let controller = new RestaurantController();
   controller
@@ -77,5 +103,8 @@ router.post(
   isRegular,
   addReview
 );
+
+router.get("/", getRestaurants);
+router.get("/:id", getRestaurantForId);
 
 export default router;
