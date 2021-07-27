@@ -17,6 +17,7 @@ const ReviewSchema = new Schema(
     reviewerId: { type: Schema.Types.ObjectId, ref: "User" },
     visitedDate: Number,
     rating: Number,
+    ownerComment: String,
   },
   {
     collection: "reviews",

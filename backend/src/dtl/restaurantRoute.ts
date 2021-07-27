@@ -4,7 +4,7 @@ const router = express.Router();
 import { body } from "express-validator";
 import { StatusCodes } from "http-status-codes";
 import { RestaurantController } from "../controllers/restaurantController";
-import { isOwner, isRegular } from "../middlewares/permissionCheckers";
+import { isOwner, isRegular } from "../middlewares/generalMiddlewares";
 import { isValidRating, requestValidator } from "../middlewares/validators";
 import { print, wrapError, wrapSuccess } from "../utils";
 

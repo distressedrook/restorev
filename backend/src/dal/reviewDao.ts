@@ -1,7 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import { ApplicationError } from "../errors/applicationError";
 import { ApplicationErrorCodes } from "../errors/errorCodes";
-import { IRestaurant, Restaurant } from "../models/restaurant";
 import { IReview, Review } from "../models/review";
 import { print } from "../utils";
 
@@ -53,25 +52,49 @@ export class ReviewDao {
       });
   }
 
-  public async findById(id: string): Promise<IRestaurant> {
+  public async findById(id: string): Promise<IReview> {
     let cThis = this;
-    return Restaurant.findOne({ _id: id })
+    return Review.findOne({ _id: id })
       .exec()
       .catch(function (err) {
-        return cThis.noRestaurantReject();
+        return cThis.noReviewReject();
       })
       .then(function (doc) {
         if (doc == null) {
-          return cThis.noRestaurantReject();
+          return cThis.noReviewReject();
         }
         return doc;
       });
   }
 
-  private noRestaurantReject() {
+  public async comment(id: string, commentString: string): Promise<IReview> {
+    let cThis = this;
+    return Review.findOne({ _id: id })
+      .exec()
+      .catch(function (err) {
+        return cThis.noReviewReject();
+      })
+      .then(function (doc) {
+        if (doc == null) {
+          return cThis.noReviewReject();
+        }
+        if (doc.ownerComment == null) {
+          doc.ownerComment = commentString;
+          doc.save();
+          return doc;
+        } else {
+          let error = new ApplicationError();
+          error.status = ApplicationErrorCodes.COMMENT_ALREADY_EXISTS;
+          error.status = "You cannot add a comment again";
+          return Promise.reject(error);
+        }
+      });
+  }
+
+  private noReviewReject() {
     let error = new ApplicationError();
-    error.status = ApplicationErrorCodes.RESTAURANT_DOES_NOT_EXIST;
-    error.title = "This restaurant does not exist";
+    error.status = ApplicationErrorCodes.REVIEW_DOES_NOT_EXIST;
+    error.title = "This review does not exist";
     return Promise.reject(error);
   }
 
