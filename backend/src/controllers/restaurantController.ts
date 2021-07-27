@@ -1,7 +1,7 @@
 import { RestaurantDao } from "../daos/restaurantDao";
 import { ReviewDao } from "../daos/reviewDao";
 import { UserDao } from "../daos/userDao";
-import { print } from "../utils";
+import { print, wrapSuccess } from "../utils";
 
 export class RestaurantController {
   restaurantDao = new RestaurantDao();
@@ -15,6 +15,10 @@ export class RestaurantController {
       });
     await this.userDao.addRestaurantToOwner(ownerId, rest.id);
     return rest;
+  }
+
+  public async editRestaurant(restaurantId: string, name: string) {
+    return this.restaurantDao.edit(restaurantId, name);
   }
 
   public async addReview(

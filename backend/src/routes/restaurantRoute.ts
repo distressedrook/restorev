@@ -4,7 +4,7 @@ const router = express.Router();
 import { body } from "express-validator";
 import { StatusCodes } from "http-status-codes";
 import { RestaurantController } from "../controllers/restaurantController";
-import { isOwner, isRegular } from "../middlewares/generalMiddlewares";
+import { isAdmin, isOwner, isRegular } from "../middlewares/generalMiddlewares";
 import { isValidRating, requestValidator } from "../middlewares/validators";
 import { print, wrapError, wrapSuccess } from "../utils";
 
@@ -58,7 +58,6 @@ function addRestaurant(req, res, next) {
 
 function addReview(req, res, next) {
   const requestBody = req.body;
-  print(requestBody);
   let controller = new RestaurantController();
   controller
     .addReview(
@@ -73,6 +72,19 @@ function addReview(req, res, next) {
       res.send(wrapSuccess(review));
     })
     .catch(function (err) {
+      res.send(wrapError([err]));
+    });
+}
+
+function editRestaurant(req, res, next) {
+  let controller = new RestaurantController();
+  controller
+    .editRestaurant(req.params.id, req.body.name)
+    .then(function () {
+      res.send(wrapSuccess("OK"));
+    })
+    .catch(function (err) {
+      res.status(StatusCodes.BAD_REQUEST);
       res.send(wrapError([err]));
     });
 }
@@ -107,5 +119,6 @@ router.post(
 
 router.get("/", getRestaurants);
 router.get("/:id", getRestaurantForId);
+router.post("/:id/edit", isAdmin, editRestaurant);
 
 export default router;

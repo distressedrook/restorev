@@ -24,6 +24,21 @@ export class RestaurantDao {
     return restaurant;
   }
 
+  public async edit(restaurantId: string, name: string) {
+    return Restaurant.updateOne(
+      { _id: restaurantId },
+      {
+        $set: {
+          name: name,
+        },
+      }
+    )
+      .exec()
+      .then(function (doc) {
+        return;
+      });
+  }
+
   public async findByName(name: string): Promise<IRestaurant> {
     let cThis = this;
     return Restaurant.findOne({ name: name })
