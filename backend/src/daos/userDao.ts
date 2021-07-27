@@ -66,6 +66,13 @@ export class UserDao {
       });
   }
 
+  public async addRestaurantToOwner(userId: string, restaurantId: string) {
+    return User.updateOne(
+      { _id: userId },
+      { $push: { ownedRestaurants: restaurantId } }
+    );
+  }
+
   private getGenericReject(err) {
     let error = new ApplicationError();
     error.title = "Internal Server Error";

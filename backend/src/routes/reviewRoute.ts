@@ -10,6 +10,8 @@ import {
 } from "../middlewares/generalMiddlewares";
 import { requestValidator } from "../middlewares/validators";
 import { print, wrapError, wrapSuccess } from "../utils";
+import { UserController } from "../controllers/userController";
+import { StatusCodes } from "http-status-codes";
 
 const COMMENT = "comment";
 
@@ -33,6 +35,22 @@ function comment(req, res, next) {
     });
 }
 
+function getPendingReviews(req, res, next) {
+  let userController = new UserController();
+  userController
+    .findPendingReviews(req.user.sub)
+    .then(function (reviews) {
+      let responseBody = wrapSuccess(reviews);
+      res.send(responseBody);
+    })
+    .catch(function (err) {
+      err.status = "" + StatusCodes.BAD_REQUEST;
+      res.status(StatusCodes.BAD_REQUEST);
+      let responseBody = wrapError([err]);
+      res.send(responseBody);
+    });
+}
+
 router.post(
   "/:id/comment",
   commentValidators,
@@ -42,5 +60,7 @@ router.post(
   fillRestaurantId,
   comment
 );
+
+router.get("/pending", isOwner, getPendingReviews);
 
 export default router;

@@ -1,14 +1,20 @@
-import { ResturantDao } from "../dal/restaurantDao";
-import { ReviewDao } from "../dal/reviewDao";
+import { RestaurantDao } from "../daos/restaurantDao";
+import { ReviewDao } from "../daos/reviewDao";
+import { UserDao } from "../daos/userDao";
 import { print } from "../utils";
 
 export class RestaurantController {
-  restaurantDao = new ResturantDao();
+  restaurantDao = new RestaurantDao();
   reviewsDao = new ReviewDao();
+  userDao = new UserDao();
   public async create(name: string, ownerId: string): Promise<any> {
-    return this.restaurantDao.create(name, ownerId).then(function (restaurant) {
-      return restaurant.toJSON();
-    });
+    let rest = await this.restaurantDao
+      .create(name, ownerId)
+      .then(function (restaurant) {
+        return restaurant.toJSON();
+      });
+    await this.userDao.addRestaurantToOwner(ownerId, rest.id);
+    return rest;
   }
 
   public async addReview(
@@ -18,6 +24,8 @@ export class RestaurantController {
     visitedDate: number,
     rating: number
   ): Promise<any> {
+    print("Is is coming here?");
+    await this.findRestaurantById(restaurantId);
     let review = await this.reviewsDao.create(
       reviewString,
       reviewerId,
@@ -25,6 +33,8 @@ export class RestaurantController {
       visitedDate,
       rating
     );
+    print(review);
+    await review.save();
     await this.restaurantDao.addReview(review._id, restaurantId);
     return review.toJSON();
   }
@@ -37,7 +47,7 @@ export class RestaurantController {
     });
   }
 
-  public async findById(id: string): Promise<any> {
+  public async findRestaurantById(id: string): Promise<any> {
     return this.restaurantDao.findById(id).then(function (restaurant) {
       return restaurant.toJSON();
     });

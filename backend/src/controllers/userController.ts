@@ -1,12 +1,17 @@
-import { UserDao } from "../dal/userDao";
+import { UserDao } from "../daos/userDao";
 import bcrypt from "bcrypt";
 import { ApplicationError } from "../errors/applicationError";
 import { ApplicationErrorCodes } from "../errors/errorCodes";
 import jwt from "jsonwebtoken";
 import { Constants } from "../config/constants";
+import { ReviewDao } from "../daos/reviewDao";
+import { RestaurantDao } from "../daos/restaurantDao";
+import { print } from "../utils";
 
 export class UserController {
   private userDao = new UserDao();
+  private reviewDao = new ReviewDao();
+  private restaurantDao = new RestaurantDao();
   public async create(
     name: string,
     password: string,
@@ -64,5 +69,24 @@ export class UserController {
       .catch(function (error) {
         return Promise.reject(error);
       });
+  }
+
+  public async findPendingReviews(ownerId: string): Promise<any[]> {
+    let user = await this.userDao.findById(ownerId);
+    let response: any[] = [];
+    for (let restaurantId of user.ownedRestaurants) {
+      let restaurant = await this.restaurantDao.findById(restaurantId);
+      print(restaurant);
+      let reviews = await this.reviewDao.findPendingReviews(restaurantId);
+      if (reviews.length == 0) {
+        continue;
+      }
+      response.push({
+        restaurantName: restaurant.name,
+        restaurantId: restaurant._id,
+        pendingReviews: reviews.map((review) => review.toJSON()),
+      });
+    }
+    return response;
   }
 }

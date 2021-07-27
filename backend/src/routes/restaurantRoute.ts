@@ -31,7 +31,7 @@ function getRestaurants(req, res, next) {
 function getRestaurantForId(req, res, next) {
   let controller = new RestaurantController();
   controller
-    .findById(req.params.id)
+    .findRestaurantById(req.params.id)
     .then(function (restaurant) {
       res.send(wrapSuccess(restaurant));
     })
@@ -58,6 +58,7 @@ function addRestaurant(req, res, next) {
 
 function addReview(req, res, next) {
   const requestBody = req.body;
+  print(requestBody);
   let controller = new RestaurantController();
   controller
     .addReview(

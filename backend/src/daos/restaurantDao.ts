@@ -4,7 +4,7 @@ import { ApplicationErrorCodes } from "../errors/errorCodes";
 import { IRestaurant, Restaurant } from "../models/restaurant";
 import { print } from "../utils";
 
-export class ResturantDao {
+export class RestaurantDao {
   public async create(name: string, ownerId: string): Promise<IRestaurant> {
     var restaurant = new Restaurant({
       name: name,
@@ -98,6 +98,7 @@ export class ResturantDao {
   }
 
   public async addReview(reviewId: string, restaurantId: string) {
+    print("Adding review " + reviewId);
     let cThis = this;
     return Restaurant.updateOne(
       { _id: restaurantId },

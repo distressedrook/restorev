@@ -1,4 +1,4 @@
-import { ReviewDao } from "../dal/reviewDao";
+import { ReviewDao } from "../daos/reviewDao";
 
 export class ReviewController {
   reviewDao = new ReviewDao();

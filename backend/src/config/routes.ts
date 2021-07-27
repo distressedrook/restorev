@@ -1,7 +1,7 @@
 import { Express } from "express";
-import authRoute from "../dtl/authRoute";
-import restaurantRoute from "../dtl/restaurantRoute";
-import reviewRoute from "../dtl/reviewRoute";
+import authRoute from "../routes/authRoute";
+import restaurantRoute from "../routes/restaurantRoute";
+import reviewRoute from "../routes/reviewRoute";
 module.exports = function (app: Express) {
   app.use("/auth", authRoute);
   app.use("/restaurants", restaurantRoute);

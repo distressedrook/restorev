@@ -1,6 +1,6 @@
 import expressJwt from "express-jwt";
 import { Constants } from "../config/constants";
-import { UserDao } from "../dal/userDao";
+import { UserDao } from "../daos/userDao";
 const userDao = new UserDao();
 
 export function jwt() {

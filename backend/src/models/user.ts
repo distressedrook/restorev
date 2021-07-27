@@ -6,6 +6,7 @@ export interface IUser extends mongoose.Document {
   jwtToken: string;
   role: Role;
   hash: string;
+  ownedRestaurants: any[];
 }
 
 const Schema = mongoose.Schema;
@@ -16,6 +17,7 @@ const UserSchema = new Schema(
     jwtToken: String,
     role: String,
     hash: String,
+    ownedRestaurants: [{ type: Schema.Types.ObjectId, ref: "Restaurant" }],
   },
   {
     collection: "users",

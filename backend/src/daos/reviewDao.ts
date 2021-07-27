@@ -14,8 +14,6 @@ export class ReviewDao {
   ): Promise<IReview> {
     let cThis = this;
 
-    await this.findById(restaurantId);
-
     let review = new Review({
       reviewString: reviewString,
       reviewerId: reviewerId,
@@ -23,6 +21,7 @@ export class ReviewDao {
       visitedDate: visitedDate,
       rating: rating,
     });
+    print(review);
     await review
       .save()
       .then(function (doc) {
@@ -32,6 +31,7 @@ export class ReviewDao {
         print(err);
         return cThis.getGenericReject(err);
       });
+    print(review);
     return review;
   }
 
@@ -40,6 +40,21 @@ export class ReviewDao {
   ): Promise<IReview[]> {
     let cThis = this;
     return Review.find({ restaurantId: restaurantId })
+      .exec()
+      .catch(function (err) {
+        return cThis.getGenericReject(err);
+      })
+      .then(function (doc) {
+        if (doc == null) {
+          return [];
+        }
+        return doc;
+      });
+  }
+
+  public async findPendingReviews(restaurantId: string): Promise<IReview[]> {
+    let cThis = this;
+    return Review.find({ restaurantId: restaurantId, ownerComment: null })
       .exec()
       .catch(function (err) {
         return cThis.getGenericReject(err);

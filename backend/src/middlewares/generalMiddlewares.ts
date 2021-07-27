@@ -43,7 +43,7 @@ export function isAdmin(req, res, next) {
 export function checkCommentPrivilege(req, res, next) {
   let restaurantController = new RestaurantController();
   restaurantController
-    .findById(req.body.restaurantId)
+    .findRestaurantById(req.body.restaurantId)
     .then(function (restaurant) {
       if (restaurant.ownerId != req.user.sub) {
         sendForbidden(res);
