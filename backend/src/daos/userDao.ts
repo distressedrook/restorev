@@ -66,6 +66,21 @@ export class UserDao {
       });
   }
 
+  public async findAll(): Promise<IUser[]> {
+    let cThis = this;
+    return User.find({})
+      .exec()
+      .catch(function (err) {
+        return cThis.getGenericReject(err);
+      })
+      .then(function (doc) {
+        if (doc == null) {
+          return [];
+        }
+        return doc;
+      });
+  }
+
   public async addRestaurantToOwner(userId: string, restaurantId: string) {
     return User.updateOne(
       { _id: userId },

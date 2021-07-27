@@ -71,6 +71,12 @@ export class UserController {
       });
   }
 
+  public async findAllUsers(): Promise<any[]> {
+    return this.userDao.findAll().then(function (users) {
+      return users.map((user) => user.toJSON());
+    });
+  }
+
   public async findPendingReviews(ownerId: string): Promise<any[]> {
     let user = await this.userDao.findById(ownerId);
     let response: any[] = [];
