@@ -21,6 +21,18 @@ export class RestaurantController {
     return this.restaurantDao.edit(restaurantId, name);
   }
 
+  public async deleteRestaurant(restaurantId: string) {
+    let restaurant = await this.restaurantDao.findById(restaurantId);
+    let owner = await this.userDao.findById(restaurant.ownerId);
+    owner.ownedRestaurants = owner.ownedRestaurants.filter(function (element) {
+      return element != restaurantId;
+    });
+    await owner.save();
+    await this.reviewsDao.deleteReviewsForRestaurant(restaurantId);
+    await restaurant.delete();
+    return "OK";
+  }
+
   public async addReview(
     reviewString: string,
     reviewerId: string,
@@ -28,7 +40,6 @@ export class RestaurantController {
     visitedDate: number,
     rating: number
   ): Promise<any> {
-    print("Is is coming here?");
     await this.findRestaurantById(restaurantId);
     let review = await this.reviewsDao.create(
       reviewString,
@@ -37,7 +48,6 @@ export class RestaurantController {
       visitedDate,
       rating
     );
-    print(review);
     await review.save();
     await this.restaurantDao.addReview(review._id, restaurantId);
     return review.toJSON();

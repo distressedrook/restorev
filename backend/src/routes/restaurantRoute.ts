@@ -89,6 +89,19 @@ function editRestaurant(req, res, next) {
     });
 }
 
+function deleteRestaurant(req, res, next) {
+  let controller = new RestaurantController();
+  controller
+    .deleteRestaurant(req.params.id)
+    .then(function () {
+      res.send(wrapSuccess("OK"));
+    })
+    .catch(function (err) {
+      res.status(StatusCodes.BAD_REQUEST);
+      res.send(wrapError([err]));
+    });
+}
+
 let createValidators = [
   body(NAME).isLength({
     min: 1,
@@ -117,5 +130,6 @@ router.post(
 router.get("/", getRestaurants);
 router.get("/:id", getRestaurantForId);
 router.put("/:id/edit", isAdmin, editRestaurant);
+router.delete("/:id/delete", isAdmin, deleteRestaurant);
 
 export default router;

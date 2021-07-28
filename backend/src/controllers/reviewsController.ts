@@ -1,7 +1,9 @@
+import { RestaurantDao } from "../daos/restaurantDao";
 import { ReviewDao } from "../daos/reviewDao";
 
 export class ReviewController {
   reviewDao = new ReviewDao();
+  restaurantDao = new RestaurantDao();
   public async comment(reviewId: string, comment: string): Promise<any> {
     return this.reviewDao.comment(reviewId, comment).then(function (review) {
       return review.toJSON();
@@ -22,9 +24,14 @@ export class ReviewController {
   }
 
   public async deleteReview(id: string): Promise<any> {
-    return this.reviewDao.deleteReview(id).then(function () {
-      return "OK";
-    });
+    let review = await this.reviewDao.findById(id);
+    let restaurant = await this.restaurantDao.findById(review.restaurantId);
+    restaurant.reviews = restaurant.reviews.filter(
+      (reviewId) => reviewId != id
+    );
+    await restaurant.save();
+    await this.reviewDao.deleteReview(id);
+    return "OK";
   }
 
   public async findById(id: string): Promise<any> {

@@ -39,6 +39,14 @@ export class RestaurantDao {
       });
   }
 
+  public async delete(restaurantId: string) {
+    return Restaurant.deleteOne({ _id: restaurantId })
+      .exec()
+      .then(function (doc) {
+        return;
+      });
+  }
+
   public async findByName(name: string): Promise<IRestaurant> {
     let cThis = this;
     return Restaurant.findOne({ name: name })
