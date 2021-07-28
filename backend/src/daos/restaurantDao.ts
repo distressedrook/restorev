@@ -57,6 +57,17 @@ export class RestaurantDao {
       });
   }
 
+  public async deleteOwnerRestaurants(ownerId: string) {
+    let cThis = this;
+    Restaurant.deleteMany({
+      ownerId: ownerId,
+    })
+      .exec()
+      .catch(function (err) {
+        return cThis.getGenericReject(err);
+      });
+  }
+
   public async findAllRestaurants(): Promise<IRestaurant[]> {
     let cThis = this;
     return Restaurant.find({})

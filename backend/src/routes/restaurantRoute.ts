@@ -45,7 +45,7 @@ function addRestaurant(req, res, next) {
   const requestBody = req.body;
   let controller = new RestaurantController();
   controller
-    .create(requestBody.name, requestBody.ownerId)
+    .create(requestBody.name, req.user.sub)
     .then(function (restaurant) {
       res.status(StatusCodes.CREATED);
       res.send(wrapSuccess(restaurant));
@@ -93,9 +93,6 @@ let createValidators = [
   body(NAME).isLength({
     min: 1,
   }),
-  body(OWNER_ID).isLength({
-    min: 1,
-  }),
 ];
 
 let addReviewValidators = [
@@ -119,6 +116,6 @@ router.post(
 
 router.get("/", getRestaurants);
 router.get("/:id", getRestaurantForId);
-router.post("/:id/edit", isAdmin, editRestaurant);
+router.put("/:id/edit", isAdmin, editRestaurant);
 
 export default router;

@@ -24,6 +24,7 @@ const UserSchema = new Schema(
     toJSON: {
       transform: function (doc, ret) {
         ret.id = ret._id;
+        delete ret.ownedRestaurants;
         delete ret.hash;
         delete ret._id;
       },
@@ -37,6 +38,7 @@ export enum Role {
   Regular = "regular",
   Admin = "admin",
   Owner = "owner",
+  Ghost = "ghost",
 }
 
 export const User = mongoose.model<IUser>("User", UserSchema);

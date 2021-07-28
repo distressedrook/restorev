@@ -47,6 +47,26 @@ export class UserDao {
       });
   }
 
+  public async delete(id: string) {
+    let cThis = this;
+    User.deleteOne({ _id: id })
+      .exec()
+      .catch(function (err) {
+        return cThis.getGenericReject(err);
+      });
+  }
+
+  public async getGhostUser(): Promise<IUser> {
+    let cThis = this;
+    return User.findOne({
+      role: Role.Ghost,
+    })
+      .exec()
+      .catch(function (err) {
+        return cThis.getGenericReject(err);
+      });
+  }
+
   public async findByEmail(email: string): Promise<IUser> {
     let cThis = this;
     return User.findOne({ email: email })

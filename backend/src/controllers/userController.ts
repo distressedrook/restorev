@@ -50,6 +50,7 @@ export class UserController {
     if (role == Role.Admin) {
       roleEnum = Role.Admin;
     } else if (role == Role.Owner) {
+      await this.restaurantDao.deleteOwnerRestaurants(id);
       roleEnum = Role.Owner;
     } else if (role == Role.Regular) {
       roleEnum = Role.Regular;
@@ -57,6 +58,24 @@ export class UserController {
     return this.userDao.edit(id, name, roleEnum).then(function () {
       return "OK";
     });
+  }
+
+  public async delete(id: string): Promise<any> {
+    let user = await this.userDao.findById(id);
+    if (user.role == Role.Admin) {
+      let err = new ApplicationError();
+      err.code = ApplicationErrorCodes.CANNOT_DELETE_ADMIN;
+      err.title = "You cannot delete an admin";
+      return Promise.reject(err);
+    }
+    for (var restaurant of user.ownedRestaurants) {
+      await this.reviewDao.deleteReviewsForRestaurant(restaurant._id);
+    }
+    await this.restaurantDao.deleteOwnerRestaurants(id);
+    let ghostUser = await this.userDao.getGhostUser();
+    await this.reviewDao.changeReviewerId(id, ghostUser._id);
+    await this.userDao.delete(id);
+    return "OK";
   }
 
   public async authorise(email: string, password: string): Promise<any> {

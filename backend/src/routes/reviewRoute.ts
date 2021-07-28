@@ -91,7 +91,7 @@ router.post(
 );
 
 router.get("/pending", isOwner, getPendingReviews);
-router.post(
+router.put(
   "/:id/edit",
   isAdmin,
   editReviewValidators,

@@ -129,6 +129,38 @@ export class ReviewDao {
       });
   }
 
+  public async changeReviewerId(
+    curReviewerId: string,
+    toReviewerId: string
+  ): Promise<any> {
+    let cThis = this;
+    Review.updateMany(
+      {
+        reviewerId: curReviewerId,
+      },
+      {
+        $set: {
+          reviewerId: toReviewerId,
+        },
+      }
+    )
+      .exec()
+      .catch(function (err) {
+        return cThis.noReviewReject();
+      });
+  }
+
+  public async deleteReviewsForRestaurant(restaurantId: string) {
+    let cThis = this;
+    return Review.deleteMany({
+      restaurantId: restaurantId,
+    })
+      .exec()
+      .catch(function (error) {
+        return cThis.getGenericReject(error);
+      });
+  }
+
   private noReviewReject() {
     let error = new ApplicationError();
     error.status = ApplicationErrorCodes.REVIEW_DOES_NOT_EXIST;

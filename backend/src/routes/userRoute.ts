@@ -41,8 +41,22 @@ function editUser(req, res, next) {
     });
 }
 
+function deleteUser(req, res, next) {
+  let userController = new UserController();
+  userController
+    .delete(req.params.id)
+    .then(function (user) {
+      res.send(wrapSuccess(user));
+    })
+    .catch(function (err) {
+      res.send(wrapError([err]));
+    });
+}
+
 router.get("/", isAdmin, getAllUsers);
 router.get("/:id", isAdmin, getUserById);
-router.post("/:id/edit", isAdmin, editUser);
+router.put("/:id/edit", isAdmin, editUser);
+
+router.delete("/:id/delete", isAdmin, deleteUser);
 
 export default router;
