@@ -16,12 +16,11 @@ export class UserController {
   public async create(
     name: string,
     password: string,
-    email: string,
-    role: string
+    email: string
   ): Promise<any> {
     let hash = bcrypt.hashSync(password, 10);
     let user = await this.userDao
-      .create(name, email, hash, role)
+      .create(name, email, hash)
       .catch(function (error) {
         return Promise.reject(error);
       });

@@ -9,7 +9,6 @@ import { wrapError, wrapSuccess } from "../utils";
 
 const NAME = "name";
 const EMAIL = "email";
-const ROLE = "role";
 const PASSWORD = "password";
 
 const MIN_PASSWORD_LENGTH = 5;
@@ -18,7 +17,7 @@ function register(req, res, next) {
   const userInfo = req.body;
   let userController = new UserController();
   userController
-    .create(userInfo.name, userInfo.password, userInfo.email, userInfo.role)
+    .create(userInfo.name, userInfo.password, userInfo.email)
     .then(function (user) {
       res.status(StatusCodes.CREATED);
       let responseBody = wrapSuccess(user);
@@ -56,9 +55,6 @@ var signupValidators = [
   body(EMAIL).isEmail(),
   body(PASSWORD).isLength({
     min: MIN_PASSWORD_LENGTH,
-  }),
-  body(ROLE).isLength({
-    min: 1,
   }),
 ];
 

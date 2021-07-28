@@ -8,13 +8,12 @@ export class UserDao {
     name: string,
     email: string,
     hash: string,
-    role: string
   ): Promise<IUser> {
     var user = new User({
       name: name,
       email: email,
       hash: hash,
-      role: role,
+      role: Role.Regular
     });
     await user
       .save()
