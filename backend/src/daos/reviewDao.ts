@@ -3,7 +3,6 @@ import { ApplicationError } from "../errors/applicationError";
 import { ApplicationErrorCodes } from "../errors/errorCodes";
 import { IReview, Review } from "../models/review";
 import { print } from "../utils";
-
 export class ReviewDao {
   public async create(
     reviewString: string,
@@ -103,6 +102,30 @@ export class ReviewDao {
           error.status = "You cannot add a comment again";
           return Promise.reject(error);
         }
+      });
+  }
+
+  public async edit(
+    id: string,
+    reviewString: string,
+    rating: number,
+    visitedDate: number
+  ) {
+    let cThis = this;
+
+    Review.updateOne(
+      { _id: id },
+      {
+        $set: {
+          reviewString: reviewString,
+          rating: rating,
+          visitedDate: visitedDate,
+        },
+      }
+    )
+      .exec()
+      .catch(function (err) {
+        return cThis.noReviewReject();
       });
   }
 

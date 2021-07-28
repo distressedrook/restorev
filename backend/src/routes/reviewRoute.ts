@@ -7,6 +7,7 @@ import {
   checkCommentPrivilege,
   fillRestaurantId,
   isOwner,
+  isAdmin,
 } from "../middlewares/generalMiddlewares";
 import { requestValidator } from "../middlewares/validators";
 import { print, wrapError, wrapSuccess } from "../utils";
@@ -15,15 +16,26 @@ import { StatusCodes } from "http-status-codes";
 
 const COMMENT = "comment";
 
-var commentValidators = [
+const REVIEW = "review";
+const RATING = "rating";
+const VISITED_DATE = "visitedDate";
+
+let commentValidators = [
   body(COMMENT).isLength({
     min: 10,
   }),
   body(COMMENT).isString(),
 ];
 
+let editReviewValidators = [
+  body(REVIEW).isLength({
+    min: 2,
+  }),
+  body(RATING).isInt(),
+  body(VISITED_DATE).isInt(),
+];
+
 function comment(req, res, next) {
-  print("The review id is " + req.params.id);
   let reviewController = new ReviewController();
   reviewController
     .comment(req.params.id, req.body.comment)
@@ -51,6 +63,23 @@ function getPendingReviews(req, res, next) {
     });
 }
 
+function editReview(req, res, next) {
+  let reviewController = new ReviewController();
+  reviewController
+    .editReview(
+      req.params.id,
+      req.body.review,
+      req.body.rating,
+      req.body.visitedDate
+    )
+    .then(function (response) {
+      res.send(wrapSuccess(response));
+    })
+    .catch(function (error) {
+      res.send(wrapError([error]));
+    });
+}
+
 router.post(
   "/:id/comment",
   commentValidators,
@@ -62,5 +91,12 @@ router.post(
 );
 
 router.get("/pending", isOwner, getPendingReviews);
+router.post(
+  "/:id/edit",
+  isAdmin,
+  editReviewValidators,
+  requestValidator,
+  editReview
+);
 
 export default router;

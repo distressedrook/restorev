@@ -1,7 +1,7 @@
 import { RestaurantDao } from "../daos/restaurantDao";
 import { ReviewDao } from "../daos/reviewDao";
 import { UserDao } from "../daos/userDao";
-import { print, wrapSuccess } from "../utils";
+import { print } from "../utils";
 
 export class RestaurantController {
   restaurantDao = new RestaurantDao();
