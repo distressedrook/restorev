@@ -21,6 +21,12 @@ export class ReviewController {
       });
   }
 
+  public async deleteReview(id: string): Promise<any> {
+    return this.reviewDao.deleteReview(id).then(function () {
+      return "OK";
+    });
+  }
+
   public async findById(id: string): Promise<any> {
     return this.reviewDao.findById(id).then(function (review) {
       return review.toJSON();

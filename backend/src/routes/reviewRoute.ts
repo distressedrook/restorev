@@ -80,6 +80,18 @@ function editReview(req, res, next) {
     });
 }
 
+function deleteReview(req, res, next) {
+  let reviewController = new ReviewController();
+  reviewController
+    .deleteReview(req.params.id)
+    .then(function (response) {
+      res.send(wrapSuccess(response));
+    })
+    .catch(function (error) {
+      res.send(wrapError([error]));
+    });
+}
+
 router.post(
   "/:id/comment",
   commentValidators,
@@ -98,5 +110,7 @@ router.put(
   requestValidator,
   editReview
 );
+
+router.delete("/:id/delete", isAdmin, deleteReview);
 
 export default router;
