@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import { ApplicationError } from "../errors/applicationError";
 import { ApplicationErrorCodes } from "../errors/errorCodes";
-import { IUser, User } from "../models/user";
+import { IUser, Role, User } from "../models/user";
 
 export class UserDao {
   public async create(
@@ -28,6 +28,23 @@ export class UserDao {
         return Promise.reject(error);
       });
     return user;
+  }
+
+  public async edit(id: string, name: string, role: Role) {
+    let cThis = this;
+    User.updateOne(
+      { _id: id },
+      {
+        $set: {
+          name: name,
+          role: role,
+        },
+      }
+    )
+      .exec()
+      .catch(function (err) {
+        return cThis.getGenericReject(err);
+      });
   }
 
   public async findByEmail(email: string): Promise<IUser> {

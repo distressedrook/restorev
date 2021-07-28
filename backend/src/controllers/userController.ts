@@ -7,6 +7,7 @@ import { Constants } from "../config/constants";
 import { ReviewDao } from "../daos/reviewDao";
 import { RestaurantDao } from "../daos/restaurantDao";
 import { print } from "../utils";
+import { Role } from "../models/user";
 
 export class UserController {
   private userDao = new UserDao();
@@ -42,6 +43,20 @@ export class UserController {
       .catch(function (err) {
         return Promise.reject(err);
       });
+  }
+
+  public async edit(id: string, name: string, role: string): Promise<any> {
+    var roleEnum: Role;
+    if (role == Role.Admin) {
+      roleEnum = Role.Admin;
+    } else if (role == Role.Owner) {
+      roleEnum = Role.Owner;
+    } else if (role == Role.Regular) {
+      roleEnum = Role.Regular;
+    }
+    return this.userDao.edit(id, name, roleEnum).then(function () {
+      return "OK";
+    });
   }
 
   public async authorise(email: string, password: string): Promise<any> {

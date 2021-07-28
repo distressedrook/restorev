@@ -29,7 +29,20 @@ function getUserById(req, res, next) {
     });
 }
 
+function editUser(req, res, next) {
+  let userController = new UserController();
+  userController
+    .edit(req.params.id, req.body.name, req.body.role)
+    .then(function (user) {
+      res.send(wrapSuccess(user));
+    })
+    .catch(function (err) {
+      res.send(wrapError([err]));
+    });
+}
+
 router.get("/", isAdmin, getAllUsers);
 router.get("/:id", isAdmin, getUserById);
+router.post("/:id/edit", isAdmin, editUser);
 
 export default router;

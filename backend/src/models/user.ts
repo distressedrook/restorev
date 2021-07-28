@@ -33,7 +33,7 @@ const UserSchema = new Schema(
   }
 );
 
-enum Role {
+export enum Role {
   Regular = "regular",
   Admin = "admin",
   Owner = "owner",
