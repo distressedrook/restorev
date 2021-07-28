@@ -62,6 +62,21 @@ export class ReviewDao {
       });
   }
 
+  public async deleteComment(id: string) {
+    let cThis = this;
+    return Review.updateOne({
+      _id: id,
+    }, {
+      $set: {
+        comment: null
+      }
+    })
+      .exec()
+      .catch(function (err) {
+        return cThis.getGenericReject;
+      });
+  }
+
   public async findPendingReviews(restaurantId: string): Promise<IReview[]> {
     let cThis = this;
     return Review.find({ restaurantId: restaurantId, ownerComment: null })

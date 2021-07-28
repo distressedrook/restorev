@@ -10,7 +10,7 @@ import {
   isAdmin,
 } from "../middlewares/generalMiddlewares";
 import { requestValidator } from "../middlewares/validators";
-import { print, wrapError, wrapSuccess } from "../utils";
+import { wrapError, wrapSuccess } from "../utils";
 import { UserController } from "../controllers/userController";
 import { StatusCodes } from "http-status-codes";
 
@@ -92,6 +92,18 @@ function deleteReview(req, res, next) {
     });
 }
 
+function deleteComment(req, res, next) {
+  let reviewController = new ReviewController();
+  reviewController
+    .deleteComment(req.params.id)
+    .then(function (response) {
+      res.send(wrapSuccess(response));
+    })
+    .catch(function (error) {
+      res.send(wrapError([error]));
+    });
+}
+
 router.post(
   "/:id/comment",
   commentValidators,
@@ -112,5 +124,6 @@ router.put(
 );
 
 router.delete("/:id/delete", isAdmin, deleteReview);
+router.delete("/:id/deleteComment", isAdmin, deleteComment)
 
 export default router;

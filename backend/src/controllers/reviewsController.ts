@@ -34,6 +34,11 @@ export class ReviewController {
     return "OK";
   }
 
+  public async deleteComment(id: string): Promise<any> {
+    await this.reviewDao.deleteComment(id);
+    return "OK";
+  }
+
   public async findById(id: string): Promise<any> {
     return this.reviewDao.findById(id).then(function (review) {
       return review.toJSON();

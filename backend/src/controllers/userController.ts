@@ -7,7 +7,7 @@ import { Constants } from "../config/constants";
 import { ReviewDao } from "../daos/reviewDao";
 import { RestaurantDao } from "../daos/restaurantDao";
 import { print } from "../utils";
-import { Role } from "../models/user";
+import { IUser, Role } from "../models/user";
 
 export class UserController {
   private userDao = new UserDao();
@@ -45,19 +45,33 @@ export class UserController {
       });
   }
 
+  private async deleteRestaurantInfo(user: IUser) {
+    await this.restaurantDao.deleteOwnerRestaurants(user._id);
+    for(let restaurant in user.ownedRestaurants) {
+      await this.reviewDao.deleteReviewsForRestaurant(restaurant)
+    }
+  }
+
   public async edit(id: string, name: string, role: string): Promise<any> {
+    let user = await this.userDao.findById(id);
+    if (user.role == Role.Admin) {
+      let err = new ApplicationError();
+      err.code = ApplicationErrorCodes.CANNOT_DELETE_ADMIN;
+      err.title = "You cannot delete an admin";
+      return Promise.reject(err);
+    }
     var roleEnum: Role;
     if (role == Role.Admin) {
+      await this.deleteRestaurantInfo(user)
       roleEnum = Role.Admin;
     } else if (role == Role.Owner) {
-      await this.restaurantDao.deleteOwnerRestaurants(id);
       roleEnum = Role.Owner;
     } else if (role == Role.Regular) {
+      await this.deleteRestaurantInfo(user)
       roleEnum = Role.Regular;
     }
-    return this.userDao.edit(id, name, roleEnum).then(function () {
-      return "OK";
-    });
+    await this.userDao.edit(id, name, roleEnum)
+    return "OK"
   }
 
   public async delete(id: string): Promise<any> {
