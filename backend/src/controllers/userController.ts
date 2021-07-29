@@ -46,8 +46,8 @@ export class UserController {
 
   private async deleteRestaurantInfo(user: IUser) {
     await this.restaurantDao.deleteOwnerRestaurants(user._id);
-    for(let restaurant in user.ownedRestaurants) {
-      await this.reviewDao.deleteReviewsForRestaurant(restaurant)
+    for (let restaurant in user.ownedRestaurants) {
+      await this.reviewDao.deleteReviewsForRestaurant(restaurant);
     }
   }
 
@@ -61,16 +61,16 @@ export class UserController {
     }
     var roleEnum: Role;
     if (role == Role.Admin) {
-      await this.deleteRestaurantInfo(user)
+      await this.deleteRestaurantInfo(user);
       roleEnum = Role.Admin;
     } else if (role == Role.Owner) {
       roleEnum = Role.Owner;
     } else if (role == Role.Regular) {
-      await this.deleteRestaurantInfo(user)
+      await this.deleteRestaurantInfo(user);
       roleEnum = Role.Regular;
     }
-    await this.userDao.edit(id, name, roleEnum)
-    return "OK"
+    await this.userDao.edit(id, name, roleEnum);
+    return "OK";
   }
 
   public async delete(id: string): Promise<any> {

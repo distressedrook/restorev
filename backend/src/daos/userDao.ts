@@ -7,13 +7,13 @@ export class UserDao {
   public async create(
     name: string,
     email: string,
-    hash: string,
+    hash: string
   ): Promise<IUser> {
     var user = new User({
       name: name,
       email: email,
       hash: hash,
-      role: Role.Regular
+      role: Role.Regular,
     });
     await user
       .save()

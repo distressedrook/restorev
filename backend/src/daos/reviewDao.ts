@@ -64,13 +64,16 @@ export class ReviewDao {
 
   public async deleteComment(id: string) {
     let cThis = this;
-    return Review.updateOne({
-      _id: id,
-    }, {
-      $set: {
-        comment: null
+    return Review.updateOne(
+      {
+        _id: id,
+      },
+      {
+        $set: {
+          comment: null,
+        },
       }
-    })
+    )
       .exec()
       .catch(function (err) {
         return cThis.getGenericReject;

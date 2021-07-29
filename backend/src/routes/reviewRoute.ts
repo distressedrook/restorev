@@ -124,6 +124,6 @@ router.put(
 );
 
 router.delete("/:id/delete", isAdmin, deleteReview);
-router.delete("/:id/deleteComment", isAdmin, deleteComment)
+router.delete("/:id/deleteComment", isAdmin, deleteComment);
 
 export default router;
