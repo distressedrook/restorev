@@ -1,2 +1,7 @@
 backend/node_modules
 backend/.www
+ios/xcuserdata/
+*.ipa
+*.dSYM.zip
+*.dSYM
+ios/.build/

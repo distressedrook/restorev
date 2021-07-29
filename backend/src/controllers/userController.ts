@@ -104,7 +104,6 @@ export class UserController {
         const token = jwt.sign(
           {
             sub: user.toJSON().id,
-            role: user.role,
           },
           Constants.JWT_SECRET
         );
