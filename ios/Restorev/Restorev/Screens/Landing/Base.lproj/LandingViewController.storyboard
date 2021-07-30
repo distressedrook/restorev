@@ -4,19 +4,89 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-ExtraBold.ttf">
+            <string>OpenSans-ExtraBold</string>
+        </array>
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Landing View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LandingViewController" customModule="Restorev" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UILabel">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NNr-mi-ewm">
+                                <rect key="frame" x="87" y="274" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="T2b-XC-dCw"/>
+                                    <constraint firstAttribute="height" constant="128" id="zAL-I6-byL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="restorev" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TT6-kH-gaK">
+                                <rect key="frame" x="127.5" y="410" width="159" height="50"/>
+                                <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="36"/>
+                                <color key="textColor" red="0.10980392156862745" green="0.2627450980392157" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5S-8J-2eD">
+                                <rect key="frame" x="124.5" y="504" width="165" height="70"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Z6H-xD-Kbg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="165" id="fN0-x8-5fK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="21"/>
+                                <state key="normal" title="register">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRegisterButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I4q-5M-W0F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne4-Ml-UbG">
+                                <rect key="frame" x="124.5" y="590" width="165" height="70"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="165" id="MdL-M6-JCh"/>
+                                    <constraint firstAttribute="height" constant="70" id="Yzb-da-sxa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="21"/>
+                                <state key="normal" title="login">
+                                    <color key="titleColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapLoginButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9X9-sv-acV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TT6-kH-gaK" firstAttribute="top" secondItem="NNr-mi-ewm" secondAttribute="bottom" constant="8" symbolic="YES" id="5Kk-RG-oya"/>
+                            <constraint firstItem="NNr-mi-ewm" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-115" id="CtY-ci-06F"/>
+                            <constraint firstItem="N5S-8J-2eD" firstAttribute="centerX" secondItem="TT6-kH-gaK" secondAttribute="centerX" id="Ffw-Kk-PcM"/>
+                            <constraint firstItem="N5S-8J-2eD" firstAttribute="top" secondItem="TT6-kH-gaK" secondAttribute="bottom" constant="44" id="VYx-jo-mpW"/>
+                            <constraint firstItem="Ne4-Ml-UbG" firstAttribute="centerX" secondItem="N5S-8J-2eD" secondAttribute="centerX" id="evm-Ej-yTT"/>
+                            <constraint firstItem="Ne4-Ml-UbG" firstAttribute="top" secondItem="N5S-8J-2eD" secondAttribute="bottom" constant="16" id="fF1-HB-FSN"/>
+                            <constraint firstItem="TT6-kH-gaK" firstAttribute="centerX" secondItem="NNr-mi-ewm" secondAttribute="centerX" id="iaj-XJ-m7F"/>
+                            <constraint firstItem="NNr-mi-ewm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kDV-hs-Ws1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -25,8 +95,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="LogoLarge" width="168" height="84"/>
     </resources>
 </document>

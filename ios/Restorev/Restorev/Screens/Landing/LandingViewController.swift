@@ -6,14 +6,34 @@
 //
 
 import UIKit
+import SwiftMessages
 
-class LandingViewController: UIViewController {
+class LandingViewController: UIViewController, MessageDisplayable {
 
+    var router: LandingRouter!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.router = LandingRouterImp(navigatable: self)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+}
 
+extension LandingViewController {
+    @IBAction func didTapLoginButton(sender: UIButton) {
+        self.router.routeToLogin()
+    }
+    
+    @IBAction func didTapRegisterButton(sender: UIButton) {
+        self.router.routeToRegister(with: self)
+    }
+}
 
+extension LandingViewController: RegisterViewControllerDelegate {
+    func didFinishRegisterIn(registerViewController: RegisterViewController) {
+        self.showSuccess(with: Strings.success, message: Strings.accountCreated)
+    }
 }
 

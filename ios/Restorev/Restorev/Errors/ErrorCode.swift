@@ -15,8 +15,19 @@ enum ErrorCode: String {
     case httpMethodNotAllowed = "405"
     case httpInternalServerError = "500"
     case timedOut = "1001"
-    case statusSuccessful = "200"
+    
+    case validation = "100"
+    case userAlreadyExists = "001"
+    case userDoesNotExist = "002"
+    case passwordMismatch = "003"
     
     // MARK: _ Unknown
     case unknown
 }
+
+let errorDisplayMap: [ErrorCode: String] = [
+    .unknown: Strings.oops,
+    .userAlreadyExists: Strings.userExists,
+    .userDoesNotExist: Strings.userDoesNotExist,
+    .passwordMismatch: Strings.passwordMismatch
+]

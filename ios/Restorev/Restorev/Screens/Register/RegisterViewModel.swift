@@ -6,3 +6,57 @@
 //
 
 import Foundation
+
+protocol RegisterViewModel {
+    var didRegister: (() -> ())? { get set }
+    var didRegisterFail: ((ApplicationError) -> ())? { get set }
+    init()
+    init(service: AuthService)
+    
+    func register(name: String, email: String, password: String)
+}
+
+final class RegisterViewModelImp: RegisterViewModel {
+    var service: AuthService
+    
+    var didRegister: (() -> ())?
+    var didRegisterFail: ((ApplicationError) -> ())?
+    
+    init() {
+        self.service = AuthServiceImp()
+    }
+    
+    init(service: AuthService) {
+        self.service = service
+    }
+    
+    func register(name: String, email: String, password: String) {
+        if !validate(name: name, email: email, password: password) { return }
+        
+        self.service.register(name: name, email: email, password: password) { [weak self] in
+            self?.didRegister?()
+        } failure: { [weak self] error in
+            self?.didRegisterFail?(error)
+        }
+    }
+    
+    private func validate(name: String, email:String, password: String) -> Bool {
+        var validated = true
+        if name.isEmpty {
+            didRegisterFail?(ValidationError(fieldType: .name))
+            validated = false
+        }
+        
+        if !email.isValidEmail {
+            didRegisterFail?(ValidationError(fieldType: .email))
+            validated = false
+        }
+        
+        if password.count < 5 {
+            didRegisterFail?(ValidationError(fieldType: .password))
+            validated = false
+        }
+        
+        return validated
+    }
+}

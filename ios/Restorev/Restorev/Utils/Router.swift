@@ -8,12 +8,13 @@
 import UIKit
 
 protocol Router: AnyObject {
-    var viewController: UIViewController? { get set }
+    init(navigatable: Navigatable)
+    var navigatable: Navigatable? { get set }
     func dismiss(completion: (() -> Void)?)
 }
 
 extension Router {
     func dismiss(completion: (() -> Void)? = nil) {
-        self.viewController?.dismiss(animated: true, completion: completion)
+        self.navigatable?.dismiss(animated: true, completion: completion)
     }
 }

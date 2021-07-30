@@ -7,13 +7,15 @@
 
 import UIKit
 
-protocol RegisterRouter: Router {
+protocol LoginRouter: Router {
     
 }
 
-final class RegisterRouterImp: RegisterRouter {
+final class LoginRouterImp: LoginRouter {
     init(navigatable: Navigatable) {
         self.navigatable = navigatable
     }
-    var navigatable: Navigatable?
+    
+    weak var navigatable: Navigatable?
+    
 }
