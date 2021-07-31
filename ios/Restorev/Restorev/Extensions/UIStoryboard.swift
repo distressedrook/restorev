@@ -15,4 +15,24 @@ extension UIStoryboard {
     static var login: UIStoryboard {
         return UIStoryboard(name: "LoginViewController", bundle: nil)
     }
+    
+    static var landing: UIStoryboard {
+        return UIStoryboard(name: "LandingViewController", bundle: nil)
+    }
+    
+    static var homeTab: UIStoryboard {
+        return UIStoryboard(name: "HomeTabBarController", bundle: nil)
+    }
+    
+    static var restaurants: UIStoryboard {
+        return UIStoryboard(name: "RestaurantsViewController", bundle: nil)
+    }
+    
+    static var restaurantsNavigation: UIStoryboard {
+        return UIStoryboard(name: "RestaurantsNavigationController", bundle: nil)
+    }
+    
+    static var settings: UIStoryboard {
+        return UIStoryboard(name: "SettingsViewController", bundle: nil)
+    }
 }

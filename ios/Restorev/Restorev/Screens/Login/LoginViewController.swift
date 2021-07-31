@@ -31,6 +31,7 @@ extension LoginViewController {
         self.viewModel.didRegisterSuccess = { user in
             self.hideLoading()
             self.showSuccess(with: Strings.success, message: Strings.loggedIn)
+            self.router.moveToHome()
         }
     }
 }

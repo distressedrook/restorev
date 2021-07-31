@@ -61,6 +61,23 @@
 		69C48B8526B32CF200550BC9 /* MessageDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B8426B32CF200550BC9 /* MessageDisplayable.swift */; };
 		69C48B8826B3AFC300550BC9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B8726B3AFC300550BC9 /* User.swift */; };
 		69C48B8A26B3B23000550BC9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B8926B3B23000550BC9 /* Utils.swift */; };
+		69C48B8C26B3F5BE00550BC9 /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B8B26B3F5BE00550BC9 /* RoleManager.swift */; };
+		69C48B8F26B463E600550BC9 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B8E26B463E600550BC9 /* HomeTabBarController.swift */; };
+		69C48B9126B4641F00550BC9 /* HomeTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C48B9026B4641F00550BC9 /* HomeTabBarController.storyboard */; };
+		69C48B9526B4F06B00550BC9 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B9426B4F06B00550BC9 /* RestaurantsViewController.swift */; };
+		69C48B9926B4F09B00550BC9 /* RestaurantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B9826B4F09B00550BC9 /* RestaurantsRouter.swift */; };
+		69C48B9B26B4F13800550BC9 /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B9A26B4F13800550BC9 /* RestaurantsViewModel.swift */; };
+		69C48B9D26B4F37F00550BC9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B9C26B4F37F00550BC9 /* SettingsViewController.swift */; };
+		69C48B9F26B4F3A300550BC9 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B9E26B4F3A300550BC9 /* SettingsRouter.swift */; };
+		69C48BA126B4F4BC00550BC9 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BA026B4F4BC00550BC9 /* UITabBarController.swift */; };
+		69C48BA426B4F64700550BC9 /* RestaurantsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BA326B4F64700550BC9 /* RestaurantsNavigationController.swift */; };
+		69C48BA626B4F6CA00550BC9 /* RestaurantsNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C48BA526B4F6CA00550BC9 /* RestaurantsNavigationController.storyboard */; };
+		69C48BA826B4F83200550BC9 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BA726B4F83200550BC9 /* UINavigationController.swift */; };
+		69C48BAA26B4F9D500550BC9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BA926B4F9D500550BC9 /* UIImage.swift */; };
+		69C48BAF26B5139500550BC9 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BAE26B5139500550BC9 /* UIFont.swift */; };
+		69C48BB726B5249E00550BC9 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BB526B5249E00550BC9 /* RestaurantTableViewCell.swift */; };
+		69C48BB826B5249E00550BC9 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C48BB626B5249E00550BC9 /* RestaurantTableViewCell.xib */; };
+		69C48BBA26B526EE00550BC9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BB926B526EE00550BC9 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +154,23 @@
 		69C48B8426B32CF200550BC9 /* MessageDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayable.swift; sourceTree = "<group>"; };
 		69C48B8726B3AFC300550BC9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		69C48B8926B3B23000550BC9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		69C48B8B26B3F5BE00550BC9 /* RoleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManager.swift; sourceTree = "<group>"; };
+		69C48B8E26B463E600550BC9 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		69C48B9026B4641F00550BC9 /* HomeTabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTabBarController.storyboard; sourceTree = "<group>"; };
+		69C48B9426B4F06B00550BC9 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
+		69C48B9826B4F09B00550BC9 /* RestaurantsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsRouter.swift; sourceTree = "<group>"; };
+		69C48B9A26B4F13800550BC9 /* RestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModel.swift; sourceTree = "<group>"; };
+		69C48B9C26B4F37F00550BC9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		69C48B9E26B4F3A300550BC9 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		69C48BA026B4F4BC00550BC9 /* UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
+		69C48BA326B4F64700550BC9 /* RestaurantsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsNavigationController.swift; sourceTree = "<group>"; };
+		69C48BA526B4F6CA00550BC9 /* RestaurantsNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantsNavigationController.storyboard; sourceTree = "<group>"; };
+		69C48BA726B4F83200550BC9 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		69C48BA926B4F9D500550BC9 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		69C48BAE26B5139500550BC9 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		69C48BB526B5249E00550BC9 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		69C48BB626B5249E00550BC9 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
+		69C48BB926B526EE00550BC9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +225,9 @@
 		69C48AE626B27E1000550BC9 /* Restorev */ = {
 			isa = PBXGroup;
 			children = (
-				69C48B8626B3AFB700550BC9 /* Model */,
+				69C48BB026B5246700550BC9 /* Views */,
+				69C48BAD26B50F3D00550BC9 /* Resources */,
+				69C48B8626B3AFB700550BC9 /* Models */,
 				69C48B8026B3295A00550BC9 /* Protocols */,
 				69C48B5726B2BC6000550BC9 /* Services */,
 				69C48B6826B2CADA00550BC9 /* Managers */,
@@ -226,10 +262,8 @@
 		69C48B1726B27E4400550BC9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				69C48B1E26B28D2000550BC9 /* Fonts */,
 				69C48AE926B27E1000550BC9 /* SceneDelegate.swift */,
 				69C48AE726B27E1000550BC9 /* AppDelegate.swift */,
-				69C48AF026B27E1E00550BC9 /* Assets.xcassets */,
 				69C48AF226B27E1E00550BC9 /* LaunchScreen.storyboard */,
 				69C48B6626B2BFA900550BC9 /* Strings.swift */,
 			);
@@ -239,6 +273,9 @@
 		69C48B1826B27E9900550BC9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				69C48BA226B4F61A00550BC9 /* RestaurantsNavigation */,
+				69C48B9326B4EF9000550BC9 /* Settings */,
+				69C48B8D26B463B500550BC9 /* Home */,
 				69C48B3C26B2949F00550BC9 /* Register */,
 				69C48B3B26B2949B00550BC9 /* Login */,
 				69C48B1926B27EA900550BC9 /* Landing */,
@@ -264,6 +301,10 @@
 				69C48B3926B2947C00550BC9 /* UIViewController.swift */,
 				69C48B4E26B29B6300550BC9 /* UIStoryboard.swift */,
 				69C48B7C26B2FEAD00550BC9 /* String.swift */,
+				69C48BA026B4F4BC00550BC9 /* UITabBarController.swift */,
+				69C48BA726B4F83200550BC9 /* UINavigationController.swift */,
+				69C48BA926B4F9D500550BC9 /* UIImage.swift */,
+				69C48BAE26B5139500550BC9 /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,6 +385,7 @@
 			children = (
 				69C48B6B26B2CD0400550BC9 /* Cache.swift */,
 				69C48B6926B2CAE200550BC9 /* Log.swift */,
+				69C48B8B26B3F5BE00550BC9 /* RoleManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -358,12 +400,85 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		69C48B8626B3AFB700550BC9 /* Model */ = {
+		69C48B8626B3AFB700550BC9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				69C48B8726B3AFC300550BC9 /* User.swift */,
+				69C48BB926B526EE00550BC9 /* Restaurant.swift */,
 			);
-			path = Model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		69C48B8D26B463B500550BC9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				69C48B8E26B463E600550BC9 /* HomeTabBarController.swift */,
+				69C48B9026B4641F00550BC9 /* HomeTabBarController.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		69C48B9326B4EF9000550BC9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				69C48B9C26B4F37F00550BC9 /* SettingsViewController.swift */,
+				69C48B9E26B4F3A300550BC9 /* SettingsRouter.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		69C48BA226B4F61A00550BC9 /* RestaurantsNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				69C48BA326B4F64700550BC9 /* RestaurantsNavigationController.swift */,
+				69C48BA526B4F6CA00550BC9 /* RestaurantsNavigationController.storyboard */,
+				69C48BAC26B4FD3A00550BC9 /* Restaurants */,
+			);
+			path = RestaurantsNavigation;
+			sourceTree = "<group>";
+		};
+		69C48BAC26B4FD3A00550BC9 /* Restaurants */ = {
+			isa = PBXGroup;
+			children = (
+				69C48B9426B4F06B00550BC9 /* RestaurantsViewController.swift */,
+				69C48B9826B4F09B00550BC9 /* RestaurantsRouter.swift */,
+				69C48B9A26B4F13800550BC9 /* RestaurantsViewModel.swift */,
+			);
+			path = Restaurants;
+			sourceTree = "<group>";
+		};
+		69C48BAD26B50F3D00550BC9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				69C48AF026B27E1E00550BC9 /* Assets.xcassets */,
+				69C48B1E26B28D2000550BC9 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		69C48BB026B5246700550BC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69C48BB126B5246D00550BC9 /* TableViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		69C48BB126B5246D00550BC9 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				69C48BB226B5247300550BC9 /* Restaurant */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		69C48BB226B5247300550BC9 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				69C48BB526B5249E00550BC9 /* RestaurantTableViewCell.swift */,
+				69C48BB626B5249E00550BC9 /* RestaurantTableViewCell.xib */,
+			);
+			path = Restaurant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,10 +600,13 @@
 				69C48AF426B27E1E00550BC9 /* LaunchScreen.storyboard in Resources */,
 				69C48B3126B28D3E00550BC9 /* OpenSans-SemiBold.ttf in Resources */,
 				69C48B3326B28D3E00550BC9 /* OpenSans-Italic.ttf in Resources */,
+				69C48BA626B4F6CA00550BC9 /* RestaurantsNavigationController.storyboard in Resources */,
 				69C48AF126B27E1E00550BC9 /* Assets.xcassets in Resources */,
 				69C48B2A26B28D3E00550BC9 /* OpenSans-Bold.ttf in Resources */,
+				69C48B9126B4641F00550BC9 /* HomeTabBarController.storyboard in Resources */,
 				69C48B3026B28D3E00550BC9 /* OpenSans-LightItalic.ttf in Resources */,
 				69C48AEF26B27E1000550BC9 /* LandingViewController.storyboard in Resources */,
+				69C48BB826B5249E00550BC9 /* RestaurantTableViewCell.xib in Resources */,
 				69C48B2C26B28D3E00550BC9 /* OpenSans-ExtraBold.ttf in Resources */,
 				69C48B3426B28D3E00550BC9 /* OpenSans-BoldItalic.ttf in Resources */,
 				69C48B2F26B28D3E00550BC9 /* OpenSans-Light.ttf in Resources */,
@@ -525,12 +643,15 @@
 				69C48B8526B32CF200550BC9 /* MessageDisplayable.swift in Sources */,
 				69C48B4C26B295A100550BC9 /* LoginViewController.swift in Sources */,
 				69C48B8826B3AFC300550BC9 /* User.swift in Sources */,
+				69C48B9D26B4F37F00550BC9 /* SettingsViewController.swift in Sources */,
 				69C48B7F26B3147500550BC9 /* Navigatable.swift in Sources */,
 				69C48B6A26B2CAE200550BC9 /* Log.swift in Sources */,
 				69C48B6E26B2D99500550BC9 /* AuthService.swift in Sources */,
 				69C48B3A26B2947C00550BC9 /* UIViewController.swift in Sources */,
 				69C48B5626B2ACE100550BC9 /* KeyboardLayoutConstraint.swift in Sources */,
+				69C48B8C26B3F5BE00550BC9 /* RoleManager.swift in Sources */,
 				69C48B4D26B295A100550BC9 /* LoginRouter.swift in Sources */,
+				69C48B9B26B4F13800550BC9 /* RestaurantsViewModel.swift in Sources */,
 				69C48B5426B2AA8700550BC9 /* TextField.swift in Sources */,
 				69C48B5926B2BCA700550BC9 /* ServiceManager.swift in Sources */,
 				69C48B3626B2924300550BC9 /* UIView.swift in Sources */,
@@ -538,18 +659,29 @@
 				69C48B6326B2BE4D00550BC9 /* ErrorCode.swift in Sources */,
 				69C48B4B26B295A100550BC9 /* LoginViewModel.swift in Sources */,
 				69C48B7B26B2F6CB00550BC9 /* ValidationError.swift in Sources */,
+				69C48B9926B4F09B00550BC9 /* RestaurantsRouter.swift in Sources */,
+				69C48B8F26B463E600550BC9 /* HomeTabBarController.swift in Sources */,
 				69C48B7226B2DB5A00550BC9 /* ApplicationError.swift in Sources */,
 				69C48AEC26B27E1000550BC9 /* LandingViewController.swift in Sources */,
+				69C48BB726B5249E00550BC9 /* RestaurantTableViewCell.swift in Sources */,
 				69C48B4F26B29B6300550BC9 /* UIStoryboard.swift in Sources */,
 				69C48B7D26B2FEAD00550BC9 /* String.swift in Sources */,
+				69C48BA826B4F83200550BC9 /* UINavigationController.swift in Sources */,
+				69C48BAF26B5139500550BC9 /* UIFont.swift in Sources */,
 				69C48B6726B2BFA900550BC9 /* Strings.swift in Sources */,
 				69C48B8A26B3B23000550BC9 /* Utils.swift in Sources */,
+				69C48BBA26B526EE00550BC9 /* Restaurant.swift in Sources */,
 				69C48B5226B29DB300550BC9 /* Router.swift in Sources */,
 				69C48B3E26B294EB00550BC9 /* RegisterViewController.swift in Sources */,
+				69C48B9526B4F06B00550BC9 /* RestaurantsViewController.swift in Sources */,
+				69C48BAA26B4F9D500550BC9 /* UIImage.swift in Sources */,
 				69C48B4426B2953600550BC9 /* RegisterRouter.swift in Sources */,
+				69C48BA126B4F4BC00550BC9 /* UITabBarController.swift in Sources */,
 				69C48B1D26B28B4400550BC9 /* UIColor.swift in Sources */,
 				69C48AE826B27E1000550BC9 /* AppDelegate.swift in Sources */,
+				69C48BA426B4F64700550BC9 /* RestaurantsNavigationController.swift in Sources */,
 				69C48B3826B293FE00550BC9 /* LandingRouter.swift in Sources */,
+				69C48B9F26B4F3A300550BC9 /* SettingsRouter.swift in Sources */,
 				69C48B4226B2951500550BC9 /* RegisterViewModel.swift in Sources */,
 				69C48AEA26B27E1000550BC9 /* SceneDelegate.swift in Sources */,
 			);
