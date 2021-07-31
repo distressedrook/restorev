@@ -10,6 +10,9 @@
         <array key="OpenSans-Bold.ttf">
             <string>OpenSans-Bold</string>
         </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -36,11 +39,19 @@
                                     <constraint firstAttribute="height" constant="14" id="0IY-ey-wjC"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezy-Sq-oKz">
+                                <rect key="frame" x="46" y="96.5" width="38" height="21"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ezy-Sq-oKz" firstAttribute="centerY" secondItem="1vF-Q4-KY9" secondAttribute="centerY" id="592-eo-n03"/>
                             <constraint firstItem="tx8-5Z-GCV" firstAttribute="leading" secondItem="vxd-80-YBo" secondAttribute="leading" constant="24" id="8rU-qe-PJo"/>
                             <constraint firstItem="1vF-Q4-KY9" firstAttribute="leading" secondItem="tx8-5Z-GCV" secondAttribute="leading" id="HfS-De-mBb"/>
+                            <constraint firstItem="ezy-Sq-oKz" firstAttribute="leading" secondItem="1vF-Q4-KY9" secondAttribute="trailing" constant="8" symbolic="YES" id="Hk9-Ib-fUN"/>
                             <constraint firstItem="1vF-Q4-KY9" firstAttribute="top" secondItem="tx8-5Z-GCV" secondAttribute="bottom" constant="12" id="Pye-xl-stU"/>
                             <constraint firstAttribute="bottom" secondItem="1vF-Q4-KY9" secondAttribute="bottom" constant="16" id="YbE-E7-Gaq"/>
                             <constraint firstItem="tx8-5Z-GCV" firstAttribute="top" secondItem="vxd-80-YBo" secondAttribute="top" constant="14" id="chT-hz-JuY"/>
@@ -61,6 +72,10 @@
                     <color key="value" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="averageRatingLabel" destination="ezy-Sq-oKz" id="WaD-sc-0Hx"/>
+                <outlet property="nameLabel" destination="tx8-5Z-GCV" id="shK-8I-bqo"/>
+            </connections>
             <point key="canvasLocation" x="203.62318840579712" y="99.107142857142847"/>
         </tableViewCell>
     </objects>

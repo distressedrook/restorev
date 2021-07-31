@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cu8-C4-1B2">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,11 +20,11 @@
             <objects>
                 <viewController id="cu8-C4-1B2" customClass="LoginViewController" customModule="Restorev" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bh5-Y2-Kkc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlP-Dm-Ptt">
-                                <rect key="frame" x="44" y="313.5" width="326" height="70"/>
+                                <rect key="frame" x="44" y="313.66666666666669" width="287" height="70"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="0Xa-x9-IEY"/>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0nr-gd-KPr" customClass="TextField" customModule="Restorev" customModuleProvider="target">
-                                <rect key="frame" x="44" y="161.5" width="326" height="60"/>
+                                <rect key="frame" x="44" y="161.66666666666666" width="287" height="60"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8oW-h8-fJk"/>
@@ -54,13 +54,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1M-cX-ivN">
-                                <rect key="frame" x="161" y="88" width="92.5" height="49.5"/>
+                                <rect key="frame" x="141.33333333333334" y="88" width="92.666666666666657" height="49.666666666666657"/>
                                 <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="36"/>
                                 <color key="textColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DRs-Nk-mq5" customClass="TextField" customModule="Restorev" customModuleProvider="target">
-                                <rect key="frame" x="44" y="229.5" width="326" height="60"/>
+                                <rect key="frame" x="44" y="229.66666666666663" width="287" height="60"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="M6C-vN-U49"/>
@@ -103,7 +103,7 @@
     </scenes>
     <designables>
         <designable name="0nr-gd-KPr">
-            <size key="intrinsicContentSize" width="88.5" height="30.5"/>
+            <size key="intrinsicContentSize" width="88.333333333333329" height="30.333333333333332"/>
         </designable>
         <designable name="DRs-Nk-mq5">
             <size key="intrinsicContentSize" width="130" height="29"/>

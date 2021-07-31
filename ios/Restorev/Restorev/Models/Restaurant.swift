@@ -9,4 +9,6 @@ import Foundation
 
 struct Restaurant: Codable {
     let name: String
+    let id: String
+    let averageRating: Double
 }

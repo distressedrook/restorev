@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RestaurantsViewController: UIViewController {
+class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDisplayable {
     
     @IBOutlet var tableView: UITableView!
     
@@ -18,23 +18,23 @@ class RestaurantsViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setOnce(viewModel: RestaurantsViewModelImp(), router: RestaurantsRouterImp(navigatable: self))
+        self.bind()
         self.addAddButton()
+        self.getRestaurants()
         self.setupTableView()
     }
     
-    func setupTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(RestaurantTableViewCell.nib, forCellReuseIdentifier: RestaurantTableViewCell.cellIdentifier)
-        self.tableView.reloadData()
-    }
-    
-    func addAddButton() {
-        let barButtonItem = roleManager.barButtonItemFor(restaurantViewController: self)
-        self.navigationItem.rightBarButtonItem = barButtonItem
+    func setOnce(viewModel: RestaurantsViewModel, router: RestaurantsRouter) {
+        if self.viewModel == nil {
+            self.viewModel = viewModel
+        }
+        if self.router == nil {
+            self.router = router
+        }
     }
     
     @objc func didTapAddButton(sender: UIButton) {
@@ -43,14 +43,51 @@ class RestaurantsViewController: UIViewController {
     
 }
 
+extension RestaurantsViewController {
+    
+    private func setupTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(RestaurantTableViewCell.nib, forCellReuseIdentifier: RestaurantTableViewCell.cellIdentifier)
+    }
+    
+    private func addAddButton() {
+        let barButtonItem = roleManager.barButtonItemFor(restaurantViewController: self)
+        self.navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    private func bind() {
+        self.viewModel.didGetRestaurants = {
+            self.hideLoading()
+            self.tableView.reloadData()
+            UIView.animate(withDuration: Constants.ANIMATION_TIME) {
+                self.tableView.alpha = 1.0
+            }
+        }
+        
+        self.viewModel.didGetRestaurantFail = { error in
+            self.showError(with: Strings.failure, message: error.displayString)
+            self.viewModel.getRestaurants()
+        }
+    }
+    
+    private func getRestaurants() {
+        self.showLoading()
+        self.tableView.alpha = 0.0
+        self.viewModel.getRestaurants()
+    }
+    
+}
+
 extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.viewModel.numberOfRestaurants
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.cellIdentifier) as! RestaurantTableViewCell
-        cell.selectionStyle = .none
+        cell.nameLabel.text = self.viewModel.name(at: indexPath.row)
+        cell.averageRatingLabel.text = "\(self.viewModel.averageRating(at: indexPath.row))"
         return cell
     }
     
@@ -59,6 +96,6 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        Log.d("Tapped at \(self.viewModel.id(at: indexPath.row))")
     }
 }

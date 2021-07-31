@@ -17,8 +17,9 @@ final class LoginRouterImp: LoginRouter {
     }
     
     func moveToHome() {
-        self.navigatable?.modalPresentationStyle = .fullScreen
-        self.navigatable?.present(RoleManager().viewControllerForPostLogin(), animated: true, completion: nil)
+        let viewController = RoleManager().viewControllerForPostLogin()
+        viewController.modalPresentationStyle = .fullScreen
+        self.navigatable?.present(viewController, animated: true, completion: nil)
     }
     
     weak var navigatable: Navigatable?

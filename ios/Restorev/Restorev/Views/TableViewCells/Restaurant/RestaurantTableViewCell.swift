@@ -8,6 +8,9 @@
 import UIKit
 
 class RestaurantTableViewCell: UITableViewCell {
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var averageRatingLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

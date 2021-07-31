@@ -78,6 +78,7 @@
 		69C48BB726B5249E00550BC9 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BB526B5249E00550BC9 /* RestaurantTableViewCell.swift */; };
 		69C48BB826B5249E00550BC9 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C48BB626B5249E00550BC9 /* RestaurantTableViewCell.xib */; };
 		69C48BBA26B526EE00550BC9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BB926B526EE00550BC9 /* Restaurant.swift */; };
+		69C48BBC26B556B100550BC9 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BBB26B556B000550BC9 /* RestaurantService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		69C48BB526B5249E00550BC9 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		69C48BB626B5249E00550BC9 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		69C48BB926B526EE00550BC9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		69C48BBB26B556B000550BC9 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				69C48B5826B2BCA700550BC9 /* ServiceManager.swift */,
+				69C48BBB26B556B000550BC9 /* RestaurantService.swift */,
 				69C48B6D26B2D99500550BC9 /* AuthService.swift */,
 			);
 			path = Services;
@@ -665,6 +668,7 @@
 				69C48AEC26B27E1000550BC9 /* LandingViewController.swift in Sources */,
 				69C48BB726B5249E00550BC9 /* RestaurantTableViewCell.swift in Sources */,
 				69C48B4F26B29B6300550BC9 /* UIStoryboard.swift in Sources */,
+				69C48BBC26B556B100550BC9 /* RestaurantService.swift in Sources */,
 				69C48B7D26B2FEAD00550BC9 /* String.swift in Sources */,
 				69C48BA826B4F83200550BC9 /* UINavigationController.swift in Sources */,
 				69C48BAF26B5139500550BC9 /* UIFont.swift in Sources */,
