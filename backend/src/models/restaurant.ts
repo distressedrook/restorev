@@ -4,6 +4,7 @@ export interface IRestaurant extends mongoose.Document {
   name: string;
   ownerId: string;
   reviews: any[];
+  averageRating: number;
 }
 
 const Schema = mongoose.Schema;
