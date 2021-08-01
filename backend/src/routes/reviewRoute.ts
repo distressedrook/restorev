@@ -109,8 +109,8 @@ router.post(
   commentValidators,
   requestValidator,
   isOwner,
-  checkCommentPrivilege,
   fillRestaurantId,
+  checkCommentPrivilege,
   comment
 );
 

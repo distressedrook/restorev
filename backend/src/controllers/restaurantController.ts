@@ -1,6 +1,7 @@
 import { RestaurantDao } from "../daos/restaurantDao";
 import { ReviewDao } from "../daos/reviewDao";
 import { UserDao } from "../daos/userDao";
+import { IRestaurant } from "../models/restaurant";
 import { IReview } from "../models/review";
 
 export class RestaurantController {
@@ -88,13 +89,41 @@ export class RestaurantController {
     return averageRating;
   }
 
+  private async transformRestaurant(restaurant: IRestaurant): Promise<any> {
+    var restsaurantJSON = restaurant.toJSON();
+    let restaurntRes: any = {
+      name: restaurant.name,
+      ownerId: restaurant.ownerId,
+      id: restaurant.id,
+    };
+    let reviews: any[] = [];
+    for (let review of restaurant.reviews) {
+      let reviewRes: any = {
+        restaurantId: review.restaurantId,
+        visitedDate: review.visitedDate,
+        rating: review.rating,
+        ownerComment: review.ownerComment,
+        id: review.id,
+        review: review.reviewString,
+      };
+      let reviewer = await this.userDao.findById(review.reviewerId);
+      reviewRes.reviewer = reviewer.toJSON();
+      reviews.push(reviewRes);
+    }
+    restaurntRes.reviews = reviews;
+    return restaurntRes;
+  }
+
   public async findRestaurantById(id: string): Promise<any> {
     let cThis = this;
     return this.restaurantDao.findById(id).then(function (restaurant) {
       let averageRating = cThis.calculateAverageRating(restaurant.reviews);
-      let restaurantJSON = restaurant.toJSON();
-      restaurantJSON.averageRating = averageRating;
-      return restaurantJSON;
+      return cThis
+        .transformRestaurant(restaurant)
+        .then(function (restaurantJSON) {
+          restaurantJSON.averageRating = averageRating;
+          return restaurantJSON;
+        });
     });
   }
 }
