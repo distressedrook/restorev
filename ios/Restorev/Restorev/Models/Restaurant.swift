@@ -11,4 +11,5 @@ struct Restaurant: Codable {
     let name: String
     let id: String
     let averageRating: Double
+    let reviews: [Review]?
 }

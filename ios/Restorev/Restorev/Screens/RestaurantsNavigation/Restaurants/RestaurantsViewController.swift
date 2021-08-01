@@ -28,6 +28,13 @@ class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDi
         self.setupTableView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let id = sender as? String else {
+            fatalError("Sender must always be a string")
+        }
+        self.router.prepareToMoveTo(viewController: segue.destination, id: id)
+    }
+    
     func setOnce(viewModel: RestaurantsViewModel, router: RestaurantsRouter) {
         if self.viewModel == nil {
             self.viewModel = viewModel
@@ -96,6 +103,12 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Log.d("Tapped at \(self.viewModel.id(at: indexPath.row))")
+        self.router.moveToRestaurantDetailWith(id: self.viewModel.id(at: indexPath.row))
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 18
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 6
     }
 }

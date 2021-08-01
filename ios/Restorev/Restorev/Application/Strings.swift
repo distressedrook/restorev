@@ -22,4 +22,11 @@ class Strings {
     static let passwordMismatch = "uh oh, you have entered the wrong passsword. Please try again."
     static let loggedIn = "you have successfully logged in"
     static let restaurants = "restaurants"
+    static let review = "review"
+    static let averageRating = "average rating"
+    static let commented = "commented"
+    static let youCommented = "you commented"
+    static let allReviews = "all reviews"
+    static let topRatedReview = "top rated review"
+    static let mostCriticalReview = "most critical review"
 }

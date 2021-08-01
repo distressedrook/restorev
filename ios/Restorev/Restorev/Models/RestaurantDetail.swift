@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct RestaurantDetail {
+    var re: String
+}

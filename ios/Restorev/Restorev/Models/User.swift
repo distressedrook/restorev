@@ -19,11 +19,11 @@ class User: NSObject, Codable, NSCoding {
         coder.encode(self.id, forKey: User.ID)
         coder.encode(self.name, forKey: User.NAME)
         coder.encode(self.email, forKey: User.EMAIL)
-        coder.encode(self.role.rawValue, forKey: User.ROLE)
+        coder.encode(self.role?.rawValue, forKey: User.ROLE)
         coder.encode(self.token, forKey: User.TOKEN)
     }
     
-    init(id: String, name: String, email: String, role: Role, token: String) {
+    init(id: String, name: String, email: String?, role: Role?, token: String?) {
         self.id = id
         self.name = name
         self.email = email
@@ -34,17 +34,21 @@ class User: NSObject, Codable, NSCoding {
     required convenience init(coder: NSCoder) {
         let id = coder.decodeObject(forKey: User.ID) as! String
         let name = coder.decodeObject(forKey: User.NAME) as! String
-        let email = coder.decodeObject(forKey: User.EMAIL) as! String
-        let role = coder.decodeObject(forKey: User.ROLE) as! String
-        let token = coder.decodeObject(forKey: User.TOKEN) as! String
-        self.init(id: id, name: name, email: email, role: Role(rawValue: role)!, token: token)
+        let email = coder.decodeObject(forKey: User.EMAIL) as? String
+        let role = coder.decodeObject(forKey: User.ROLE) as? String
+        let token = coder.decodeObject(forKey: User.TOKEN) as? String
+        var resRole: Role? = nil
+        if let uRole = role {
+            resRole = Role(rawValue: uRole)
+        }
+        self.init(id: id, name: name, email: email, role: resRole, token: token)
     }
     
     let id: String
     let name: String
-    let email: String
-    let role: Role
-    let token: String
+    let email: String?
+    let role: Role?
+    let token: String?
     
 }
 

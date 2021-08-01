@@ -54,6 +54,37 @@ class RoleManager {
         }
     }
     
+    func rightBarButtonItemFor(restaurantDetailViewController: RestaurantDetailViewController) -> UIBarButtonItem? {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            let barButtonItem = UIBarButtonItem(title: Strings.review, style: .plain, target: restaurantDetailViewController, action: #selector(RestaurantDetailViewController.didTapReviewButton(sender:)))
+            barButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.openSansBold(with: 15)], for: .normal)
+            barButtonItem.tintColor = UIColor.white
+            return barButtonItem
+        case .admin:
+            return nil
+        case .owner:
+            return nil
+        }
+    }
+    
+    func commentTitleLabelForRestaurant(name: String) -> String {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            return "\(name) \(Strings.commented)"
+        case .admin:
+            return "\(name) \(Strings.commented)"
+        case .owner:
+            return Strings.youCommented
+        }
+    }
+    
     private func viewControllerForRegular() -> UIViewController {
         let controller = UITabBarController.homeTab
         

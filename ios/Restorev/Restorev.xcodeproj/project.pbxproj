@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
+		0F94B28326B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28226B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift */; };
+		0F94B28526B6EF0800DC0C68 /* RestaurantDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28426B6EF0800DC0C68 /* RestaurantDetailRouter.swift */; };
+		693C437526B65E600042840D /* RestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C437426B65E600042840D /* RestaurantDetail.swift */; };
 		69C48AE826B27E1000550BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48AE726B27E1000550BC9 /* AppDelegate.swift */; };
 		69C48AEA26B27E1000550BC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48AE926B27E1000550BC9 /* SceneDelegate.swift */; };
 		69C48AEC26B27E1000550BC9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48AEB26B27E1000550BC9 /* LandingViewController.swift */; };
@@ -79,6 +83,10 @@
 		69C48BB826B5249E00550BC9 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C48BB626B5249E00550BC9 /* RestaurantTableViewCell.xib */; };
 		69C48BBA26B526EE00550BC9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BB926B526EE00550BC9 /* Restaurant.swift */; };
 		69C48BBC26B556B100550BC9 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BBB26B556B000550BC9 /* RestaurantService.swift */; };
+		69C48BBF26B57F4C00550BC9 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BBE26B57F4C00550BC9 /* RestaurantDetailViewController.swift */; };
+		69C48BC226B5853900550BC9 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 69C48BC126B5853900550BC9 /* Cosmos */; };
+		69C48BC526B5C98900550BC9 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */; };
+		69C48BC626B5C98900550BC9 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C48BC426B5C98900550BC9 /* ReviewTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +107,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F94B28026B6CB8000DC0C68 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		0F94B28226B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewModel.swift; sourceTree = "<group>"; };
+		0F94B28426B6EF0800DC0C68 /* RestaurantDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailRouter.swift; sourceTree = "<group>"; };
+		693C437426B65E600042840D /* RestaurantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetail.swift; sourceTree = "<group>"; };
 		69C48AE426B27E1000550BC9 /* Restorev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restorev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C48AE726B27E1000550BC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69C48AE926B27E1000550BC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +185,9 @@
 		69C48BB626B5249E00550BC9 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		69C48BB926B526EE00550BC9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		69C48BBB26B556B000550BC9 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		69C48BBE26B57F4C00550BC9 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		69C48BC426B5C98900550BC9 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C48BC226B5853900550BC9 /* Cosmos in Frameworks */,
 				69C48B7926B2EDEB00550BC9 /* NVActivityIndicatorViewExtended in Frameworks */,
 				69C48B7726B2EDEB00550BC9 /* NVActivityIndicatorView in Frameworks */,
 				69C48B8326B32AC100550BC9 /* SwiftMessages in Frameworks */,
@@ -408,6 +424,8 @@
 			children = (
 				69C48B8726B3AFC300550BC9 /* User.swift */,
 				69C48BB926B526EE00550BC9 /* Restaurant.swift */,
+				693C437426B65E600042840D /* RestaurantDetail.swift */,
+				0F94B28026B6CB8000DC0C68 /* Review.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -436,6 +454,7 @@
 				69C48BA326B4F64700550BC9 /* RestaurantsNavigationController.swift */,
 				69C48BA526B4F6CA00550BC9 /* RestaurantsNavigationController.storyboard */,
 				69C48BAC26B4FD3A00550BC9 /* Restaurants */,
+				69C48BBD26B57F0C00550BC9 /* RestaurantsDetail */,
 			);
 			path = RestaurantsNavigation;
 			sourceTree = "<group>";
@@ -471,6 +490,8 @@
 			isa = PBXGroup;
 			children = (
 				69C48BB226B5247300550BC9 /* Restaurant */,
+				69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */,
+				69C48BC426B5C98900550BC9 /* ReviewTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -482,6 +503,16 @@
 				69C48BB626B5249E00550BC9 /* RestaurantTableViewCell.xib */,
 			);
 			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		69C48BBD26B57F0C00550BC9 /* RestaurantsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				69C48BBE26B57F4C00550BC9 /* RestaurantDetailViewController.swift */,
+				0F94B28226B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift */,
+				0F94B28426B6EF0800DC0C68 /* RestaurantDetailRouter.swift */,
+			);
+			path = RestaurantsDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,6 +536,7 @@
 				69C48B7626B2EDEB00550BC9 /* NVActivityIndicatorView */,
 				69C48B7826B2EDEB00550BC9 /* NVActivityIndicatorViewExtended */,
 				69C48B8226B32AC100550BC9 /* SwiftMessages */,
+				69C48BC126B5853900550BC9 /* Cosmos */,
 			);
 			productName = Restorev;
 			productReference = 69C48AE426B27E1000550BC9 /* Restorev.app */;
@@ -581,6 +613,7 @@
 				69C48B5A26B2BD1500550BC9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				69C48B7526B2EDEB00550BC9 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				69C48B8126B32AC100550BC9 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				69C48BC026B5853900550BC9 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 69C48AE526B27E1000550BC9 /* Products */;
 			projectDirPath = "";
@@ -611,6 +644,7 @@
 				69C48AEF26B27E1000550BC9 /* LandingViewController.storyboard in Resources */,
 				69C48BB826B5249E00550BC9 /* RestaurantTableViewCell.xib in Resources */,
 				69C48B2C26B28D3E00550BC9 /* OpenSans-ExtraBold.ttf in Resources */,
+				69C48BC626B5C98900550BC9 /* ReviewTableViewCell.xib in Resources */,
 				69C48B3426B28D3E00550BC9 /* OpenSans-BoldItalic.ttf in Resources */,
 				69C48B2F26B28D3E00550BC9 /* OpenSans-Light.ttf in Resources */,
 				69C48B4026B294F800550BC9 /* RegisterViewController.storyboard in Resources */,
@@ -651,8 +685,10 @@
 				69C48B6A26B2CAE200550BC9 /* Log.swift in Sources */,
 				69C48B6E26B2D99500550BC9 /* AuthService.swift in Sources */,
 				69C48B3A26B2947C00550BC9 /* UIViewController.swift in Sources */,
+				69C48BBF26B57F4C00550BC9 /* RestaurantDetailViewController.swift in Sources */,
 				69C48B5626B2ACE100550BC9 /* KeyboardLayoutConstraint.swift in Sources */,
 				69C48B8C26B3F5BE00550BC9 /* RoleManager.swift in Sources */,
+				693C437526B65E600042840D /* RestaurantDetail.swift in Sources */,
 				69C48B4D26B295A100550BC9 /* LoginRouter.swift in Sources */,
 				69C48B9B26B4F13800550BC9 /* RestaurantsViewModel.swift in Sources */,
 				69C48B5426B2AA8700550BC9 /* TextField.swift in Sources */,
@@ -664,8 +700,11 @@
 				69C48B7B26B2F6CB00550BC9 /* ValidationError.swift in Sources */,
 				69C48B9926B4F09B00550BC9 /* RestaurantsRouter.swift in Sources */,
 				69C48B8F26B463E600550BC9 /* HomeTabBarController.swift in Sources */,
+				0F94B28526B6EF0800DC0C68 /* RestaurantDetailRouter.swift in Sources */,
 				69C48B7226B2DB5A00550BC9 /* ApplicationError.swift in Sources */,
+				0F94B28326B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift in Sources */,
 				69C48AEC26B27E1000550BC9 /* LandingViewController.swift in Sources */,
+				69C48BC526B5C98900550BC9 /* ReviewTableViewCell.swift in Sources */,
 				69C48BB726B5249E00550BC9 /* RestaurantTableViewCell.swift in Sources */,
 				69C48B4F26B29B6300550BC9 /* UIStoryboard.swift in Sources */,
 				69C48BBC26B556B100550BC9 /* RestaurantService.swift in Sources */,
@@ -685,6 +724,7 @@
 				69C48AE826B27E1000550BC9 /* AppDelegate.swift in Sources */,
 				69C48BA426B4F64700550BC9 /* RestaurantsNavigationController.swift in Sources */,
 				69C48B3826B293FE00550BC9 /* LandingRouter.swift in Sources */,
+				0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */,
 				69C48B9F26B4F3A300550BC9 /* SettingsRouter.swift in Sources */,
 				69C48B4226B2951500550BC9 /* RegisterViewModel.swift in Sources */,
 				69C48AEA26B27E1000550BC9 /* SceneDelegate.swift in Sources */,
@@ -842,7 +882,9 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1042,6 +1084,14 @@
 				minimumVersion = 9.0.3;
 			};
 		};
+		69C48BC026B5853900550BC9 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1064,6 +1114,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 69C48B8126B32AC100550BC9 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
 			productName = SwiftMessages;
+		};
+		69C48BC126B5853900550BC9 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69C48BC026B5853900550BC9 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

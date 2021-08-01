@@ -8,6 +8,24 @@
 import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
+    
+    @IBOutlet var reviewerLabel: UILabel!
+    @IBOutlet var ratingLabel: UILabel!
+    @IBOutlet var visitedOnLabel: UILabel!
+    @IBOutlet var reviewLabel: UILabel!
+    
+    @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var ownerTitleLabel: UILabel!
+    
+    @IBOutlet var commentHeightConstraint: NSLayoutConstraint!
+    
+    static var cellIdentifier: String {
+        return "ReviewTableViewCell"
+    }
+    
+    static var nib: UINib {
+        return UINib(nibName: "ReviewTableViewCell", bundle: nil)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
