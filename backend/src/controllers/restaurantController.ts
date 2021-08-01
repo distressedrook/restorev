@@ -108,6 +108,8 @@ export class RestaurantController {
       };
       let reviewer = await this.userDao.findById(review.reviewerId);
       reviewRes.reviewer = reviewer.toJSON();
+      delete reviewRes.reviewer.email;
+      delete reviewRes.reviewer.role;
       reviews.push(reviewRes);
     }
     restaurntRes.reviews = reviews;
