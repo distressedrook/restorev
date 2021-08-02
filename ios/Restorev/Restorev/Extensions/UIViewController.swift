@@ -41,4 +41,12 @@ extension UIViewController {
         viewController.router = SettingsRouterImp(navigatable: viewController)
         return viewController
     }
+    
+    static func reviewViewController(with name: String, restaurantId: String, delegate: ReviewViewControllerDelegate? = nil) -> UIViewController {
+        let viewController = UIStoryboard.addReview.instantiateInitialViewController() as! ReviewViewController
+        viewController.viewModel = ReviewViewModelImp(restaurantId: restaurantId, restaurantName: name)
+        viewController.delegate = delegate
+        return viewController
+    }
+    
 }

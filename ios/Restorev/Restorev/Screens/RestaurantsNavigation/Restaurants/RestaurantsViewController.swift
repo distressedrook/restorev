@@ -24,8 +24,12 @@ class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDi
         self.setOnce(viewModel: RestaurantsViewModelImp(), router: RestaurantsRouterImp(navigatable: self))
         self.bind()
         self.addAddButton()
-        self.getRestaurants()
         self.setupTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.getRestaurants()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -94,7 +98,7 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.cellIdentifier) as! RestaurantTableViewCell
         cell.nameLabel.text = self.viewModel.name(at: indexPath.row)
-        cell.averageRatingLabel.text = "\(self.viewModel.averageRating(at: indexPath.row))"
+        cell.averageRatingLabel.text = "\(String(format: "%.2f", self.viewModel.averageRating(at: indexPath.row)))"
         return cell
     }
     

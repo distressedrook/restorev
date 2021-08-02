@@ -35,4 +35,8 @@ extension UIStoryboard {
     static var settings: UIStoryboard {
         return UIStoryboard(name: "SettingsViewController", bundle: nil)
     }
+    
+    static var addReview: UIStoryboard {
+        return UIStoryboard(name: "ReviewViewController", bundle: nil)
+    }
 }

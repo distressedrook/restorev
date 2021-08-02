@@ -12,7 +12,7 @@ struct Review: Codable {
     let visitedDate: Int
     let rating: Int
     let ownerComment: String?
-    let id: String
+    let id: String?
     let review: String
-    let reviewer: User
+    let reviewer: User?
 }

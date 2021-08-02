@@ -3,4 +3,102 @@
    uuid = "2396D5B1-E541-4738-994A-0A211EF30697"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9BFC4A7-E483-4470-B114-651E23FA1F68"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E9BFC4A7-E483-4470-B114-651E23FA1F68 - 659e4056666cac8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Restorev.RestaurantDetailViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "E9BFC4A7-E483-4470-B114-651E23FA1F68 - d2a5f929bb54fb0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc Restorev.RestaurantDetailViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "886388CE-4691-461A-8249-7823F880CC74"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewWillDisappear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "886388CE-4691-461A-8249-7823F880CC74 - 7b25a8f503e5739f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Restorev.RestaurantDetailViewController.viewWillDisappear(Swift.Bool) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "886388CE-4691-461A-8249-7823F880CC74 - b5ce4c0f12e3eee3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc Restorev.RestaurantDetailViewController.viewWillDisappear(Swift.Bool) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

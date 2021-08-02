@@ -66,7 +66,7 @@ final class RestaurantDetailViewModelImp: RestaurantDetailViewModel {
     }
     
     func reviewerNameAt(index: Int) -> String {
-        return self.restaurant.reviews![index].reviewer.name
+        return self.restaurant.reviews![index].reviewer!.name
     }
     
     func visitedDateAt(index: Int) -> Int {
@@ -89,7 +89,7 @@ final class RestaurantDetailViewModelImp: RestaurantDetailViewModel {
     }
     
     var topReviewerName: String {
-        return self.topRatedReview.reviewer.name
+        return self.topRatedReview.reviewer!.name
     }
     
     var topRatedRating: Int {
@@ -109,7 +109,7 @@ final class RestaurantDetailViewModelImp: RestaurantDetailViewModel {
     }
     
     var mostCriticalReviewerName: String {
-        return self.mostCriticalReview.reviewer.name
+        return self.mostCriticalReview.reviewer!.name
     }
     
     var mostCriticalRating: Int {

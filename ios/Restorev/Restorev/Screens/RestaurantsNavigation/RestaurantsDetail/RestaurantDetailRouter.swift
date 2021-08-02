@@ -5,10 +5,10 @@
 //  Created by Avismara Hugoppalu on 01/08/21.
 //
 
-import Foundation
+import UIKit
 
 protocol RestaurantDetailRouter: Router {
-    func moveToReview()
+    func moveToReview(restaurantName: String, restaurantId: String, delegate: ReviewViewControllerDelegate?) 
     func moveToEdit()
 }
 
@@ -17,8 +17,9 @@ final class RestaurantDetailRouterImp: RestaurantDetailRouter {
         self.navigatable = navigatable
     }
     
-    func moveToReview() {
-        
+    func moveToReview(restaurantName: String, restaurantId: String, delegate: ReviewViewControllerDelegate? = nil) {
+        let reviewViewController = UIViewController.reviewViewController(with: restaurantName, restaurantId: restaurantId, delegate: delegate)
+        self.navigatable?.present(reviewViewController, animated: true, completion: nil)
     }
     
     func moveToEdit() {

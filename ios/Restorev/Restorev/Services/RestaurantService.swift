@@ -12,6 +12,7 @@ protocol RestaurantService {
     init(serviceManager: ServiceManager)
     func getAllRestaurants(success: @escaping ([Restaurant]) -> (), failure: @escaping (ApplicationError) -> ())
     func getRestaurant(with id: String, success: @escaping (Restaurant) -> (), failure: @escaping (ApplicationError) -> ())
+    func addReview(review: String, rating: Int, visitedDate: Int, to restauarntId: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
 }
 
 final class RestaurantServiceImp: RestaurantService {
@@ -41,6 +42,25 @@ final class RestaurantServiceImp: RestaurantService {
             } catch {
                 fatalError("API is not behaving as expected")
             }
+        } failure: { error in
+            failure(error)
+        }
+    }
+    
+    func addReview(review: String, rating: Int, visitedDate: Int, to restauarntId: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> () ) {
+        class Review: Codable {
+            let review: String
+            let rating: Int
+            let visitedDate: Int
+            init(review: String, rating: Int, visitedDate: Int) {
+                self.visitedDate = visitedDate
+                self.review = review
+                self.rating = rating
+            }
+        }
+        let review = Review(review: review, rating: rating, visitedDate: visitedDate)
+        self.serviceManager.post(with: URL + "/\(restauarntId)/addReview", parameters: review, headers: authTokenHeader()) { response in
+            success()
         } failure: { error in
             failure(error)
         }

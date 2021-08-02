@@ -8,7 +8,7 @@
 import UIKit
 import Cosmos
 
-class RestaurantDetailViewController: UIViewController, MessageDisplayable {
+class RestaurantDetailViewController: UIViewController, MessageDisplayable, LoadingIndicatable {
     var viewModel: RestaurantDetailViewModel!
     var router: RestaurantDetailRouter!
     let roleManager = RoleManager()
@@ -24,8 +24,17 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable {
         self.bind()
         self.hideViews()
         self.setupTableView()
+        self.showLoading()
         self.viewModel.getDetail()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     private func populateLabels() {
@@ -38,8 +47,10 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable {
             self.populateLabels()
             self.reviewsTableView.reloadData()
             self.showViewAnimated()
+            self.hideLoading()
         }
         self.viewModel.didGetRestaurantDetailFail = { error in
+            self.hideLoading()
             self.showError(with: Strings.failure, message: error.displayString)
         }
     }
@@ -64,8 +75,17 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable {
     
     @objc func didTapReviewButton(sender: UIBarButtonItem) {
         if let title = sender.title, title == Strings.review {
-            self.router.moveToReview()
+            let restaurantName = self.viewModel.restaurantName
+            let restaurantId = self.viewModel.restaurantId
+            self.router.moveToReview(restaurantName: restaurantName, restaurantId: restaurantId, delegate: self)
         }
+    }
+}
+
+extension RestaurantDetailViewController: ReviewViewControllerDelegate {
+    func reviewViewControllerDidDismiss(reviewViewController: ReviewViewController) {
+        self.showLoading()
+        self.viewModel.getDetail()
     }
 }
 

@@ -54,6 +54,8 @@ class ServiceManagerImp: ServiceManager {
         } else if let error = response.error {
             if let errorCode = error.responseCode, let appErrorCode = ErrorCode(rawValue:  String(errorCode)) {
                 failure(ApplicationError(code: appErrorCode))
+            } else {
+                failure(ApplicationError(code: .unknown))
             }
         }
     }

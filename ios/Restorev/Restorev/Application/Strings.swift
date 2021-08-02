@@ -20,7 +20,7 @@ class Strings {
     static let userExists = "uh oh, this email already exists. Please try again with a different email"
     static let userDoesNotExist = "an account with this email does not exist"
     static let passwordMismatch = "uh oh, you have entered the wrong passsword. Please try again."
-    static let loggedIn = "you have successfully logged in"
+    static let loggedIn = "Hi, "
     static let restaurants = "restaurants"
     static let review = "review"
     static let averageRating = "average rating"
@@ -29,4 +29,5 @@ class Strings {
     static let allReviews = "all reviews"
     static let topRatedReview = "top rated review"
     static let mostCriticalReview = "most critical review"
+    static let reviewAdded = "your review was succesfully added"
 }
