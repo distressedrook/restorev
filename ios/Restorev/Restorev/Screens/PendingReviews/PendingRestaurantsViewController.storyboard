@@ -1,25 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aL9-PC-Hjy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Pending Restaurants View Controller-->
+        <scene sceneID="69g-L9-ls6">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="aL9-PC-Hjy" customClass="PendingRestaurantsViewController" customModule="Restorev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ywQ-RH-7TY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOd-M5-nnl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pending reviews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnw-5L-rSk">
+                                        <rect key="frame" x="137.5" y="61" width="139" height="24"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Fnw-5L-rSk" firstAttribute="centerX" secondItem="rOd-M5-nnl" secondAttribute="centerX" id="4OH-gO-UGk"/>
+                                    <constraint firstAttribute="height" constant="95" id="e1L-oJ-hMq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fnw-5L-rSk" secondAttribute="bottom" constant="10" id="g9l-vi-MPq"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gIQ-Vs-zST">
+                                <rect key="frame" x="0.0" y="95" width="414" height="801"/>
+                                <color key="separatorColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="0.19943133499999999" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DVX-hc-f9C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gIQ-Vs-zST" secondAttribute="bottom" id="HeI-hr-K2S"/>
+                            <constraint firstItem="gIQ-Vs-zST" firstAttribute="leading" secondItem="DVX-hc-f9C" secondAttribute="leading" id="glI-SA-2u4"/>
+                            <constraint firstItem="gIQ-Vs-zST" firstAttribute="top" secondItem="rOd-M5-nnl" secondAttribute="bottom" id="jPj-14-iH7"/>
+                            <constraint firstItem="rOd-M5-nnl" firstAttribute="top" secondItem="ywQ-RH-7TY" secondAttribute="top" id="oML-em-U6y"/>
+                            <constraint firstItem="rOd-M5-nnl" firstAttribute="trailing" secondItem="DVX-hc-f9C" secondAttribute="trailing" id="sEh-jt-W2m"/>
+                            <constraint firstItem="rOd-M5-nnl" firstAttribute="leading" secondItem="DVX-hc-f9C" secondAttribute="leading" id="uD2-SS-4zu"/>
+                            <constraint firstItem="gIQ-Vs-zST" firstAttribute="trailing" secondItem="DVX-hc-f9C" secondAttribute="trailing" id="x5b-UY-R9b"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="reviewsTableView" destination="gIQ-Vs-zST" id="aOq-sT-ibR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LsG-lW-RAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="66.964285714285708"/>
         </scene>
     </scenes>
     <resources>

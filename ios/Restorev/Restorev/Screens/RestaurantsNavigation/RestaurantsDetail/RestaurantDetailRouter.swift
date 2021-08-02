@@ -24,7 +24,7 @@ final class RestaurantDetailRouterImp: RestaurantDetailRouter {
     }
     
     func moveToComment(review: Review, delegate: CommentViewControllerDelegate?) {
-        let commentViewController = UIViewController.commentViewControllerWith(review: review)
+        let commentViewController = UIViewController.commentViewControllerWith(review: review, delegate: delegate)
         self.navigatable?.present(commentViewController, animated: true, completion: nil)
     }
     

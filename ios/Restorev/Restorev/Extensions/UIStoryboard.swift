@@ -28,6 +28,10 @@ extension UIStoryboard {
         return UIStoryboard(name: "RestaurantsViewController", bundle: nil)
     }
     
+    static var pending: UIStoryboard {
+        return UIStoryboard(name: "PendingRestaurantsViewController", bundle: nil)
+    }
+    
     static var restaurantsNavigation: UIStoryboard {
         return UIStoryboard(name: "RestaurantsNavigationController", bundle: nil)
     }

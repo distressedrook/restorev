@@ -7,49 +7,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3343B0DC-F925-4BF3-92DB-C684EAB42BBA"
+            uuid = "00396504-74A5-4706-BE0D-285DB027DCFC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Restorev/Views/TableViewCells/ReviewTableViewCell.swift"
+            filePath = "Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "didTapCommentButton(sender:)"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "didPostCommentIn(commentViewController:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3343B0DC-F925-4BF3-92DB-C684EAB42BBA - ba9ccaddccf1d3b4"
+                  uuid = "00396504-74A5-4706-BE0D-285DB027DCFC - 6e983aab81c58e8c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Restorev.ReviewTableViewCell.didTapCommentButton(sender: __C.UIButton) -&gt; ()"
+                  symbolName = "Restorev.RestaurantDetailViewController.didPostCommentIn(commentViewController: Restorev.CommentViewController) -&gt; ()"
                   moduleName = "Restorev"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Views/TableViewCells/ReviewTableViewCell.swift"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "238"
+                  endingLineNumber = "238"
+                  offsetFromSymbolStart = "20">
                </Location>
                <Location
-                  uuid = "3343B0DC-F925-4BF3-92DB-C684EAB42BBA - 8ce32d70fd59aca8"
+                  uuid = "00396504-74A5-4706-BE0D-285DB027DCFC - ce806751284e1968"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "@objc Restorev.ReviewTableViewCell.didTapCommentButton(sender: __C.UIButton) -&gt; ()"
+                  symbolName = "protocol witness for Restorev.CommentViewControllerDelegate.didPostCommentIn(commentViewController: Restorev.CommentViewController) -&gt; () in conformance Restorev.RestaurantDetailViewController : Restorev.CommentViewControllerDelegate in Restorev"
                   moduleName = "Restorev"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Views/TableViewCells/ReviewTableViewCell.swift"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "238"
+                  endingLineNumber = "238"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACE8F08B-E6DD-47F9-A2A0-AEF61BF86456"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Restorev/Screens/Comment/CommentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "bind()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DEB788F-330A-4A8B-B05F-D65DA02E0279"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Restorev/Screens/PendingReviews/PendingRestsaurantsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getPendingRestaurants()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

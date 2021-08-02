@@ -32,6 +32,14 @@ extension UIImage {
         return UIImage(named: "SettingsIconUnselected")!
     }
     
+    static var pendingSelected: UIImage {
+        return UIImage(named: "PendingIconSelected")!
+    }
+    
+    static var pendingUnselected: UIImage {
+        return UIImage(named: "PendingIconUnselected")!
+    }
+    
     static var add: UIImage {
         return UIImage(named: "AddIcon")!
     }

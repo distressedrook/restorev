@@ -36,6 +36,13 @@ extension UIViewController {
         return viewController
     }
     
+    static var pending: UIViewController {
+        let viewController = UIStoryboard.pending.instantiateInitialViewController() as! PendingRestaurantsViewController
+        viewController.viewModel = PendingRestaurantsViewModelImp()
+        viewController.router = PendingRestaurantsRouterImp(navigatable: viewController)
+        return viewController
+    }
+    
     static var settings: UIViewController {
         let viewController = UIStoryboard.settings.instantiateInitialViewController() as! SettingsViewController
         viewController.router = SettingsRouterImp(navigatable: viewController)

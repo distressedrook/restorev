@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PendingRestaurantsViewModel {
-    func findPendingRestaurants()
+    func getPendingRestaurants()
     
     func restaurantName(at index: Int) -> String
     func reviewAt(restaurantIndex: Int, reviewIndex: Int) -> Review
@@ -27,7 +27,7 @@ final class PendingRestaurantsViewModelImp: PendingRestaurantsViewModel {
     var pendingRestaurants: [PendingRestaurants]!
     
     var numberOfRestauranats: Int {
-        return self.pendingRestaurants.count
+        return self.pendingRestaurants?.count ?? 0
     }
     
     init() {
@@ -46,10 +46,10 @@ final class PendingRestaurantsViewModelImp: PendingRestaurantsViewModel {
         return self.pendingRestaurants[restaurantIndex].pendingReviews[reviewIndex]
     }
     func numberOfPendingReviews(at index: Int) -> Int {
-        self.pendingRestaurants[index].pendingReviews.count
+        self.pendingRestaurants?[index].pendingReviews.count ?? 0
     }
     
-    func findPendingRestaurants() {
+    func getPendingRestaurants() {
         self.service.getPendingReviews { pendingReviews in
             self.pendingRestaurants = pendingReviews
             self.didFindPendingResaturants?()

@@ -140,6 +140,7 @@ class RoleManager {
         settingsTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
         settingsViewController.tabBarItem = settingsTabBarItem
         
+        
         controller.setViewControllers([restaurantsNavigationController, settingsViewController], animated: false)
         return controller
     }
@@ -157,7 +158,12 @@ class RoleManager {
         settingsTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
         settingsViewController.tabBarItem = settingsTabBarItem
         
-        controller.setViewControllers([restaurantsNavigationController, settingsViewController], animated: false)
+        let pendingRestaurantsViewController = UIViewController.pending
+        let pendingTabBarItem = UITabBarItem(title: nil, image: UIImage.pendingUnselected, selectedImage: UIImage.pendingSelected)
+        pendingTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+        pendingRestaurantsViewController.tabBarItem = pendingTabBarItem
+        
+        controller.setViewControllers([restaurantsNavigationController, pendingRestaurantsViewController, settingsViewController], animated: false)
         return controller
     }
 }
