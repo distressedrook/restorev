@@ -10,6 +10,7 @@ import UIKit
 protocol RestaurantsRouter: Router {
     func moveToRestaurantDetailWith(id: String)
     func prepareToMoveTo(viewController: UIViewController, id: String)
+    func moveToAddRestaurantViewController(delegate: AddRestaurantViewControllerDelegate)
 }
 
 final class RestaurantsRouterImp: RestaurantsRouter {
@@ -27,6 +28,10 @@ final class RestaurantsRouterImp: RestaurantsRouter {
     
     func moveToRestaurantDetailWith(id: String) {
         self.navigatable?.performSegue(withIdentifier: "showRestaurantDetail", sender: id)
+    }
+    
+    func moveToAddRestaurantViewController(delegate: AddRestaurantViewControllerDelegate) {
+        self.navigatable?.present(UIViewController.addRestaurantViewControllerWith(delegate: delegate), animated: true, completion: nil)
     }
     
 }

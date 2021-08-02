@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cq0-y2-hdB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Restaurant View Controller-->
+        <scene sceneID="nHF-FF-kGN">
+            <objects>
+                <viewController id="Cq0-y2-hdB" customClass="AddRestaurantViewController" customModule="Restorev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yMM-xY-iJD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJ6-Js-r8v">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoy-e1-y3Z">
+                                        <rect key="frame" x="143" y="60" width="128" height="24"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vK-Fh-D4s">
+                                        <rect key="frame" x="356" y="54" width="42" height="36"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
+                                        <state key="normal" title="done">
+                                            <color key="titleColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapDoneButtonWithSender:" destination="Cq0-y2-hdB" eventType="touchUpInside" id="KOd-5f-yai"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWa-lS-zsM">
+                                        <rect key="frame" x="16" y="54" width="50" height="36"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                        <state key="normal" title="cancel">
+                                            <color key="titleColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapCancelButtonWithSender:" destination="Cq0-y2-hdB" eventType="touchUpInside" id="Ra5-ea-r8s"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uoy-e1-y3Z" secondAttribute="bottom" constant="16" id="9Q7-zZ-3B3"/>
+                                    <constraint firstItem="nWa-lS-zsM" firstAttribute="leading" secondItem="JJ6-Js-r8v" secondAttribute="leading" constant="16" id="F2H-Uz-MEJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="4vK-Fh-D4s" secondAttribute="trailing" constant="16" id="Pnv-6V-B1d"/>
+                                    <constraint firstItem="nWa-lS-zsM" firstAttribute="centerY" secondItem="uoy-e1-y3Z" secondAttribute="centerY" id="S75-Bm-zE2"/>
+                                    <constraint firstItem="4vK-Fh-D4s" firstAttribute="centerY" secondItem="uoy-e1-y3Z" secondAttribute="centerY" id="iYE-PK-vzk"/>
+                                    <constraint firstAttribute="height" constant="100" id="pG1-LQ-ff1"/>
+                                    <constraint firstItem="uoy-e1-y3Z" firstAttribute="centerX" secondItem="JJ6-Js-r8v" secondAttribute="centerX" id="zRf-gK-okE"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="restaurant name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OH1-Y6-GOc" customClass="TextField" customModule="Restorev" customModuleProvider="target">
+                                <rect key="frame" x="16" y="124" width="382" height="60"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="S1B-9e-JjM"/>
+                                </constraints>
+                                <color key="textColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sxS-nB-Mbj"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JJ6-Js-r8v" firstAttribute="top" secondItem="yMM-xY-iJD" secondAttribute="top" id="Hbo-6n-KsW"/>
+                            <constraint firstAttribute="trailing" secondItem="JJ6-Js-r8v" secondAttribute="trailing" id="Trk-LE-cq2"/>
+                            <constraint firstItem="OH1-Y6-GOc" firstAttribute="top" secondItem="JJ6-Js-r8v" secondAttribute="bottom" constant="24" id="Zq7-kB-kDX"/>
+                            <constraint firstItem="OH1-Y6-GOc" firstAttribute="leading" secondItem="sxS-nB-Mbj" secondAttribute="leading" constant="16" id="fYb-Hh-cAs"/>
+                            <constraint firstItem="sxS-nB-Mbj" firstAttribute="trailing" secondItem="OH1-Y6-GOc" secondAttribute="trailing" constant="16" id="pnL-kW-T6U"/>
+                            <constraint firstItem="JJ6-Js-r8v" firstAttribute="leading" secondItem="sxS-nB-Mbj" secondAttribute="leading" id="th6-R5-uGd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="OH1-Y6-GOc" id="ID2-Mp-cK4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q56-A5-JX2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="41.517857142857139"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="OH1-Y6-GOc">
+            <size key="intrinsicContentSize" width="164.5" height="30.5"/>
+        </designable>
+    </designables>
+</document>

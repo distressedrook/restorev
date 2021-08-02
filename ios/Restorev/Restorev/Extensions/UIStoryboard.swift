@@ -36,7 +36,7 @@ extension UIStoryboard {
         return UIStoryboard(name: "SettingsViewController", bundle: nil)
     }
     
-    static var addReview: UIStoryboard {
-        return UIStoryboard(name: "ReviewViewController", bundle: nil)
+    static var addRestaurant: UIStoryboard {
+        return UIStoryboard(name: "AddRestaurantViewController", bundle: nil)
     }
 }

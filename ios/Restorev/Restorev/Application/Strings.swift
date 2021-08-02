@@ -30,4 +30,7 @@ class Strings {
     static let topRatedReview = "top rated review"
     static let mostCriticalReview = "most critical review"
     static let reviewAdded = "your review was succesfully added"
+    
+    static let restaurantCreated = "your restauranant was successfully created"
+    static let restaurantEdited = "this restaurant was successfully edited"
 }

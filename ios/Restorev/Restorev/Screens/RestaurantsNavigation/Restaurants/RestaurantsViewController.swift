@@ -29,6 +29,7 @@ class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.showLoading()
         self.getRestaurants()
     }
     
@@ -49,7 +50,7 @@ class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDi
     }
     
     @objc func didTapAddButton(sender: UIButton) {
-        Log.d("Add button tapped")
+        self.router.moveToAddRestaurantViewController(delegate: self)
     }
     
 }
@@ -98,7 +99,11 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.cellIdentifier) as! RestaurantTableViewCell
         cell.nameLabel.text = self.viewModel.name(at: indexPath.row)
-        cell.averageRatingLabel.text = "\(String(format: "%.2f", self.viewModel.averageRating(at: indexPath.row)))"
+        if self.viewModel.averageRating(at: indexPath.row) == 0 {
+            cell.averageRatingLabel.text = " - "
+        } else {
+            cell.averageRatingLabel.text = "\(String(format: "%.2f", self.viewModel.averageRating(at: indexPath.row)))"
+        }
         return cell
     }
     
@@ -114,5 +119,12 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 6
+    }
+}
+
+extension RestaurantsViewController: AddRestaurantViewControllerDelegate {
+    func didPostNameIn(addRestaurantViewController: AddRestaurantViewController) {
+        self.showLoading()
+        self.getRestaurants()
     }
 }

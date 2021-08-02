@@ -13,12 +13,14 @@ protocol RestaurantService {
     func getAllRestaurants(success: @escaping ([Restaurant]) -> (), failure: @escaping (ApplicationError) -> ())
     func getAllRestaurants(of ownerId: String, success: @escaping ([Restaurant]) -> (), failure: @escaping (ApplicationError) -> ())
     func getRestaurant(with id: String, success: @escaping (Restaurant) -> (), failure: @escaping (ApplicationError) -> ())
+    func addRestaurant(with name: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
     func addReview(review: String, rating: Int, visitedDate: Int, to restauarntId: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
 }
 
 final class RestaurantServiceImp: RestaurantService {
     private let URL = Constants.BASE_URL + "/restaurants"
     private let DATA = "data"
+    private let NAME = "name"
     let serviceManager: ServiceManager
     
     init() {
@@ -27,6 +29,14 @@ final class RestaurantServiceImp: RestaurantService {
     
     init(serviceManager: ServiceManager) {
         self.serviceManager = serviceManager
+    }
+    
+    func addRestaurant(with name: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ()) {
+        self.serviceManager.post(with: URL + "/add", parameters: [NAME: name], headers: authTokenHeader()) { response in
+            success()
+        } failure: { error in
+            failure(error)
+        }
     }
     
     func getAllRestaurants(of ownerId: String, success: @escaping ([Restaurant]) -> (), failure: @escaping (ApplicationError) -> ()) {

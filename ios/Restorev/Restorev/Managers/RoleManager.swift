@@ -68,6 +68,20 @@ class RoleManager {
         }
     }
     
+    func messageForPostRestaurantName() -> String {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            fatalError("Should never come here")
+        case .admin:
+            return Strings.restaurantEdited
+        case .owner:
+            return Strings.restaurantCreated
+        }
+    }
+    
     func rightBarButtonItemFor(restaurantDetailViewController: RestaurantDetailViewController) -> UIBarButtonItem? {
         guard let role = self.cache.user?.role else {
             fatalError("User is not logged in. Use this method only after the user has logged in.")
