@@ -8,7 +8,8 @@
 import UIKit
 
 protocol RestaurantDetailRouter: Router {
-    func moveToReview(restaurantName: String, restaurantId: String, delegate: ReviewViewControllerDelegate?) 
+    func moveToReview(restaurantName: String, restaurantId: String, delegate: ReviewViewControllerDelegate?)
+    func moveToComment(review: Review, delegate: CommentViewControllerDelegate?)
     func moveToEdit()
 }
 
@@ -20,6 +21,11 @@ final class RestaurantDetailRouterImp: RestaurantDetailRouter {
     func moveToReview(restaurantName: String, restaurantId: String, delegate: ReviewViewControllerDelegate? = nil) {
         let reviewViewController = UIViewController.reviewViewController(with: restaurantName, restaurantId: restaurantId, delegate: delegate)
         self.navigatable?.present(reviewViewController, animated: true, completion: nil)
+    }
+    
+    func moveToComment(review: Review, delegate: CommentViewControllerDelegate?) {
+        let commentViewController = UIViewController.commentViewControllerWith(review: review)
+        self.navigatable?.present(commentViewController, animated: true, completion: nil)
     }
     
     func moveToEdit() {

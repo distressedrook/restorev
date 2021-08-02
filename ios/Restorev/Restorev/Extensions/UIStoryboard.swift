@@ -39,4 +39,8 @@ extension UIStoryboard {
     static var addRestaurant: UIStoryboard {
         return UIStoryboard(name: "AddRestaurantViewController", bundle: nil)
     }
+    
+    static var comment: UIStoryboard {
+        return UIStoryboard(name: "CommentViewController", bundle: nil)
+    }
 }

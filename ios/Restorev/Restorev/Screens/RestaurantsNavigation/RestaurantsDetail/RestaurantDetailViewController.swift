@@ -233,15 +233,22 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
     }
 }
 
+extension RestaurantDetailViewController: CommentViewControllerDelegate {
+    func didPostCommentIn(commentViewController: CommentViewController) {
+        self.showLoading()
+        self.viewModel.getDetail()
+    }
+}
+
 extension RestaurantDetailViewController: ReviewTableViewCellDelegate {
     func didTapCommentButtonIn(reviewTableViewCell: ReviewTableViewCell) {
         if let indexPath = self.reviewsTableView.indexPath(for: reviewTableViewCell) {
             if indexPath.section == 0 {
-                Log.d(self.viewModel.topRatedReviewId)
+                self.router.moveToComment(review: self.viewModel.topRatedReview, delegate: self)
             } else if indexPath.section == 1 {
-                Log.d(self.viewModel.mostCriticalReviewId)
+                self.router.moveToComment(review: self.viewModel.mostCriticalReview, delegate: self)
             } else if indexPath.section == 2 {
-                Log.d(self.viewModel.reviewIdAt(index: indexPath.row))
+                self.router.moveToComment(review: self.viewModel.mReview(at: indexPath.row), delegate: self)
             }
         }
     }

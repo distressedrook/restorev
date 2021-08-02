@@ -77,8 +77,8 @@ class ReviewViewController: UIViewController, LoadingIndicatable, MessageDisplay
     @objc func keyboardWillHide(notification:NSNotification?) {
         UIView.animate(withDuration: Constants.ANIMATION_TIME) { () -> Void in
                self.view.frame.origin.y = 0
-           }
-       }
+        }
+    }
 }
 
 extension ReviewViewController {

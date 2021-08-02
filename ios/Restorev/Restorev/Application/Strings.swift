@@ -33,4 +33,5 @@ class Strings {
     
     static let restaurantCreated = "your restauranant was successfully created"
     static let restaurantEdited = "this restaurant was successfully edited"
+    static let commentAdded = "your comment was successfully added"
 }

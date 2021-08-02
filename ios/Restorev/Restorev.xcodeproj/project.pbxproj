@@ -10,6 +10,10 @@
 		0F2FF58526B82282006FBAC5 /* AddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF58426B82282006FBAC5 /* AddRestaurantViewController.swift */; };
 		0F2FF58726B8231C006FBAC5 /* AddRestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF58626B8231B006FBAC5 /* AddRestaurantViewModel.swift */; };
 		0F2FF58926B83244006FBAC5 /* AddRestaurantViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF58826B83244006FBAC5 /* AddRestaurantViewController.storyboard */; };
+		0F2FF58B26B8416E006FBAC5 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF58A26B8416E006FBAC5 /* ReviewService.swift */; };
+		0F2FF58E26B842AC006FBAC5 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF58D26B842AC006FBAC5 /* CommentViewController.swift */; };
+		0F2FF59026B842C7006FBAC5 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF58F26B842C7006FBAC5 /* CommentViewModel.swift */; };
+		0F2FF59226B851F1006FBAC5 /* CommentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF59126B851F1006FBAC5 /* CommentViewController.storyboard */; };
 		0F6CBADC26B7BA04001D1082 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CBADB26B7BA04001D1082 /* UITextField.swift */; };
 		0F6CBAE026B7EA45001D1082 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */; };
 		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
@@ -118,6 +122,10 @@
 		0F2FF58426B82282006FBAC5 /* AddRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewController.swift; sourceTree = "<group>"; };
 		0F2FF58626B8231B006FBAC5 /* AddRestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewModel.swift; sourceTree = "<group>"; };
 		0F2FF58826B83244006FBAC5 /* AddRestaurantViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddRestaurantViewController.storyboard; sourceTree = "<group>"; };
+		0F2FF58A26B8416E006FBAC5 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		0F2FF58D26B842AC006FBAC5 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		0F2FF58F26B842C7006FBAC5 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		0F2FF59126B851F1006FBAC5 /* CommentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommentViewController.storyboard; sourceTree = "<group>"; };
 		0F6CBADB26B7BA04001D1082 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		0F94B28026B6CB8000DC0C68 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -246,6 +254,16 @@
 			path = AddRestaurant;
 			sourceTree = "<group>";
 		};
+		0F2FF58C26B84299006FBAC5 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FF58D26B842AC006FBAC5 /* CommentViewController.swift */,
+				0F2FF58F26B842C7006FBAC5 /* CommentViewModel.swift */,
+				0F2FF59126B851F1006FBAC5 /* CommentViewController.storyboard */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		0F94B28626B6F16E00DC0C68 /* Review */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +345,7 @@
 		69C48B1826B27E9900550BC9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FF58C26B84299006FBAC5 /* Comment */,
 				0F2FF58326B821FE006FBAC5 /* AddRestaurant */,
 				0F94B28626B6F16E00DC0C68 /* Review */,
 				69C48BA226B4F61A00550BC9 /* RestaurantsNavigation */,
@@ -424,6 +443,7 @@
 				69C48B5826B2BCA700550BC9 /* ServiceManager.swift */,
 				69C48BBB26B556B000550BC9 /* RestaurantService.swift */,
 				69C48B6D26B2D99500550BC9 /* AuthService.swift */,
+				0F2FF58A26B8416E006FBAC5 /* ReviewService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -689,6 +709,7 @@
 				0F2FF58926B83244006FBAC5 /* AddRestaurantViewController.storyboard in Resources */,
 				69C48BC626B5C98900550BC9 /* ReviewTableViewCell.xib in Resources */,
 				69C48B3426B28D3E00550BC9 /* OpenSans-BoldItalic.ttf in Resources */,
+				0F2FF59226B851F1006FBAC5 /* CommentViewController.storyboard in Resources */,
 				69C48B2F26B28D3E00550BC9 /* OpenSans-Light.ttf in Resources */,
 				69C48B4026B294F800550BC9 /* RegisterViewController.storyboard in Resources */,
 				69C48B4A26B295A100550BC9 /* LoginViewController.storyboard in Resources */,
@@ -727,6 +748,7 @@
 				69C48B7F26B3147500550BC9 /* Navigatable.swift in Sources */,
 				69C48B6A26B2CAE200550BC9 /* Log.swift in Sources */,
 				69C48B6E26B2D99500550BC9 /* AuthService.swift in Sources */,
+				0F2FF59026B842C7006FBAC5 /* CommentViewModel.swift in Sources */,
 				69C48B3A26B2947C00550BC9 /* UIViewController.swift in Sources */,
 				69C48BBF26B57F4C00550BC9 /* RestaurantDetailViewController.swift in Sources */,
 				69C48B5626B2ACE100550BC9 /* KeyboardLayoutConstraint.swift in Sources */,
@@ -738,6 +760,7 @@
 				69C48B5926B2BCA700550BC9 /* ServiceManager.swift in Sources */,
 				69C48B3626B2924300550BC9 /* UIView.swift in Sources */,
 				0F94B28C26B6F69300DC0C68 /* ReviewViewModel.swift in Sources */,
+				0F2FF58E26B842AC006FBAC5 /* CommentViewController.swift in Sources */,
 				69C48B7426B2E5F700550BC9 /* LoadingIndicatable.swift in Sources */,
 				69C48B6326B2BE4D00550BC9 /* ErrorCode.swift in Sources */,
 				69C48B4B26B295A100550BC9 /* LoginViewModel.swift in Sources */,
@@ -772,6 +795,7 @@
 				69C48BA426B4F64700550BC9 /* RestaurantsNavigationController.swift in Sources */,
 				69C48B3826B293FE00550BC9 /* LandingRouter.swift in Sources */,
 				0F6CBADC26B7BA04001D1082 /* UITextField.swift in Sources */,
+				0F2FF58B26B8416E006FBAC5 /* ReviewService.swift in Sources */,
 				0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */,
 				69C48B9F26B4F3A300550BC9 /* SettingsRouter.swift in Sources */,
 				69C48B4226B2951500550BC9 /* RegisterViewModel.swift in Sources */,

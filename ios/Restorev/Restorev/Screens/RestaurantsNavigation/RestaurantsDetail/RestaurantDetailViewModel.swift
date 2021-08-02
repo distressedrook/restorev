@@ -18,6 +18,9 @@ protocol RestaurantDetailViewModel {
     var averageRating: Double { get }
     var numberOfReviews: Int { get }
     
+    var topRatedReview: Review! { get }
+    var mostCriticalReview: Review! { get }
+    
     var topRatedReviewString: String { get }
     var topRatedReviewId: String { get }
     var topReviewerName: String { get }
@@ -38,7 +41,7 @@ protocol RestaurantDetailViewModel {
     func visitedDateAt(index: Int) -> Int
     func reviewAt(index: Int) -> String
     func commentAt(index: Int) -> String?
-    
+    func mReview(at index: Int) -> Review
     
     func getDetail()
 }
@@ -92,8 +95,12 @@ final class RestaurantDetailViewModelImp: RestaurantDetailViewModel {
         return self.restaurant.reviews![index].ownerComment
     }
     
-    private var topRatedReview: Review!
-    private var mostCriticalReview: Review!
+    func mReview(at index: Int) -> Review {
+        return self.restaurant.reviews![index]
+    }
+    
+    var topRatedReview: Review!
+    var mostCriticalReview: Review!
     
     var topRatedReviewString: String {
         self.topRatedReview.review
