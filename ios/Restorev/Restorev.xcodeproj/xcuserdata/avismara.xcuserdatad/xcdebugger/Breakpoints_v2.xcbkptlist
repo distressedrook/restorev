@@ -14,40 +14,40 @@
             filePath = "Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E9BFC4A7-E483-4470-B114-651E23FA1F68 - 659e4056666cac8f"
+                  uuid = "E9BFC4A7-E483-4470-B114-651E23FA1F68 - 61ca1f55bf3b32e4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Restorev.RestaurantDetailViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  symbolName = "Restorev.RestaurantDetailViewController.viewWillAppear(Swift.Bool) -&gt; ()"
                   moduleName = "Restorev"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
                   offsetFromSymbolStart = "24">
                </Location>
                <Location
-                  uuid = "E9BFC4A7-E483-4470-B114-651E23FA1F68 - d2a5f929bb54fb0b"
+                  uuid = "E9BFC4A7-E483-4470-B114-651E23FA1F68 - 349687e48f63d8e0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "@objc Restorev.RestaurantDetailViewController.viewDidAppear(Swift.Bool) -&gt; ()"
+                  symbolName = "@objc Restorev.RestaurantDetailViewController.viewWillAppear(Swift.Bool) -&gt; ()"
                   moduleName = "Restorev"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -62,13 +62,13 @@
             filePath = "Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewWillDisappear(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "886388CE-4691-461A-8249-7823F880CC74 - 7b25a8f503e5739f"
+                  uuid = "886388CE-4691-461A-8249-7823F880CC74 - 7b25a8f503e48c1b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -78,12 +78,12 @@
                   urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
-                  uuid = "886388CE-4691-461A-8249-7823F880CC74 - b5ce4c0f12e3eee3"
+                  uuid = "886388CE-4691-461A-8249-7823F880CC74 - b5ce4c0f12e21167"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -93,11 +93,27 @@
                   urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E2EB229-7DD6-4618-89CB-67BC5EC27E0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Restorev/Managers/RoleManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "restaurantsServiceFor(viewModel:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

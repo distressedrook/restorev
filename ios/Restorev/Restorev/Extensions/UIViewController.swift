@@ -39,6 +39,7 @@ extension UIViewController {
     static var settings: UIViewController {
         let viewController = UIStoryboard.settings.instantiateInitialViewController() as! SettingsViewController
         viewController.router = SettingsRouterImp(navigatable: viewController)
+        viewController.cache = CacheImp()
         return viewController
     }
     

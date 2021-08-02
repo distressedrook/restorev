@@ -34,7 +34,21 @@ class RoleManager {
         case .admin:
             return UIViewController()
         case .owner:
-            return UIViewController()
+            return viewControllerForOwner()
+        }
+    }
+    
+    func restaurantsServiceFor(viewModel: RestaurantsViewModel) -> (() -> ()) {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            return viewModel.getAllRestaurants
+        case .admin:
+            return viewModel.getAllRestaurants
+        case .owner:
+            return viewModel.getRestaurantsForUser
         }
     }
     
@@ -90,11 +104,28 @@ class RoleManager {
         
         let restaurantsNavigationController = UINavigationController.restaurantsNavigation
         let restaurantsTabBarItem = UITabBarItem(title: nil, image: UIImage.restaurantsUnselected, selectedImage: UIImage.restaurantsSelected)
-        restaurantsTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+        restaurantsTabBarItem.imageInsets = UIEdgeInsets(top: 15, left: 0, bottom: -10, right: 0)
         restaurantsNavigationController.tabBarItem = restaurantsTabBarItem
         
-        let settingsViewController = UIViewController()
-        let settingsTabBarItem = UITabBarItem(title: nil, image: UIImage.restaurantsUnselected, selectedImage: UIImage.restaurantsSelected)
+        let settingsViewController = UIViewController.settings
+        let settingsTabBarItem = UITabBarItem(title: nil, image: UIImage.settingsUnselected, selectedImage: UIImage.settingsSelected)
+        settingsTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+        settingsViewController.tabBarItem = settingsTabBarItem
+        
+        controller.setViewControllers([restaurantsNavigationController, settingsViewController], animated: false)
+        return controller
+    }
+    
+    private func viewControllerForOwner() -> UIViewController {
+        let controller = UITabBarController.homeTab
+        
+        let restaurantsNavigationController = UINavigationController.restaurantsNavigation
+        let restaurantsTabBarItem = UITabBarItem(title: nil, image: UIImage.restaurantsUnselected, selectedImage: UIImage.restaurantsSelected)
+        restaurantsTabBarItem.imageInsets = UIEdgeInsets(top: 15, left: 0, bottom: -10, right: 0)
+        restaurantsNavigationController.tabBarItem = restaurantsTabBarItem
+        
+        let settingsViewController = UIViewController.settings
+        let settingsTabBarItem = UITabBarItem(title: nil, image: UIImage.settingsUnselected, selectedImage: UIImage.settingsSelected)
         settingsTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
         settingsViewController.tabBarItem = settingsTabBarItem
         

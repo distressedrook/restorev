@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F6CBADC26B7BA04001D1082 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CBADB26B7BA04001D1082 /* UITextField.swift */; };
+		0F6CBAE026B7EA45001D1082 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */; };
 		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
 		0F94B28326B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28226B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift */; };
 		0F94B28526B6EF0800DC0C68 /* RestaurantDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28426B6EF0800DC0C68 /* RestaurantDetailRouter.swift */; };
@@ -112,6 +113,7 @@
 
 /* Begin PBXFileReference section */
 		0F6CBADB26B7BA04001D1082 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		0F94B28026B6CB8000DC0C68 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		0F94B28226B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewModel.swift; sourceTree = "<group>"; };
 		0F94B28426B6EF0800DC0C68 /* RestaurantDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailRouter.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 			children = (
 				69C48B9C26B4F37F00550BC9 /* SettingsViewController.swift */,
 				69C48B9E26B4F3A300550BC9 /* SettingsRouter.swift */,
+				0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				69C48B3026B28D3E00550BC9 /* OpenSans-LightItalic.ttf in Resources */,
 				69C48AEF26B27E1000550BC9 /* LandingViewController.storyboard in Resources */,
 				0F94B28A26B6F66A00DC0C68 /* ReviewViewController.storyboard in Resources */,
+				0F6CBAE026B7EA45001D1082 /* SettingsViewController.storyboard in Resources */,
 				69C48BB826B5249E00550BC9 /* RestaurantTableViewCell.xib in Resources */,
 				69C48B2C26B28D3E00550BC9 /* OpenSans-ExtraBold.ttf in Resources */,
 				69C48BC626B5C98900550BC9 /* ReviewTableViewCell.xib in Resources */,

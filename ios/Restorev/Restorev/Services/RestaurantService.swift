@@ -11,6 +11,7 @@ protocol RestaurantService {
     init()
     init(serviceManager: ServiceManager)
     func getAllRestaurants(success: @escaping ([Restaurant]) -> (), failure: @escaping (ApplicationError) -> ())
+    func getAllRestaurants(of ownerId: String, success: @escaping ([Restaurant]) -> (), failure: @escaping (ApplicationError) -> ())
     func getRestaurant(with id: String, success: @escaping (Restaurant) -> (), failure: @escaping (ApplicationError) -> ())
     func addReview(review: String, rating: Int, visitedDate: Int, to restauarntId: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
 }
@@ -26,6 +27,25 @@ final class RestaurantServiceImp: RestaurantService {
     
     init(serviceManager: ServiceManager) {
         self.serviceManager = serviceManager
+    }
+    
+    func getAllRestaurants(of ownerId: String, success: @escaping ([Restaurant]) -> (), failure: @escaping (ApplicationError) -> ()) {
+        self.serviceManager.get(with: URL + "/owner/\(ownerId)", parameters: [String:String](), headers: authTokenHeader()) { [weak self] response in
+            guard let self = self else {
+                return
+            }
+            guard let data = response[self.DATA] as? [[String: Any]] else {
+                fatalError("API is not behaving as expected")
+            }
+            do {
+                let restaurants = try parse(with: data, to: Restaurant.self)
+                success(restaurants)
+            } catch {
+                fatalError("API is not behaving as expected")
+            }
+        } failure: { error in
+            failure(error)
+        }
     }
     
     func getAllRestaurants(success: @escaping ([Restaurant]) -> (), failure: @escaping (ApplicationError) -> ()) {

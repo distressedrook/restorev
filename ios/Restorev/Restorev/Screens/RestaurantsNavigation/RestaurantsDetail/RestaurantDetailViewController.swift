@@ -18,19 +18,22 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
     @IBOutlet var reviewsTableView: UITableView!
     @IBOutlet var restaurantDetailContainerView: UIView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.roleManager.rightBarButtonItemFor(restaurantDetailViewController: self)
         self.bind()
         self.hideViews()
         self.setupTableView()
-        self.showLoading()
-        self.viewModel.getDetail()
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.showLoading()
+        self.viewModel.getDetail()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,8 +87,10 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
 
 extension RestaurantDetailViewController: ReviewViewControllerDelegate {
     func reviewViewControllerDidDismiss(reviewViewController: ReviewViewController) {
+        self.hideViews()
         self.showLoading()
         self.viewModel.getDetail()
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 }
 

@@ -24,6 +24,14 @@ extension UIImage {
         return UIImage(named: "ReviewsIconUnselected")!
     }
     
+    static var settingsSelected: UIImage {
+        return UIImage(named: "SettingsIconSelected")!
+    }
+    
+    static var settingsUnselected: UIImage {
+        return UIImage(named: "SettingsIconUnselected")!
+    }
+    
     static var add: UIImage {
         return UIImage(named: "AddIcon")!
     }

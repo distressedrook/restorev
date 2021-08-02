@@ -16,6 +16,10 @@ class ReviewViewController: UIViewController, LoadingIndicatable, MessageDisplay
     @IBOutlet var cosmosView: CosmosView!
     @IBOutlet var datePicker: UIDatePicker!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bind()

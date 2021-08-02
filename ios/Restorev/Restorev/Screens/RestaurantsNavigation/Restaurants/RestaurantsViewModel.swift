@@ -9,7 +9,7 @@ import Foundation
 
 protocol RestaurantsViewModel {
     init()
-    init(restaurantService: RestaurantService)
+    init(restaurantService: RestaurantService, cache: Cache)
     
     var numberOfRestaurants: Int { get }
     func name(at index: Int) -> String
@@ -19,7 +19,8 @@ protocol RestaurantsViewModel {
     var didGetRestaurants: (() -> ())? { get set }
     var didGetRestaurantFail: ((ApplicationError) -> ())? { get set }
     
-    func getRestaurants()
+    func getAllRestaurants()
+    func getRestaurantsForUser()
 }
 
 final class RestaurantsViewModelImp: RestaurantsViewModel {
@@ -27,16 +28,19 @@ final class RestaurantsViewModelImp: RestaurantsViewModel {
     private var restaurants = [Restaurant]()
     
     let restaurantService: RestaurantService
+    let cache: Cache
     
     var didGetRestaurants: (() -> ())?
     var didGetRestaurantFail: ((ApplicationError) -> ())?
     
     init() {
         self.restaurantService = RestaurantServiceImp()
+        self.cache = CacheImp()
     }
     
-    init(restaurantService: RestaurantService) {
+    init(restaurantService: RestaurantService, cache: Cache) {
         self.restaurantService = restaurantService
+        self.cache = cache
     }
     
     var numberOfRestaurants: Int {
@@ -55,12 +59,22 @@ final class RestaurantsViewModelImp: RestaurantsViewModel {
         return self.restaurants[index].averageRating
     }
     
-    func getRestaurants() {
+    
+    func getAllRestaurants() {
         self.restaurantService.getAllRestaurants { [weak self] restaurants in
             self?.restaurants = restaurants
             self?.didGetRestaurants?()
         } failure: { [weak self] error in
             self?.didGetRestaurantFail?(error)
         }
+    }
+    
+    func getRestaurantsForUser() {
+        self.restaurantService.getAllRestaurants(of: self.cache.user!.id, success: { [weak self] restaurants in
+            self?.restaurants = restaurants
+            self?.didGetRestaurants?()
+        }, failure: { [weak self] error in
+            self?.didGetRestaurantFail?(error)
+        })
     }
 }

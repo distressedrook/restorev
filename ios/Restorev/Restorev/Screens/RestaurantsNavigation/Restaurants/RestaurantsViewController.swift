@@ -78,14 +78,14 @@ extension RestaurantsViewController {
         
         self.viewModel.didGetRestaurantFail = { error in
             self.showError(with: Strings.failure, message: error.displayString)
-            self.viewModel.getRestaurants()
+            self.roleManager.restaurantsServiceFor(viewModel: self.viewModel)()
         }
     }
     
     private func getRestaurants() {
         self.showLoading()
         self.tableView.alpha = 0.0
-        self.viewModel.getRestaurants()
+        self.roleManager.restaurantsServiceFor(viewModel: self.viewModel)()
     }
     
 }

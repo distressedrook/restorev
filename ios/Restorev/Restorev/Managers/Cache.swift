@@ -17,10 +17,7 @@ class CacheImp: Cache {
             return user
         }
         set(newValue) {
-            guard let newValue = newValue else {
-                fatalError("You cannot set a nil value to user")
-            }
-            let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: false)
+            let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: newValue as Any, requiringSecureCoding: false)
             self.save(value: encodedData, for: USER)
         }
     }
