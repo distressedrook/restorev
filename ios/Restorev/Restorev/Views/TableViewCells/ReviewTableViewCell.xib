@@ -61,6 +61,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1x-SG-iFU">
+                                <rect key="frame" x="693" y="16" width="21" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="48b-2B-9h7"/>
+                                    <constraint firstAttribute="width" constant="21" id="hcJ-sF-Gh8"/>
+                                </constraints>
+                                <state key="normal" image="CommentIcon"/>
+                                <connections>
+                                    <action selector="didTapCommentButtonWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OQK-Tn-7tu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -68,9 +79,11 @@
                             <constraint firstItem="l4o-l1-Iqt" firstAttribute="leading" secondItem="uQs-bZ-EMz" secondAttribute="leading" constant="15" id="3rC-3X-6fu"/>
                             <constraint firstItem="l4o-l1-Iqt" firstAttribute="top" secondItem="uQs-bZ-EMz" secondAttribute="top" constant="16" id="8Kd-hD-1Gv"/>
                             <constraint firstItem="jbf-Rz-XpT" firstAttribute="top" secondItem="dUq-XJ-LHt" secondAttribute="bottom" constant="16" id="IMm-RA-7IW"/>
+                            <constraint firstItem="H1x-SG-iFU" firstAttribute="top" secondItem="uQs-bZ-EMz" secondAttribute="top" constant="16" id="Lrc-SS-moZ"/>
                             <constraint firstAttribute="bottom" secondItem="jbf-Rz-XpT" secondAttribute="bottom" constant="16" id="RHO-UL-e6Q"/>
                             <constraint firstItem="d6R-W6-MEx" firstAttribute="top" secondItem="l4o-l1-Iqt" secondAttribute="bottom" constant="8" id="XuL-Yb-RKf"/>
                             <constraint firstItem="dUq-XJ-LHt" firstAttribute="top" secondItem="d6R-W6-MEx" secondAttribute="bottom" constant="8" id="Z7n-nX-dVq"/>
+                            <constraint firstAttribute="trailing" secondItem="H1x-SG-iFU" secondAttribute="trailing" constant="16" id="ak2-V8-euV"/>
                             <constraint firstAttribute="trailing" secondItem="jbf-Rz-XpT" secondAttribute="trailing" constant="16" id="erl-uw-GHd"/>
                             <constraint firstItem="d6R-W6-MEx" firstAttribute="leading" secondItem="7rt-V4-Yf9" secondAttribute="trailing" constant="8" id="g7G-cW-EUd"/>
                             <constraint firstItem="7rt-V4-Yf9" firstAttribute="leading" secondItem="l4o-l1-Iqt" secondAttribute="leading" id="gGb-pq-YGs"/>
@@ -118,6 +131,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="commentButton" destination="H1x-SG-iFU" id="P8z-5Y-vab"/>
                 <outlet property="commentHeightConstraint" destination="zS9-d2-ZB8" id="Osq-0Q-1Fe"/>
                 <outlet property="commentLabel" destination="dja-Bx-iry" id="X8y-Zf-cTk"/>
                 <outlet property="ownerTitleLabel" destination="fKQ-pb-TKz" id="3AM-xM-7yb"/>
@@ -131,5 +145,6 @@
     </objects>
     <resources>
         <image name="AverageRatingIcon" width="14" height="13"/>
+        <image name="CommentIcon" width="21" height="17"/>
     </resources>
 </document>

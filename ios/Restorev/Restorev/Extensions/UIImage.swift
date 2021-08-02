@@ -35,4 +35,8 @@ extension UIImage {
     static var add: UIImage {
         return UIImage(named: "AddIcon")!
     }
+    
+    static var comment: UIImage {
+        return UIImage(named: "CommentIcon")!
+    }
 }

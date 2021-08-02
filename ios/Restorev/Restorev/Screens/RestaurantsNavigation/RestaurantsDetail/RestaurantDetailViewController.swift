@@ -119,6 +119,7 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
         } else {
             configure(cell: cell, for: indexPath)
         }
+        cell.delegate = self
         return cell
     }
     
@@ -127,11 +128,18 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
             NSLayoutConstraint.deactivate([cell.commentHeightConstraint])
             cell.commentLabel.text = comment
             cell.ownerTitleLabel.text = self.roleManager.commentTitleLabelForRestaurant(name: self.viewModel.restaurantName)
+            cell.commentButton.isHidden = true
         } else {
             NSLayoutConstraint.activate([cell.commentHeightConstraint])
             cell.commentHeightConstraint.constant = 0
             cell.commentLabel.text = nil
             cell.ownerTitleLabel.text = nil
+            if let image = self.roleManager.rightButtonImageForReviewCell() {
+                cell.commentButton.isHidden = false
+                cell.commentButton.setImage(image, for: .normal)
+            } else {
+                cell.commentButton.isHidden = true
+            }
         }
         cell.selectionStyle = .none
         cell.ratingLabel.text = String(self.viewModel.ratingAt(index: indexPath.row))
@@ -144,11 +152,18 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
             NSLayoutConstraint.deactivate([cell.commentHeightConstraint])
             cell.commentLabel.text = comment
             cell.ownerTitleLabel.text = self.roleManager.commentTitleLabelForRestaurant(name: self.viewModel.restaurantName)
+            cell.commentButton.isHidden = true
         } else {
             NSLayoutConstraint.activate([cell.commentHeightConstraint])
             cell.commentHeightConstraint.constant = 0
             cell.commentLabel.text = nil
             cell.ownerTitleLabel.text = nil
+            if let image = self.roleManager.rightButtonImageForReviewCell() {
+                cell.commentButton.isHidden = false
+                cell.commentButton.setImage(image, for: .normal)
+            } else {
+                cell.commentButton.isHidden = true
+            }
         }
         cell.selectionStyle = .none
         cell.ratingLabel.text = String(self.viewModel.topRatedRating)
@@ -161,11 +176,18 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
             NSLayoutConstraint.deactivate([cell.commentHeightConstraint])
             cell.commentLabel.text = comment
             cell.ownerTitleLabel.text = self.roleManager.commentTitleLabelForRestaurant(name: self.viewModel.restaurantName)
+            cell.commentButton.isHidden = true
         } else {
             cell.commentLabel.text = nil
             cell.ownerTitleLabel.text = nil
             cell.commentHeightConstraint.constant = 0
             NSLayoutConstraint.activate([cell.commentHeightConstraint])
+            if let image = self.roleManager.rightButtonImageForReviewCell() {
+                cell.commentButton.isHidden = false
+                cell.commentButton.setImage(image, for: .normal)
+            } else {
+                cell.commentButton.isHidden = true
+            }
         }
         cell.selectionStyle = .none
         cell.ratingLabel.text = String(self.viewModel.mostCriticalRating)
@@ -208,5 +230,19 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
         label.backgroundColor = UIColor.backgroundWhite
         label.text = "     " + Strings.allReviews
         return label
+    }
+}
+
+extension RestaurantDetailViewController: ReviewTableViewCellDelegate {
+    func didTapCommentButtonIn(reviewTableViewCell: ReviewTableViewCell) {
+        if let indexPath = self.reviewsTableView.indexPath(for: reviewTableViewCell) {
+            if indexPath.section == 0 {
+                Log.d(self.viewModel.topRatedReviewId)
+            } else if indexPath.section == 1 {
+                Log.d(self.viewModel.mostCriticalReviewId)
+            } else if indexPath.section == 2 {
+                Log.d(self.viewModel.reviewIdAt(index: indexPath.row))
+            }
+        }
     }
 }

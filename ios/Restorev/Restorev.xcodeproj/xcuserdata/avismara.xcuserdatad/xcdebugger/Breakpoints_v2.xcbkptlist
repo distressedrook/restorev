@@ -3,4 +3,54 @@
    uuid = "2396D5B1-E541-4738-994A-0A211EF30697"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3343B0DC-F925-4BF3-92DB-C684EAB42BBA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Restorev/Views/TableViewCells/ReviewTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "didTapCommentButton(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3343B0DC-F925-4BF3-92DB-C684EAB42BBA - ba9ccaddccf1d3b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Restorev.ReviewTableViewCell.didTapCommentButton(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Views/TableViewCells/ReviewTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "3343B0DC-F925-4BF3-92DB-C684EAB42BBA - 8ce32d70fd59aca8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc Restorev.ReviewTableViewCell.didTapCommentButton(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Views/TableViewCells/ReviewTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

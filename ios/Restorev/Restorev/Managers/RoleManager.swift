@@ -99,6 +99,20 @@ class RoleManager {
         }
     }
     
+    func rightButtonImageForReviewCell() -> UIImage? {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+           return nil
+        case .admin:
+            return UIImage.comment
+        case .owner:
+            return UIImage.comment
+        }
+    }
+    
     func commentTitleLabelForRestaurant(name: String) -> String {
         guard let role = self.cache.user?.role else {
             fatalError("User is not logged in. Use this method only after the user has logged in.")

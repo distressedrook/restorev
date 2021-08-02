@@ -19,18 +19,21 @@ protocol RestaurantDetailViewModel {
     var numberOfReviews: Int { get }
     
     var topRatedReviewString: String { get }
+    var topRatedReviewId: String { get }
     var topReviewerName: String { get }
     var topRatedRating: Int { get }
     var topRatedVisiteDate: Int { get }
     var topRatedOwnerComment: String? { get}
     
     var mostCriticalReviewString: String { get }
+    var mostCriticalReviewId: String { get }
     var mostCriticalReviewerName: String { get }
     var mostCriticalRating: Int { get }
     var mostCriticalVisiteDate: Int { get }
     var mostCriticalOwnerComment: String? { get }
     
     func ratingAt(index: Int) -> Int
+    func reviewIdAt(index: Int) -> String
     func reviewerNameAt(index: Int) -> String
     func visitedDateAt(index: Int) -> Int
     func reviewAt(index: Int) -> String
@@ -57,8 +60,16 @@ final class RestaurantDetailViewModelImp: RestaurantDetailViewModel {
         return self.restaurant.averageRating
     }
     
+    var topRatedReviewId: String {
+        return self.topRatedReview.id ?? ""
+    }
+    
     var numberOfReviews: Int {
         return self.restaurant?.reviews?.count ?? 0
+    }
+    
+    func reviewIdAt(index: Int) -> String {
+        return self.restaurant.reviews![index].id ?? ""
     }
     
     func ratingAt(index: Int) -> Int {
@@ -110,6 +121,10 @@ final class RestaurantDetailViewModelImp: RestaurantDetailViewModel {
     
     var mostCriticalReviewerName: String {
         return self.mostCriticalReview.reviewer!.name
+    }
+    
+    var mostCriticalReviewId: String {
+        return self.mostCriticalReview.id ?? ""
     }
     
     var mostCriticalRating: Int {

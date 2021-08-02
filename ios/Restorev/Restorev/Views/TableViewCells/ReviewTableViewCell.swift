@@ -19,6 +19,10 @@ class ReviewTableViewCell: UITableViewCell {
     
     @IBOutlet var commentHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet var commentButton: UIButton!
+    
+    weak var delegate: ReviewTableViewCellDelegate?
+    
     static var cellIdentifier: String {
         return "ReviewTableViewCell"
     }
@@ -35,5 +39,14 @@ class ReviewTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+}
+
+extension ReviewTableViewCell {
+    @IBAction func didTapCommentButton(sender: UIButton) {
+        self.delegate?.didTapCommentButtonIn(reviewTableViewCell: self)
+    }
+}
+
+protocol ReviewTableViewCellDelegate: AnyObject {
+    func didTapCommentButtonIn(reviewTableViewCell: ReviewTableViewCell)
 }
