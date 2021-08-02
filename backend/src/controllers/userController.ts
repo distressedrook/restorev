@@ -128,7 +128,6 @@ export class UserController {
     let response: any[] = [];
     for (let restaurantId of user.ownedRestaurants) {
       let restaurant = await this.restaurantDao.findById(restaurantId);
-      print(restaurant);
       let reviews = await this.reviewDao.findPendingReviews(restaurantId);
       if (reviews.length == 0) {
         continue;
@@ -136,7 +135,16 @@ export class UserController {
       response.push({
         restaurantName: restaurant.name,
         restaurantId: restaurant._id,
-        pendingReviews: reviews.map((review) => review.toJSON()),
+        pendingReviews: reviews.map(function (review) {
+          return {
+            id: review.id,
+            restaurantId: review.restaurantId,
+            visitedDate: review.visitedDate,
+            rating: review.rating,
+            review: review.reviewString,
+            reviewer: review.reviewerId,
+          };
+        }),
       });
     }
     return response;

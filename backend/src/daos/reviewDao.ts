@@ -83,6 +83,7 @@ export class ReviewDao {
   public async findPendingReviews(restaurantId: string): Promise<IReview[]> {
     let cThis = this;
     return Review.find({ restaurantId: restaurantId, ownerComment: null })
+      .populate("reviewerId")
       .exec()
       .catch(function (err) {
         return cThis.getGenericReject(err);
