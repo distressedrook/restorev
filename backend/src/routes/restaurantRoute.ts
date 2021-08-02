@@ -28,6 +28,19 @@ function getRestaurants(req, res, next) {
     });
 }
 
+function getRestaurantsForOwner(req, res, next) {
+  let controller = new RestaurantController();
+  controller
+    .findAllOfOwner(req.params.id)
+    .then(function (restaurants) {
+      res.send(wrapSuccess(restaurants));
+    })
+    .catch(function (error) {
+      res.status(StatusCodes.OK);
+      res.send(wrapError([error]));
+    });
+}
+
 function getRestaurantForId(req, res, next) {
   let controller = new RestaurantController();
   controller
@@ -128,6 +141,7 @@ router.post(
 );
 
 router.get("/", getRestaurants);
+router.get("/owner/:id", getRestaurantsForOwner);
 router.get("/:id", getRestaurantForId);
 router.put("/:id/edit", isAdmin, editRestaurant);
 router.delete("/:id/delete", isAdmin, deleteRestaurant);

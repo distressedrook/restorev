@@ -75,6 +75,29 @@ export class RestaurantController {
     });
   }
 
+  public async findAllOfOwner(ownerId: string): Promise<any> {
+    let cThis = this;
+    return this.restaurantDao
+      .findRestaurants(ownerId)
+      .then(function (restaurants) {
+        let restaurantsJSON = restaurants.map(function (restaurant) {
+          let averageRating = cThis.calculateAverageRating(restaurant.reviews);
+          let restaurantJSON = restaurant.toJSON();
+          delete restaurantJSON.reviews;
+          delete restaurantJSON.ownerId;
+          restaurantJSON.averageRating = averageRating;
+          return restaurantJSON;
+        });
+        restaurantsJSON.sort(function (a, b) {
+          if (a.averageRating > b.averageRating) {
+            return 1;
+          }
+          return 0;
+        });
+        return restaurantsJSON;
+      });
+  }
+
   private calculateAverageRating(reviews: IReview[]): number {
     if (reviews.length == 0) {
       return 0;

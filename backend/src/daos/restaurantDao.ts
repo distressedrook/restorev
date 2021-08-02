@@ -96,6 +96,7 @@ export class RestaurantDao {
   public async findRestaurants(ownerId: string): Promise<IRestaurant[]> {
     let cThis = this;
     return Restaurant.find({ ownerId: ownerId })
+      .populate("reviews")
       .exec()
       .catch(function (err) {
         return cThis.getGenericReject(err);
