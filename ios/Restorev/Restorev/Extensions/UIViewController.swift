@@ -71,6 +71,13 @@ extension UIViewController {
         return viewController
     }
     
+    static func editRestaurantViewControllerWith(restaurantId: String, restaurantName: String, delegate: AddRestaurantViewControllerDelegate? = nil) -> UIViewController {
+        let viewController = UIStoryboard.addRestaurant.instantiateInitialViewController() as! AddRestaurantViewController
+        viewController.viewModel = AdminAddRestaurantViewModelImp(restaurantId: restaurantId, restaurantName: restaurantName)
+        viewController.delegate = delegate
+        return viewController
+    }
+    
     static func commentViewControllerWith(review: Review, delegate: CommentViewControllerDelegate? = nil) -> UIViewController {
         let viewController = UIStoryboard.comment.instantiateInitialViewController() as! CommentViewController
         viewController.viewModel = OwnerCommentViewModeImp(review: review)

@@ -37,4 +37,7 @@ class Strings {
     static let commentAdded = "your comment was successfully added"
     static let userDeleted = "the user was successfully deleted"
     static let userEdited = "the user information was successfully edited"
+    
+    static let addRestaurant = "add restaurant"
+    static let editRestaurant = "edit restaurant"
 }

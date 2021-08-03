@@ -15,6 +15,7 @@ protocol RestaurantService {
     func getRestaurant(with id: String, success: @escaping (Restaurant) -> (), failure: @escaping (ApplicationError) -> ())
     func addRestaurant(with name: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
     func addReview(review: String, rating: Int, visitedDate: Int, to restauarntId: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
+    func editRestaurant(with id: String, name: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
 }
 
 final class RestaurantServiceImp: RestaurantService {
@@ -33,6 +34,14 @@ final class RestaurantServiceImp: RestaurantService {
     
     func addRestaurant(with name: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ()) {
         self.serviceManager.post(with: URL + "/add", parameters: [NAME: name], headers: authTokenHeader()) { response in
+            success()
+        } failure: { error in
+            failure(error)
+        }
+    }
+    
+    func editRestaurant(with id: String, name: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ()) {
+        self.serviceManager.put(with: URL + "/\(id)/edit", parameters: [NAME: name], headers: authTokenHeader()) { response in
             success()
         } failure: { error in
             failure(error)

@@ -77,12 +77,12 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
     }
     
     @objc func didTapReviewButton(sender: UIBarButtonItem) {
+        let restaurantName = self.viewModel.restaurantName
+        let restaurantId = self.viewModel.restaurantId
         if let title = sender.title, title == Strings.review {
-            let restaurantName = self.viewModel.restaurantName
-            let restaurantId = self.viewModel.restaurantId
             self.router.moveToReview(restaurantName: restaurantName, restaurantId: restaurantId, delegate: self)
         } else if let title = sender.title, title == Strings.edit {
-            
+            self.router.moveToEditWith(restaurantId: restaurantId, restaurantName: restaurantName, delegate: self)
         }
     }
 }
@@ -222,6 +222,13 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
 
 extension RestaurantDetailViewController: CommentViewControllerDelegate {
     func didPostCommentIn(commentViewController: CommentViewController) {
+        self.showLoading()
+        self.viewModel.getDetail()
+    }
+}
+
+extension RestaurantDetailViewController: AddRestaurantViewControllerDelegate {
+    func didPostNameIn(addRestaurantViewController: AddRestaurantViewController) {
         self.showLoading()
         self.viewModel.getDetail()
     }

@@ -190,4 +190,18 @@ class RoleManager {
         controller.setViewControllers([usersViewController, restaurantsNavigationController, settingsViewController], animated: false)
         return controller
     }
+    
+    func titleForAddRestaurantController() -> String {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            return Strings.addRestaurant
+        case .admin:
+            return Strings.editRestaurant
+        case .owner:
+            return Strings.addRestaurant
+        }
+    }
 }

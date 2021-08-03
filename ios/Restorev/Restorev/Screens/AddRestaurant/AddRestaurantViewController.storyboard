@@ -96,6 +96,7 @@
                     </view>
                     <connections>
                         <outlet property="nameTextField" destination="OH1-Y6-GOc" id="ID2-Mp-cK4"/>
+                        <outlet property="titleLabel" destination="uoy-e1-y3Z" id="DTZ-c2-zZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q56-A5-JX2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

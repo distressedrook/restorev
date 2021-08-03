@@ -9,6 +9,7 @@ import UIKit
 
 class AddRestaurantViewController: UIViewController, LoadingIndicatable, MessageDisplayable {
     var viewModel: AddRestaurantViewModel!
+    @IBOutlet var titleLabel: UILabel!
     weak var delegate: AddRestaurantViewControllerDelegate?
     let roleManager = RoleManager()
     @IBOutlet var nameTextField: TextField!
@@ -16,7 +17,9 @@ class AddRestaurantViewController: UIViewController, LoadingIndicatable, Message
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bind()
+        self.titleLabel.text = self.roleManager.titleForAddRestaurantController()
         self.nameTextField.becomeFirstResponder()
+        self.nameTextField.text = self.viewModel.name
     }
 }
 
@@ -49,10 +52,6 @@ extension AddRestaurantViewController {
             }
             self.hideLoading()
             self.showError(with: Strings.failure, message: error.displayString)
-        }
-        
-        self.viewModel.didSetName = { name in
-            self.nameTextField.text = name
         }
     }
 }
