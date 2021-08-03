@@ -68,6 +68,20 @@ class RoleManager {
         }
     }
     
+    func nibNameForReviewTableViewCell() -> String {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            return "ReguarReviewTableViewCell"
+        case .admin:
+            return "AdminReviewTableViewCell"
+        case .owner:
+            return "OwnerReviewTableViewCell"
+        }
+    }
+    
     func messageForPostRestaurantName() -> String {
         guard let role = self.cache.user?.role else {
             fatalError("User is not logged in. Use this method only after the user has logged in.")
@@ -93,23 +107,12 @@ class RoleManager {
             barButtonItem.tintColor = UIColor.white
             return barButtonItem
         case .admin:
-            return nil
+            let barButtonItem = UIBarButtonItem(title: Strings.edit, style: .plain, target: restaurantDetailViewController, action: #selector(RestaurantDetailViewController.didTapReviewButton(sender:)))
+            barButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.openSansBold(with: 15)], for: .normal)
+            barButtonItem.tintColor = UIColor.white
+            return barButtonItem
         case .owner:
             return nil
-        }
-    }
-    
-    func rightButtonImageForReviewCell() -> UIImage? {
-        guard let role = self.cache.user?.role else {
-            fatalError("User is not logged in. Use this method only after the user has logged in.")
-        }
-        switch role {
-        case .regular:
-           return nil
-        case .admin:
-            return UIImage.comment
-        case .owner:
-            return UIImage.comment
         }
     }
     

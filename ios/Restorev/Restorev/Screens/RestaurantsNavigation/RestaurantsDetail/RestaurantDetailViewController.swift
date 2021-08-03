@@ -81,6 +81,8 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
             let restaurantName = self.viewModel.restaurantName
             let restaurantId = self.viewModel.restaurantId
             self.router.moveToReview(restaurantName: restaurantName, restaurantId: restaurantId, delegate: self)
+        } else if let title = sender.title, title == Strings.edit {
+            
         }
     }
 }
@@ -128,18 +130,13 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
             NSLayoutConstraint.deactivate([cell.commentHeightConstraint])
             cell.commentLabel.text = comment
             cell.ownerTitleLabel.text = self.roleManager.commentTitleLabelForRestaurant(name: self.viewModel.restaurantName)
-            cell.commentButton.isHidden = true
+            cell.commentButton?.isHidden = true
         } else {
             NSLayoutConstraint.activate([cell.commentHeightConstraint])
             cell.commentHeightConstraint.constant = 0
             cell.commentLabel.text = nil
             cell.ownerTitleLabel.text = nil
-            if let image = self.roleManager.rightButtonImageForReviewCell() {
-                cell.commentButton.isHidden = false
-                cell.commentButton.setImage(image, for: .normal)
-            } else {
-                cell.commentButton.isHidden = true
-            }
+            cell.commentButton?.isHidden = false
         }
         cell.selectionStyle = .none
         cell.ratingLabel.text = String(self.viewModel.ratingAt(index: indexPath.row))
@@ -152,18 +149,13 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
             NSLayoutConstraint.deactivate([cell.commentHeightConstraint])
             cell.commentLabel.text = comment
             cell.ownerTitleLabel.text = self.roleManager.commentTitleLabelForRestaurant(name: self.viewModel.restaurantName)
-            cell.commentButton.isHidden = true
+            cell.commentButton?.isHidden = true
         } else {
             NSLayoutConstraint.activate([cell.commentHeightConstraint])
             cell.commentHeightConstraint.constant = 0
             cell.commentLabel.text = nil
             cell.ownerTitleLabel.text = nil
-            if let image = self.roleManager.rightButtonImageForReviewCell() {
-                cell.commentButton.isHidden = false
-                cell.commentButton.setImage(image, for: .normal)
-            } else {
-                cell.commentButton.isHidden = true
-            }
+            cell.commentButton?.isHidden = false
         }
         cell.selectionStyle = .none
         cell.ratingLabel.text = String(self.viewModel.topRatedRating)
@@ -176,18 +168,13 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
             NSLayoutConstraint.deactivate([cell.commentHeightConstraint])
             cell.commentLabel.text = comment
             cell.ownerTitleLabel.text = self.roleManager.commentTitleLabelForRestaurant(name: self.viewModel.restaurantName)
-            cell.commentButton.isHidden = true
+            cell.commentButton?.isHidden = true
         } else {
             cell.commentLabel.text = nil
             cell.ownerTitleLabel.text = nil
             cell.commentHeightConstraint.constant = 0
             NSLayoutConstraint.activate([cell.commentHeightConstraint])
-            if let image = self.roleManager.rightButtonImageForReviewCell() {
-                cell.commentButton.isHidden = false
-                cell.commentButton.setImage(image, for: .normal)
-            } else {
-                cell.commentButton.isHidden = true
-            }
+            cell.commentButton?.isHidden = false
         }
         cell.selectionStyle = .none
         cell.ratingLabel.text = String(self.viewModel.mostCriticalRating)
@@ -251,5 +238,13 @@ extension RestaurantDetailViewController: ReviewTableViewCellDelegate {
                 self.router.moveToComment(review: self.viewModel.mReview(at: indexPath.row), delegate: self)
             }
         }
+    }
+    
+    func didTapEditCommentButtonIn(reviewTableViewCell: ReviewTableViewCell) {
+        
+    }
+    
+    func didTapEditReviewButtonIn(reviewTableViewCell: ReviewTableViewCell) {
+        
     }
 }

@@ -140,7 +140,7 @@
                 <outlet property="reviewerLabel" destination="l4o-l1-Iqt" id="Utq-uH-PhW"/>
                 <outlet property="visitedOnLabel" destination="dUq-XJ-LHt" id="sKW-v1-wqI"/>
             </connections>
-            <point key="canvasLocation" x="-255.07246376811597" y="166.74107142857142"/>
+            <point key="canvasLocation" x="-400" y="-33"/>
         </tableViewCell>
     </objects>
     <resources>

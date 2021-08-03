@@ -23,6 +23,7 @@ class Strings {
     static let loggedIn = "Hi, "
     static let restaurants = "restaurants"
     static let review = "review"
+    static let edit = "edit"
     static let averageRating = "average rating"
     static let commented = "commented"
     static let youCommented = "you commented"

@@ -29,6 +29,8 @@
 		0F2FF5B326B94CB8006FBAC5 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5B226B94CB8006FBAC5 /* EditUserViewController.swift */; };
 		0F2FF5B526B94F14006FBAC5 /* EditUserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5B426B94F14006FBAC5 /* EditUserViewController.storyboard */; };
 		0F2FF5B726B95492006FBAC5 /* UsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5B626B95492006FBAC5 /* UsersRouter.swift */; };
+		0F2FF5BB26B95F2E006FBAC5 /* AdminReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5BA26B95F2E006FBAC5 /* AdminReviewTableViewCell.xib */; };
+		0F2FF5BD26B9611A006FBAC5 /* RegularReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5BC26B9611A006FBAC5 /* RegularReviewTableViewCell.xib */; };
 		0F6CBADC26B7BA04001D1082 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CBADB26B7BA04001D1082 /* UITextField.swift */; };
 		0F6CBAE026B7EA45001D1082 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */; };
 		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
@@ -113,7 +115,7 @@
 		69C48BBF26B57F4C00550BC9 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BBE26B57F4C00550BC9 /* RestaurantDetailViewController.swift */; };
 		69C48BC226B5853900550BC9 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 69C48BC126B5853900550BC9 /* Cosmos */; };
 		69C48BC526B5C98900550BC9 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */; };
-		69C48BC626B5C98900550BC9 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C48BC426B5C98900550BC9 /* ReviewTableViewCell.xib */; };
+		69C48BC626B5C98900550BC9 /* OwnerReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C48BC426B5C98900550BC9 /* OwnerReviewTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,8 @@
 		0F2FF5B226B94CB8006FBAC5 /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
 		0F2FF5B426B94F14006FBAC5 /* EditUserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditUserViewController.storyboard; sourceTree = "<group>"; };
 		0F2FF5B626B95492006FBAC5 /* UsersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRouter.swift; sourceTree = "<group>"; };
+		0F2FF5BA26B95F2E006FBAC5 /* AdminReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminReviewTableViewCell.xib; sourceTree = "<group>"; };
+		0F2FF5BC26B9611A006FBAC5 /* RegularReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegularReviewTableViewCell.xib; sourceTree = "<group>"; };
 		0F6CBADB26B7BA04001D1082 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		0F94B28026B6CB8000DC0C68 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -241,7 +245,7 @@
 		69C48BBB26B556B000550BC9 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 		69C48BBE26B57F4C00550BC9 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		69C48BC426B5C98900550BC9 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
+		69C48BC426B5C98900550BC9 /* OwnerReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnerReviewTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,7 +324,9 @@
 			isa = PBXGroup;
 			children = (
 				69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */,
-				69C48BC426B5C98900550BC9 /* ReviewTableViewCell.xib */,
+				0F2FF5BC26B9611A006FBAC5 /* RegularReviewTableViewCell.xib */,
+				69C48BC426B5C98900550BC9 /* OwnerReviewTableViewCell.xib */,
+				0F2FF5BA26B95F2E006FBAC5 /* AdminReviewTableViewCell.xib */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -786,6 +792,7 @@
 				69C48B3326B28D3E00550BC9 /* OpenSans-Italic.ttf in Resources */,
 				69C48BA626B4F6CA00550BC9 /* RestaurantsNavigationController.storyboard in Resources */,
 				69C48AF126B27E1E00550BC9 /* Assets.xcassets in Resources */,
+				0F2FF5BD26B9611A006FBAC5 /* RegularReviewTableViewCell.xib in Resources */,
 				0F2FF5AE26B92083006FBAC5 /* UsersViewController.storyboard in Resources */,
 				69C48B2A26B28D3E00550BC9 /* OpenSans-Bold.ttf in Resources */,
 				69C48B9126B4641F00550BC9 /* HomeTabBarController.storyboard in Resources */,
@@ -796,7 +803,8 @@
 				69C48BB826B5249E00550BC9 /* RestaurantTableViewCell.xib in Resources */,
 				69C48B2C26B28D3E00550BC9 /* OpenSans-ExtraBold.ttf in Resources */,
 				0F2FF58926B83244006FBAC5 /* AddRestaurantViewController.storyboard in Resources */,
-				69C48BC626B5C98900550BC9 /* ReviewTableViewCell.xib in Resources */,
+				69C48BC626B5C98900550BC9 /* OwnerReviewTableViewCell.xib in Resources */,
+				0F2FF5BB26B95F2E006FBAC5 /* AdminReviewTableViewCell.xib in Resources */,
 				69C48B3426B28D3E00550BC9 /* OpenSans-BoldItalic.ttf in Resources */,
 				0F2FF59226B851F1006FBAC5 /* CommentViewController.storyboard in Resources */,
 				69C48B2F26B28D3E00550BC9 /* OpenSans-Light.ttf in Resources */,

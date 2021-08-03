@@ -19,7 +19,11 @@ class ReviewTableViewCell: UITableViewCell {
     
     @IBOutlet var commentHeightConstraint: NSLayoutConstraint!
     
-    @IBOutlet var commentButton: UIButton!
+    @IBOutlet var commentButton: UIButton?
+    @IBOutlet var reviewEditButton: UIButton?
+    @IBOutlet var commentEditButton: UIButton?
+    
+    
     
     weak var delegate: ReviewTableViewCellDelegate?
     
@@ -28,7 +32,8 @@ class ReviewTableViewCell: UITableViewCell {
     }
     
     static var nib: UINib {
-        return UINib(nibName: "ReviewTableViewCell", bundle: nil)
+        let roleManager = RoleManager()
+        return UINib(nibName: roleManager.nibNameForReviewTableViewCell(), bundle: nil)
     }
 
     override func awakeFromNib() {
@@ -45,8 +50,18 @@ extension ReviewTableViewCell {
     @IBAction func didTapCommentButton(sender: UIButton) {
         self.delegate?.didTapCommentButtonIn(reviewTableViewCell: self)
     }
+    
+    @IBAction func didTapEditReviewButton(sender: UIButton) {
+        self.delegate?.didTapEditReviewButtonIn(reviewTableViewCell: self)
+    }
+    
+    @IBAction func didTapEditCommentButton(sender: UIButton) {
+        self.delegate?.didTapEditCommentButtonIn(reviewTableViewCell: self)
+    }
 }
 
 protocol ReviewTableViewCellDelegate: AnyObject {
     func didTapCommentButtonIn(reviewTableViewCell: ReviewTableViewCell)
+    func didTapEditReviewButtonIn(reviewTableViewCell: ReviewTableViewCell)
+    func didTapEditCommentButtonIn(reviewTableViewCell: ReviewTableViewCell)
 }

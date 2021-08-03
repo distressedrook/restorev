@@ -79,10 +79,6 @@ extension PendingRestaurantsViewController: UITableViewDelegate, UITableViewData
         cell.commentHeightConstraint.constant = 0
         cell.commentLabel.text = nil
         cell.ownerTitleLabel.text = nil
-        if let image = self.roleManager.rightButtonImageForReviewCell() {
-            cell.commentButton.isHidden = false
-            cell.commentButton.setImage(image, for: .normal)
-        }
         cell.selectionStyle = .none
         cell.ratingLabel.text = String(self.viewModel.reviewAt(restaurantIndex: indexPath.section, reviewIndex: indexPath.row).rating)
         cell.reviewerLabel.text = self.viewModel.reviewAt(restaurantIndex: indexPath.section, reviewIndex: indexPath.row).reviewer!.name
@@ -95,6 +91,9 @@ extension PendingRestaurantsViewController: ReviewTableViewCellDelegate {
         let indexPath = reviewsTableView.indexPath(for: reviewTableViewCell)!
         self.router.moveToComment(review: self.viewModel.reviewAt(restaurantIndex: indexPath.section, reviewIndex: indexPath.row), delegate: self)
     }
+    
+    func didTapEditReviewButtonIn(reviewTableViewCell: ReviewTableViewCell) { }
+    func didTapEditCommentButtonIn(reviewTableViewCell: ReviewTableViewCell) { }
 }
 
 extension PendingRestaurantsViewController: CommentViewControllerDelegate {
