@@ -41,6 +41,7 @@ final class RestaurantServiceImp: RestaurantService {
         }
     }
     
+    
     func deleteRestaurant(with id: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ()) {
         self.serviceManager.delete(with: URL + "/\(id)/delete", parameters: [String: String](), headers: authTokenHeader()) { response in
             success()

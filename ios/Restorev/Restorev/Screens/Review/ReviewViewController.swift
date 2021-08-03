@@ -16,6 +16,9 @@ class ReviewViewController: UIViewController, LoadingIndicatable, MessageDisplay
     @IBOutlet var cosmosView: CosmosView!
     @IBOutlet var datePicker: UIDatePicker!
     
+    @IBOutlet var deleteButton: UIButton!
+    let roleManager = RoleManager()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -23,7 +26,11 @@ class ReviewViewController: UIViewController, LoadingIndicatable, MessageDisplay
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bind()
+        self.reviewTextView.text = self.viewModel.review
+        self.datePicker.date = self.viewModel.date
+        self.cosmosView.rating = Double(self.viewModel.rating)
         self.reviewTextView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        self.deleteButton.isHidden = !self.roleManager.shouldShowDeleteButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +62,18 @@ class ReviewViewController: UIViewController, LoadingIndicatable, MessageDisplay
             } else {
                 self.showError(with: Strings.failure, message: error.displayString)
             }
+        }
+        
+        self.viewModel.didDeleteReview = {
+            self.hideLoading()
+            self.showSuccess(with: Strings.success, message: Strings.reviewDeleted)
+            self.delegate?.reviewViewControllerDidDismiss(reviewViewController: self)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        self.viewModel.didDeleteReviewFail = { error in
+            self.hideLoading()
+            self.showError(with: Strings.failure, message: error.displayString)
         }
     }
     
@@ -91,6 +110,10 @@ extension ReviewViewController {
         self.dismiss(animated: true, completion: {
             self.delegate?.reviewViewControllerDidDismiss(reviewViewController: self)
         })
+    }
+    @IBAction func didTapDeleteButton(sender: UIButton) {
+        self.showLoading()
+        self.viewModel.deleteReview()
     }
 }
 

@@ -46,6 +46,8 @@ class ServiceManagerImp: ServiceManager {
             let responseMap = value as? [String: Any]
             if let successBody = responseMap?[SUCCESS] as? [String: Any] {
                 success(successBody)
+            } else if let successBody = responseMap?[SUCCESS] as? String, successBody == "OK" {
+                success(["message": "OK"])
             } else if let errorsBody = responseMap?[ERRORS] as? [[String: Any]], let error = errorsBody.first, let code = error[CODE] as? String, let error = ErrorCode(rawValue: code) {
                failure(ApplicationError(code: error))
             } else {

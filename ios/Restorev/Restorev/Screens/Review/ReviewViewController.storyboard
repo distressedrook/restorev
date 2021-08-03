@@ -145,17 +145,43 @@
                                     <!--2037-12-31 11:00:00 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpn-CF-ews">
+                                <rect key="frame" x="16" y="547" width="382" height="70"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Tk6-Mh-KVe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="21"/>
+                                <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="delete review">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapDeleteButtonWithSender:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5iY-4Q-XZe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UVX-Tt-j4v" firstAttribute="top" secondItem="zMD-Id-3Oq" secondAttribute="bottom" constant="24" id="46w-Yt-rid"/>
                             <constraint firstItem="1C4-ph-a3n" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="4mv-CD-1mF"/>
+                            <constraint firstItem="vpn-CF-ews" firstAttribute="leading" secondItem="3az-Tg-L5A" secondAttribute="leading" id="Avg-r4-7u6"/>
                             <constraint firstItem="3az-Tg-L5A" firstAttribute="trailing" secondItem="omy-HX-zfD" secondAttribute="trailing" id="Bnt-cA-M11"/>
                             <constraint firstAttribute="trailing" secondItem="1C4-ph-a3n" secondAttribute="trailing" id="IaF-p5-lF6"/>
                             <constraint firstItem="UVX-Tt-j4v" firstAttribute="leading" secondItem="zMD-Id-3Oq" secondAttribute="leading" id="Imy-S1-xSd"/>
+                            <constraint firstItem="vpn-CF-ews" firstAttribute="trailing" secondItem="3az-Tg-L5A" secondAttribute="trailing" id="NyQ-hg-umc"/>
                             <constraint firstItem="omy-HX-zfD" firstAttribute="leading" secondItem="UVX-Tt-j4v" secondAttribute="leading" id="O29-fn-LPc"/>
                             <constraint firstItem="omy-HX-zfD" firstAttribute="top" secondItem="UVX-Tt-j4v" secondAttribute="bottom" constant="16" id="Pdc-g0-19Q"/>
+                            <constraint firstItem="vpn-CF-ews" firstAttribute="top" secondItem="3az-Tg-L5A" secondAttribute="bottom" constant="24" id="ZNE-kp-8Lv"/>
                             <constraint firstItem="WPg-Cs-ca9" firstAttribute="top" secondItem="1C4-ph-a3n" secondAttribute="bottom" constant="24" id="ceF-9M-HHQ"/>
                             <constraint firstItem="zMD-Id-3Oq" firstAttribute="top" secondItem="WPg-Cs-ca9" secondAttribute="bottom" constant="15" id="heY-Jx-DDD"/>
                             <constraint firstItem="1jH-Fc-oAz" firstAttribute="top" secondItem="omy-HX-zfD" secondAttribute="bottom" constant="24" id="kPm-v9-c23"/>
@@ -171,6 +197,7 @@
                     <connections>
                         <outlet property="cosmosView" destination="zMD-Id-3Oq" id="OK7-z3-rf1"/>
                         <outlet property="datePicker" destination="omy-HX-zfD" id="ZH0-DS-16y"/>
+                        <outlet property="deleteButton" destination="vpn-CF-ews" id="8G6-U8-11z"/>
                         <outlet property="reviewTextView" destination="3az-Tg-L5A" id="qBU-zb-iG7"/>
                     </connections>
                 </viewController>
@@ -182,6 +209,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
