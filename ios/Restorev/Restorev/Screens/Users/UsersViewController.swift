@@ -9,6 +9,7 @@ import UIKit
 
 class UsersViewController: UIViewController, LoadingIndicatable, MessageDisplayable {
     var viewModel: UsersViewModel!
+    var router: UsersRouter!
     
     @IBOutlet var usersTableView: UITableView!
     
@@ -66,6 +67,14 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
 extension UsersViewController: UserTableViewCellDelegate {
     func didTapEditButtonIn(userTableViewCell: UserTableViewCell) {
         let indexPath = self.usersTableView.indexPath(for: userTableViewCell)!
-        Log.d("\(self.viewModel.userId(at: indexPath.row))")
+        let userId = self.viewModel.userId(at: indexPath.row)
+        router.moveToEditUserWith(userId: userId, delegate: self)
+    }
+}
+
+extension UsersViewController: EditUserViewControllerDelegate {
+    func didCompleteActionIn(editUserViewController: EditUserViewController) {
+        self.showLoading()
+        self.viewModel.getUsers()
     }
 }

@@ -51,4 +51,8 @@ extension UIStoryboard {
     static var users: UIStoryboard {
         return UIStoryboard(name: "UsersViewController", bundle: nil)
     }
+    
+    static var editUser: UIStoryboard {
+        return UIStoryboard(name: "EditUserViewController", bundle: nil)
+    }
 }

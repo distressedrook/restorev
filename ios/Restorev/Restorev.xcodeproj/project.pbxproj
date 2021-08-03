@@ -25,6 +25,10 @@
 		0F2FF5AB26B91A41006FBAC5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5A926B91A41006FBAC5 /* UserTableViewCell.swift */; };
 		0F2FF5AC26B91A41006FBAC5 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5AA26B91A41006FBAC5 /* UserTableViewCell.xib */; };
 		0F2FF5AE26B92083006FBAC5 /* UsersViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5AD26B92083006FBAC5 /* UsersViewController.storyboard */; };
+		0F2FF5B126B927FF006FBAC5 /* EditUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5B026B927FE006FBAC5 /* EditUserViewModel.swift */; };
+		0F2FF5B326B94CB8006FBAC5 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5B226B94CB8006FBAC5 /* EditUserViewController.swift */; };
+		0F2FF5B526B94F14006FBAC5 /* EditUserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5B426B94F14006FBAC5 /* EditUserViewController.storyboard */; };
+		0F2FF5B726B95492006FBAC5 /* UsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5B626B95492006FBAC5 /* UsersRouter.swift */; };
 		0F6CBADC26B7BA04001D1082 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CBADB26B7BA04001D1082 /* UITextField.swift */; };
 		0F6CBAE026B7EA45001D1082 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */; };
 		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
@@ -148,6 +152,10 @@
 		0F2FF5A926B91A41006FBAC5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		0F2FF5AA26B91A41006FBAC5 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		0F2FF5AD26B92083006FBAC5 /* UsersViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsersViewController.storyboard; sourceTree = "<group>"; };
+		0F2FF5B026B927FE006FBAC5 /* EditUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewModel.swift; sourceTree = "<group>"; };
+		0F2FF5B226B94CB8006FBAC5 /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		0F2FF5B426B94F14006FBAC5 /* EditUserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditUserViewController.storyboard; sourceTree = "<group>"; };
+		0F2FF5B626B95492006FBAC5 /* UsersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRouter.swift; sourceTree = "<group>"; };
 		0F6CBADB26B7BA04001D1082 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		0F94B28026B6CB8000DC0C68 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -297,14 +305,15 @@
 			path = PendingReviews;
 			sourceTree = "<group>";
 		};
-		0F2FF5A026B913AD006FBAC5 /* User */ = {
+		0F2FF5A026B913AD006FBAC5 /* Users */ = {
 			isa = PBXGroup;
 			children = (
 				0F2FF5A126B91465006FBAC5 /* UsersViewModel.swift */,
 				0F2FF5A526B918C9006FBAC5 /* UsersViewController.swift */,
 				0F2FF5AD26B92083006FBAC5 /* UsersViewController.storyboard */,
+				0F2FF5B626B95492006FBAC5 /* UsersRouter.swift */,
 			);
-			path = User;
+			path = Users;
 			sourceTree = "<group>";
 		};
 		0F2FF5A726B91A25006FBAC5 /* Review */ = {
@@ -323,6 +332,16 @@
 				0F2FF5AA26B91A41006FBAC5 /* UserTableViewCell.xib */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		0F2FF5AF26B927EB006FBAC5 /* EditUser */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FF5B026B927FE006FBAC5 /* EditUserViewModel.swift */,
+				0F2FF5B226B94CB8006FBAC5 /* EditUserViewController.swift */,
+				0F2FF5B426B94F14006FBAC5 /* EditUserViewController.storyboard */,
+			);
+			path = EditUser;
 			sourceTree = "<group>";
 		};
 		0F94B28626B6F16E00DC0C68 /* Review */ = {
@@ -406,7 +425,8 @@
 		69C48B1826B27E9900550BC9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0F2FF5A026B913AD006FBAC5 /* User */,
+				0F2FF5AF26B927EB006FBAC5 /* EditUser */,
+				0F2FF5A026B913AD006FBAC5 /* Users */,
 				0F2FF59726B864C5006FBAC5 /* PendingReviews */,
 				0F2FF58C26B84299006FBAC5 /* Comment */,
 				0F2FF58326B821FE006FBAC5 /* AddRestaurant */,
@@ -760,6 +780,7 @@
 				0F2FF59F26B86EAB006FBAC5 /* PendingRestaurantsViewController.storyboard in Resources */,
 				0F2FF5AC26B91A41006FBAC5 /* UserTableViewCell.xib in Resources */,
 				69C48B2B26B28D3E00550BC9 /* OpenSans-Regular.ttf in Resources */,
+				0F2FF5B526B94F14006FBAC5 /* EditUserViewController.storyboard in Resources */,
 				69C48AF426B27E1E00550BC9 /* LaunchScreen.storyboard in Resources */,
 				69C48B3126B28D3E00550BC9 /* OpenSans-SemiBold.ttf in Resources */,
 				69C48B3326B28D3E00550BC9 /* OpenSans-Italic.ttf in Resources */,
@@ -833,10 +854,12 @@
 				69C48B7426B2E5F700550BC9 /* LoadingIndicatable.swift in Sources */,
 				0F2FF59426B8624D006FBAC5 /* PendingRestaurants.swift in Sources */,
 				69C48B6326B2BE4D00550BC9 /* ErrorCode.swift in Sources */,
+				0F2FF5B326B94CB8006FBAC5 /* EditUserViewController.swift in Sources */,
 				69C48B4B26B295A100550BC9 /* LoginViewModel.swift in Sources */,
 				69C48B7B26B2F6CB00550BC9 /* ValidationError.swift in Sources */,
 				69C48B9926B4F09B00550BC9 /* RestaurantsRouter.swift in Sources */,
 				69C48B8F26B463E600550BC9 /* HomeTabBarController.swift in Sources */,
+				0F2FF5B726B95492006FBAC5 /* UsersRouter.swift in Sources */,
 				0F2FF58526B82282006FBAC5 /* AddRestaurantViewController.swift in Sources */,
 				0F94B28526B6EF0800DC0C68 /* RestaurantDetailRouter.swift in Sources */,
 				0F94B28826B6F63000DC0C68 /* ReviewViewController.swift in Sources */,
@@ -858,6 +881,7 @@
 				69C48B5226B29DB300550BC9 /* Router.swift in Sources */,
 				0F2FF58726B8231C006FBAC5 /* AddRestaurantViewModel.swift in Sources */,
 				69C48B3E26B294EB00550BC9 /* RegisterViewController.swift in Sources */,
+				0F2FF5B126B927FF006FBAC5 /* EditUserViewModel.swift in Sources */,
 				69C48B9526B4F06B00550BC9 /* RestaurantsViewController.swift in Sources */,
 				69C48BAA26B4F9D500550BC9 /* UIImage.swift in Sources */,
 				0F2FF59D26B86CD1006FBAC5 /* PendingRestaurantsRouter.swift in Sources */,

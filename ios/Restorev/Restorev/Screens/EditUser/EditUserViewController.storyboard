@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1zL-LY-K0G">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Edit User View Controller-->
+        <scene sceneID="RTB-bC-OLv">
+            <objects>
+                <viewController id="1zL-LY-K0G" customClass="EditUserViewController" customModule="Restorev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sOO-18-kdh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6v-z6-IAM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="edit user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beZ-MW-VX3">
+                                        <rect key="frame" x="169" y="60" width="76" height="24"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHa-eb-xh4">
+                                        <rect key="frame" x="356" y="54" width="42" height="36"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
+                                        <state key="normal" title="done">
+                                            <color key="titleColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapDoneButtonWithSender:" destination="1zL-LY-K0G" eventType="touchUpInside" id="rYG-3W-3F8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eol-7w-ukn">
+                                        <rect key="frame" x="16" y="54" width="50" height="36"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                        <state key="normal" title="cancel">
+                                            <color key="titleColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapCancelButtonWithSender:" destination="1zL-LY-K0G" eventType="touchUpInside" id="Sg6-dN-Bci"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="beZ-MW-VX3" firstAttribute="centerX" secondItem="w6v-z6-IAM" secondAttribute="centerX" id="Du4-qb-YNh"/>
+                                    <constraint firstItem="Eol-7w-ukn" firstAttribute="centerY" secondItem="beZ-MW-VX3" secondAttribute="centerY" id="FqB-Ig-LYM"/>
+                                    <constraint firstAttribute="bottom" secondItem="beZ-MW-VX3" secondAttribute="bottom" constant="16" id="HFu-Px-lY2"/>
+                                    <constraint firstAttribute="height" constant="100" id="eNk-ar-76i"/>
+                                    <constraint firstAttribute="trailing" secondItem="rHa-eb-xh4" secondAttribute="trailing" constant="16" id="g2a-12-3Po"/>
+                                    <constraint firstItem="rHa-eb-xh4" firstAttribute="centerY" secondItem="beZ-MW-VX3" secondAttribute="centerY" id="r1l-WI-IZC"/>
+                                    <constraint firstItem="Eol-7w-ukn" firstAttribute="leading" secondItem="w6v-z6-IAM" secondAttribute="leading" constant="16" id="ujJ-AA-HYI"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-kD-i2G" customClass="TextField" customModule="Restorev" customModuleProvider="target">
+                                <rect key="frame" x="16" y="124" width="382" height="60"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="omk-AN-oBG"/>
+                                </constraints>
+                                <color key="textColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="role" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7F-dg-9uZ" customClass="TextField" customModule="Restorev" customModuleProvider="target">
+                                <rect key="frame" x="16" y="200" width="382" height="60"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FR1-6B-lAh"/>
+                                </constraints>
+                                <color key="textColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhZ-cr-WWu">
+                                <rect key="frame" x="16" y="276" width="382" height="70"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="aDN-82-R0y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="21"/>
+                                <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="delete user">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapDeleteButtonWithSender:" destination="1zL-LY-K0G" eventType="touchUpInside" id="5Cr-o3-5hJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mCZ-WY-7CK"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j7F-dg-9uZ" firstAttribute="top" secondItem="hKk-kD-i2G" secondAttribute="bottom" constant="16" id="0I5-lA-hbo"/>
+                            <constraint firstItem="j7F-dg-9uZ" firstAttribute="trailing" secondItem="hKk-kD-i2G" secondAttribute="trailing" id="3T6-Gz-Txi"/>
+                            <constraint firstItem="mCZ-WY-7CK" firstAttribute="trailing" secondItem="hKk-kD-i2G" secondAttribute="trailing" constant="16" id="CvR-0E-ZmA"/>
+                            <constraint firstItem="hKk-kD-i2G" firstAttribute="leading" secondItem="mCZ-WY-7CK" secondAttribute="leading" constant="16" id="FtJ-XW-aEt"/>
+                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="trailing" secondItem="j7F-dg-9uZ" secondAttribute="trailing" id="KNg-VY-dB2"/>
+                            <constraint firstAttribute="trailing" secondItem="w6v-z6-IAM" secondAttribute="trailing" id="Xp7-u6-EWH"/>
+                            <constraint firstItem="w6v-z6-IAM" firstAttribute="top" secondItem="sOO-18-kdh" secondAttribute="top" id="XxR-Fn-JUm"/>
+                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="top" secondItem="j7F-dg-9uZ" secondAttribute="bottom" constant="16" id="aEr-hA-9gb"/>
+                            <constraint firstItem="w6v-z6-IAM" firstAttribute="leading" secondItem="mCZ-WY-7CK" secondAttribute="leading" id="ib1-wu-l2l"/>
+                            <constraint firstItem="j7F-dg-9uZ" firstAttribute="leading" secondItem="hKk-kD-i2G" secondAttribute="leading" id="nGP-pq-03t"/>
+                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="leading" secondItem="j7F-dg-9uZ" secondAttribute="leading" id="s8r-Yb-Z31"/>
+                            <constraint firstItem="hKk-kD-i2G" firstAttribute="top" secondItem="w6v-z6-IAM" secondAttribute="bottom" constant="24" id="ynb-Qc-SaC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="jhZ-cr-WWu" id="9vh-qO-EPA"/>
+                        <outlet property="nameTextField" destination="hKk-kD-i2G" id="CVN-St-neJ"/>
+                        <outlet property="roleTextField" destination="j7F-dg-9uZ" id="y12-jq-tnC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCN-em-AWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="41.517857142857139"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="hKk-kD-i2G">
+            <size key="intrinsicContentSize" width="56" height="30.5"/>
+        </designable>
+        <designable name="j7F-dg-9uZ">
+            <size key="intrinsicContentSize" width="38.5" height="30.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
