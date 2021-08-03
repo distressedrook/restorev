@@ -17,6 +17,20 @@ class RoleManager {
         self.cache = cache
     }
     
+    func shouldShowDeleteButton() -> Bool {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            return false
+        case .admin:
+            return true
+        case .owner:
+            return false
+        }
+    }
+    
     func viewControllerForLaunch() -> UIViewController {
         guard self.cache.user?.role != nil else {
             return UIViewController.landing

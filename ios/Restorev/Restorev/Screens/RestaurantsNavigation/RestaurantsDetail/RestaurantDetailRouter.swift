@@ -11,6 +11,7 @@ protocol RestaurantDetailRouter: Router {
     func moveToReview(restaurantName: String, restaurantId: String, delegate: ReviewViewControllerDelegate?)
     func moveToComment(review: Review, delegate: CommentViewControllerDelegate?)
     func moveToEditWith(restaurantId: String, restaurantName: String, delegate: AddRestaurantViewControllerDelegate)
+    func pop()
 }
 
 final class RestaurantDetailRouterImp: RestaurantDetailRouter {
@@ -31,6 +32,10 @@ final class RestaurantDetailRouterImp: RestaurantDetailRouter {
     func moveToEditWith(restaurantId: String, restaurantName: String, delegate: AddRestaurantViewControllerDelegate) {
         let editRestaurantsViewController = UIViewController.editRestaurantViewControllerWith(restaurantId: restaurantId, restaurantName: restaurantName, delegate: delegate)
         self.navigatable?.present(editRestaurantsViewController, animated: true, completion: nil)
+    }
+    
+    func pop() {
+        self.navigatable?.navigationController?.popViewController(animated: true)
     }
     
     var navigatable: Navigatable?

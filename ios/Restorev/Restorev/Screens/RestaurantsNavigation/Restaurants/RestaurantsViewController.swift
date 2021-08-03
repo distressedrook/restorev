@@ -123,6 +123,8 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension RestaurantsViewController: AddRestaurantViewControllerDelegate {
+    func didDeleteRestaurantIn(addRestaurantViewController: AddRestaurantViewController) {}
+    
     func didPostNameIn(addRestaurantViewController: AddRestaurantViewController) {
         self.showLoading()
         self.getRestaurants()

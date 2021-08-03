@@ -228,6 +228,10 @@ extension RestaurantDetailViewController: CommentViewControllerDelegate {
 }
 
 extension RestaurantDetailViewController: AddRestaurantViewControllerDelegate {
+    func didDeleteRestaurantIn(addRestaurantViewController: AddRestaurantViewController) {
+        self.router.pop()
+    }
+    
     func didPostNameIn(addRestaurantViewController: AddRestaurantViewController) {
         self.showLoading()
         self.viewModel.getDetail()

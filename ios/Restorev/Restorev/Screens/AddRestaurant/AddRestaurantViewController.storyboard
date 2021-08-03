@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -82,19 +83,46 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="146-1r-qIt">
+                                <rect key="frame" x="16" y="192" width="382" height="70"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="BJL-pR-5ox"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="21"/>
+                                <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="delete restaurant">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapDeleteButtonWithSender:" destination="Cq0-y2-hdB" eventType="touchUpInside" id="SFF-du-vnj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sxS-nB-Mbj"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="146-1r-qIt" firstAttribute="leading" secondItem="OH1-Y6-GOc" secondAttribute="leading" id="ESu-EF-RQp"/>
                             <constraint firstItem="JJ6-Js-r8v" firstAttribute="top" secondItem="yMM-xY-iJD" secondAttribute="top" id="Hbo-6n-KsW"/>
                             <constraint firstAttribute="trailing" secondItem="JJ6-Js-r8v" secondAttribute="trailing" id="Trk-LE-cq2"/>
                             <constraint firstItem="OH1-Y6-GOc" firstAttribute="top" secondItem="JJ6-Js-r8v" secondAttribute="bottom" constant="24" id="Zq7-kB-kDX"/>
+                            <constraint firstItem="146-1r-qIt" firstAttribute="top" secondItem="OH1-Y6-GOc" secondAttribute="bottom" constant="8" symbolic="YES" id="ejm-Ue-PZ2"/>
                             <constraint firstItem="OH1-Y6-GOc" firstAttribute="leading" secondItem="sxS-nB-Mbj" secondAttribute="leading" constant="16" id="fYb-Hh-cAs"/>
+                            <constraint firstItem="146-1r-qIt" firstAttribute="trailing" secondItem="OH1-Y6-GOc" secondAttribute="trailing" id="omh-KZ-eiM"/>
                             <constraint firstItem="sxS-nB-Mbj" firstAttribute="trailing" secondItem="OH1-Y6-GOc" secondAttribute="trailing" constant="16" id="pnL-kW-T6U"/>
                             <constraint firstItem="JJ6-Js-r8v" firstAttribute="leading" secondItem="sxS-nB-Mbj" secondAttribute="leading" id="th6-R5-uGd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteRestaurantButton" destination="146-1r-qIt" id="rbG-Cs-abv"/>
                         <outlet property="nameTextField" destination="OH1-Y6-GOc" id="ID2-Mp-cK4"/>
                         <outlet property="titleLabel" destination="uoy-e1-y3Z" id="DTZ-c2-zZC"/>
                     </connections>
@@ -109,4 +137,9 @@
             <size key="intrinsicContentSize" width="164.5" height="30.5"/>
         </designable>
     </designables>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

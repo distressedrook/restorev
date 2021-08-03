@@ -11,15 +11,21 @@ protocol AddRestaurantViewModel {
     init(service: RestaurantService)
     
     var didPostRestaurant: (() -> ())? { get set }
-    
+    var didDeleteRestaurant: (() -> ())? { get set }
     var name: String { get }
     
     var didPostRestaurantFail: ((ApplicationError) -> ())? { get set }
+    var didDeleteRestaurantFail: ((ApplicationError) -> ())? { get set }
     
     func postRestaurantName(name: String)
+    func deleteRestaurant()
 }
 
 final class OwnerAddRestaurantViewModelImp: AddRestaurantViewModel {
+    func deleteRestaurant() {
+        fatalError("A owner cannot delete a restaurant")
+    }
+    
     let service: RestaurantService
     
     var name: String {
@@ -29,6 +35,8 @@ final class OwnerAddRestaurantViewModelImp: AddRestaurantViewModel {
     var didPostRestaurant: (() -> ())?
     var didPostRestaurantFail: ((ApplicationError) -> ())?
     var didSetName: ((String) -> ())?
+    var didDeleteRestaurant: (() -> ())?
+    var didDeleteRestaurantFail: ((ApplicationError) -> ())?
     
     init() {
         self.service = RestaurantServiceImp()
@@ -66,6 +74,8 @@ final class AdminAddRestaurantViewModelImp: AddRestaurantViewModel {
     var didPostRestaurant: (() -> ())?
     var didPostRestaurantFail: ((ApplicationError) -> ())?
     var didSetName: ((String) -> ())?
+    var didDeleteRestaurant: (() -> ())?
+    var didDeleteRestaurantFail: ((ApplicationError) -> ())?
     
     init(restaurantId: String, restaurantName: String) {
         self.restaurantName = restaurantName
@@ -83,6 +93,14 @@ final class AdminAddRestaurantViewModelImp: AddRestaurantViewModel {
         self.restaurantName = ""
         self.restaurantId = ""
         self.service = RestaurantServiceImp()
+    }
+    
+    func deleteRestaurant() {
+        self.service.deleteRestaurant(with: self.restaurantId) {
+            self.didDeleteRestaurant?()
+        } failure: { error in
+            self.didDeleteRestaurantFail?(error)
+        }
     }
     
     func postRestaurantName(name: String) {
