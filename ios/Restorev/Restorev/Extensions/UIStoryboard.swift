@@ -47,4 +47,8 @@ extension UIStoryboard {
     static var comment: UIStoryboard {
         return UIStoryboard(name: "CommentViewController", bundle: nil)
     }
+    
+    static var users: UIStoryboard {
+        return UIStoryboard(name: "UsersViewController", bundle: nil)
+    }
 }

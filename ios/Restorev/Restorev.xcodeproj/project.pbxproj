@@ -19,6 +19,12 @@
 		0F2FF59B26B86715006FBAC5 /* PendingRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF59A26B86715006FBAC5 /* PendingRestaurantsViewController.swift */; };
 		0F2FF59D26B86CD1006FBAC5 /* PendingRestaurantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF59C26B86CD1006FBAC5 /* PendingRestaurantsRouter.swift */; };
 		0F2FF59F26B86EAB006FBAC5 /* PendingRestaurantsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF59E26B86EAB006FBAC5 /* PendingRestaurantsViewController.storyboard */; };
+		0F2FF5A226B91465006FBAC5 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5A126B91465006FBAC5 /* UsersViewModel.swift */; };
+		0F2FF5A426B91516006FBAC5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5A326B91516006FBAC5 /* UserService.swift */; };
+		0F2FF5A626B918C9006FBAC5 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5A526B918C9006FBAC5 /* UsersViewController.swift */; };
+		0F2FF5AB26B91A41006FBAC5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5A926B91A41006FBAC5 /* UserTableViewCell.swift */; };
+		0F2FF5AC26B91A41006FBAC5 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5AA26B91A41006FBAC5 /* UserTableViewCell.xib */; };
+		0F2FF5AE26B92083006FBAC5 /* UsersViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5AD26B92083006FBAC5 /* UsersViewController.storyboard */; };
 		0F6CBADC26B7BA04001D1082 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CBADB26B7BA04001D1082 /* UITextField.swift */; };
 		0F6CBAE026B7EA45001D1082 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */; };
 		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
@@ -136,6 +142,12 @@
 		0F2FF59A26B86715006FBAC5 /* PendingRestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRestaurantsViewController.swift; sourceTree = "<group>"; };
 		0F2FF59C26B86CD1006FBAC5 /* PendingRestaurantsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRestaurantsRouter.swift; sourceTree = "<group>"; };
 		0F2FF59E26B86EAB006FBAC5 /* PendingRestaurantsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PendingRestaurantsViewController.storyboard; sourceTree = "<group>"; };
+		0F2FF5A126B91465006FBAC5 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		0F2FF5A326B91516006FBAC5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		0F2FF5A526B918C9006FBAC5 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		0F2FF5A926B91A41006FBAC5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		0F2FF5AA26B91A41006FBAC5 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		0F2FF5AD26B92083006FBAC5 /* UsersViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsersViewController.storyboard; sourceTree = "<group>"; };
 		0F6CBADB26B7BA04001D1082 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		0F94B28026B6CB8000DC0C68 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -285,6 +297,34 @@
 			path = PendingReviews;
 			sourceTree = "<group>";
 		};
+		0F2FF5A026B913AD006FBAC5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FF5A126B91465006FBAC5 /* UsersViewModel.swift */,
+				0F2FF5A526B918C9006FBAC5 /* UsersViewController.swift */,
+				0F2FF5AD26B92083006FBAC5 /* UsersViewController.storyboard */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		0F2FF5A726B91A25006FBAC5 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */,
+				69C48BC426B5C98900550BC9 /* ReviewTableViewCell.xib */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		0F2FF5A826B91A2B006FBAC5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FF5A926B91A41006FBAC5 /* UserTableViewCell.swift */,
+				0F2FF5AA26B91A41006FBAC5 /* UserTableViewCell.xib */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		0F94B28626B6F16E00DC0C68 /* Review */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +406,7 @@
 		69C48B1826B27E9900550BC9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FF5A026B913AD006FBAC5 /* User */,
 				0F2FF59726B864C5006FBAC5 /* PendingReviews */,
 				0F2FF58C26B84299006FBAC5 /* Comment */,
 				0F2FF58326B821FE006FBAC5 /* AddRestaurant */,
@@ -466,6 +507,7 @@
 				69C48BBB26B556B000550BC9 /* RestaurantService.swift */,
 				69C48B6D26B2D99500550BC9 /* AuthService.swift */,
 				0F2FF58A26B8416E006FBAC5 /* ReviewService.swift */,
+				0F2FF5A326B91516006FBAC5 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -572,9 +614,9 @@
 		69C48BB126B5246D00550BC9 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FF5A826B91A2B006FBAC5 /* User */,
 				69C48BB226B5247300550BC9 /* Restaurant */,
-				69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */,
-				69C48BC426B5C98900550BC9 /* ReviewTableViewCell.xib */,
+				0F2FF5A726B91A25006FBAC5 /* Review */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -716,12 +758,14 @@
 			files = (
 				69C48B3226B28D3E00550BC9 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				0F2FF59F26B86EAB006FBAC5 /* PendingRestaurantsViewController.storyboard in Resources */,
+				0F2FF5AC26B91A41006FBAC5 /* UserTableViewCell.xib in Resources */,
 				69C48B2B26B28D3E00550BC9 /* OpenSans-Regular.ttf in Resources */,
 				69C48AF426B27E1E00550BC9 /* LaunchScreen.storyboard in Resources */,
 				69C48B3126B28D3E00550BC9 /* OpenSans-SemiBold.ttf in Resources */,
 				69C48B3326B28D3E00550BC9 /* OpenSans-Italic.ttf in Resources */,
 				69C48BA626B4F6CA00550BC9 /* RestaurantsNavigationController.storyboard in Resources */,
 				69C48AF126B27E1E00550BC9 /* Assets.xcassets in Resources */,
+				0F2FF5AE26B92083006FBAC5 /* UsersViewController.storyboard in Resources */,
 				69C48B2A26B28D3E00550BC9 /* OpenSans-Bold.ttf in Resources */,
 				69C48B9126B4641F00550BC9 /* HomeTabBarController.storyboard in Resources */,
 				69C48B3026B28D3E00550BC9 /* OpenSans-LightItalic.ttf in Resources */,
@@ -764,6 +808,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69C48B7026B2D9B400550BC9 /* Constants.swift in Sources */,
+				0F2FF5AB26B91A41006FBAC5 /* UserTableViewCell.swift in Sources */,
 				69C48B6C26B2CD0400550BC9 /* Cache.swift in Sources */,
 				69C48B8526B32CF200550BC9 /* MessageDisplayable.swift in Sources */,
 				69C48B4C26B295A100550BC9 /* LoginViewController.swift in Sources */,
@@ -808,6 +853,7 @@
 				69C48B6726B2BFA900550BC9 /* Strings.swift in Sources */,
 				0F2FF59926B864D3006FBAC5 /* PendingRestsaurantsViewModel.swift in Sources */,
 				69C48B8A26B3B23000550BC9 /* Utils.swift in Sources */,
+				0F2FF5A626B918C9006FBAC5 /* UsersViewController.swift in Sources */,
 				69C48BBA26B526EE00550BC9 /* Restaurant.swift in Sources */,
 				69C48B5226B29DB300550BC9 /* Router.swift in Sources */,
 				0F2FF58726B8231C006FBAC5 /* AddRestaurantViewModel.swift in Sources */,
@@ -818,6 +864,7 @@
 				69C48B4426B2953600550BC9 /* RegisterRouter.swift in Sources */,
 				69C48BA126B4F4BC00550BC9 /* UITabBarController.swift in Sources */,
 				69C48B1D26B28B4400550BC9 /* UIColor.swift in Sources */,
+				0F2FF5A226B91465006FBAC5 /* UsersViewModel.swift in Sources */,
 				69C48AE826B27E1000550BC9 /* AppDelegate.swift in Sources */,
 				69C48BA426B4F64700550BC9 /* RestaurantsNavigationController.swift in Sources */,
 				69C48B3826B293FE00550BC9 /* LandingRouter.swift in Sources */,
@@ -827,6 +874,7 @@
 				69C48B9F26B4F3A300550BC9 /* SettingsRouter.swift in Sources */,
 				69C48B4226B2951500550BC9 /* RegisterViewModel.swift in Sources */,
 				0F2FF59B26B86715006FBAC5 /* PendingRestaurantsViewController.swift in Sources */,
+				0F2FF5A426B91516006FBAC5 /* UserService.swift in Sources */,
 				69C48AEA26B27E1000550BC9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,6 +25,15 @@ extension LoginViewController {
     private func bind() {
         self.viewModel.didRegisterFail = { error in
             self.hideLoading()
+            if let validationError = error as? ValidationError {
+                if validationError.type == .email {
+                    self.emailTextField.shake()
+                }
+                if validationError.type == .password {
+                    self.passwordTextField.shake()
+                }
+                return
+            }
             self.showError(with: Strings.failure, message: error.displayString)
         }
         
@@ -39,7 +48,7 @@ extension LoginViewController {
 extension LoginViewController {
     @IBAction func didTapLoginButton(sender: UIButton) {
         guard let email = self.emailTextField.text, let password = self.passwordTextField.text else {
-            fatalError("This can never be null")
+            fatalError("This can never be nil")
         }
         self.showLoading()
         self.viewModel.login(email: email, password: password)

@@ -32,7 +32,7 @@ class RoleManager {
         case .regular:
             return viewControllerForRegular()
         case .admin:
-            return UIViewController()
+            return viewControllerForAdmin()
         case .owner:
             return viewControllerForOwner()
         }
@@ -140,7 +140,6 @@ class RoleManager {
         settingsTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
         settingsViewController.tabBarItem = settingsTabBarItem
         
-        
         controller.setViewControllers([restaurantsNavigationController, settingsViewController], animated: false)
         return controller
     }
@@ -164,6 +163,28 @@ class RoleManager {
         pendingRestaurantsViewController.tabBarItem = pendingTabBarItem
         
         controller.setViewControllers([restaurantsNavigationController, pendingRestaurantsViewController, settingsViewController], animated: false)
+        return controller
+    }
+    
+    private func viewControllerForAdmin() -> UIViewController {
+        let controller = UITabBarController.homeTab
+        
+        let restaurantsNavigationController = UINavigationController.restaurantsNavigation
+        let restaurantsTabBarItem = UITabBarItem(title: nil, image: UIImage.restaurantsUnselected, selectedImage: UIImage.restaurantsSelected)
+        restaurantsTabBarItem.imageInsets = UIEdgeInsets(top: 15, left: 0, bottom: -10, right: 0)
+        restaurantsNavigationController.tabBarItem = restaurantsTabBarItem
+        
+        let settingsViewController = UIViewController.settings
+        let settingsTabBarItem = UITabBarItem(title: nil, image: UIImage.settingsUnselected, selectedImage: UIImage.settingsSelected)
+        settingsTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+        settingsViewController.tabBarItem = settingsTabBarItem
+        
+        let usersViewController = UIViewController.users
+        let usersTabBarItem = UITabBarItem(title: nil, image: UIImage.userUnselected, selectedImage: UIImage.userSelected)
+        usersTabBarItem.imageInsets = UIEdgeInsets(top: 12, left: 0, bottom: -10, right: 0)
+        usersViewController.tabBarItem = usersTabBarItem
+        
+        controller.setViewControllers([usersViewController, restaurantsNavigationController, settingsViewController], animated: false)
         return controller
     }
 }

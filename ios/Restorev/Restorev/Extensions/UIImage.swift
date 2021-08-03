@@ -40,6 +40,16 @@ extension UIImage {
         return UIImage(named: "PendingIconUnselected")!
     }
     
+    static var userSelected: UIImage {
+        return UIImage(named: "UserIconSelected")!
+    }
+    
+    static var userUnselected: UIImage {
+        return UIImage(named: "UserIconUnselected")!
+    }
+    
+    
+    
     static var add: UIImage {
         return UIImage(named: "AddIcon")!
     }

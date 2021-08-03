@@ -43,6 +43,12 @@ extension UIViewController {
         return viewController
     }
     
+    static var users: UsersViewController {
+        let viewController = UIStoryboard.users.instantiateInitialViewController() as! UsersViewController
+        viewController.viewModel = UsersViewModelImp()
+        return viewController
+    }
+    
     static var settings: UIViewController {
         let viewController = UIStoryboard.settings.instantiateInitialViewController() as! SettingsViewController
         viewController.router = SettingsRouterImp(navigatable: viewController)

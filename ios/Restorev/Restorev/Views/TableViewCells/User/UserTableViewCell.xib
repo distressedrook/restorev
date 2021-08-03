@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="146" id="oy9-RI-Aa9" customClass="UserTableViewCell" customModule="Restorev" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="661" height="146"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oy9-RI-Aa9" id="gbj-73-Nv0">
+                <rect key="frame" x="0.0" y="0.0" width="661" height="146"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="549" placeholderIntrinsicHeight="191" translatesAutoresizingMaskIntoConstraints="NO" id="b4t-Kf-gVQ">
+                        <rect key="frame" x="20" y="0.0" width="621" height="130"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ax6-Nt-y3x">
+                                <rect key="frame" x="16" y="16" width="46" height="98"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cq3-Fm-LMa">
+                                <rect key="frame" x="586" y="54" width="19" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="19" id="293-ZV-Szw"/>
+                                    <constraint firstAttribute="height" constant="22" id="bpr-PI-U5y"/>
+                                </constraints>
+                                <state key="normal" image="EditIcon"/>
+                                <connections>
+                                    <action selector="didTapEditButtonWithSender:" destination="oy9-RI-Aa9" eventType="touchUpInside" id="ATA-4C-AgW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cq3-Fm-LMa" firstAttribute="centerY" secondItem="ax6-Nt-y3x" secondAttribute="centerY" id="4e8-1x-jzJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Cq3-Fm-LMa" secondAttribute="trailing" constant="16" id="Jhr-3Q-YAs"/>
+                            <constraint firstAttribute="bottom" secondItem="ax6-Nt-y3x" secondAttribute="bottom" constant="16" id="QHw-Kl-GFd"/>
+                            <constraint firstItem="ax6-Nt-y3x" firstAttribute="leading" secondItem="b4t-Kf-gVQ" secondAttribute="leading" constant="16" id="hG7-IO-R0C"/>
+                            <constraint firstItem="ax6-Nt-y3x" firstAttribute="top" secondItem="b4t-Kf-gVQ" secondAttribute="top" constant="16" id="xtM-dk-92Z"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="b4t-Kf-gVQ" firstAttribute="leading" secondItem="gbj-73-Nv0" secondAttribute="leadingMargin" id="34Z-OX-I5h"/>
+                    <constraint firstItem="b4t-Kf-gVQ" firstAttribute="top" secondItem="gbj-73-Nv0" secondAttribute="top" id="9SK-FA-9Zw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="b4t-Kf-gVQ" secondAttribute="trailing" id="rWO-GS-gfu"/>
+                    <constraint firstAttribute="bottom" secondItem="b4t-Kf-gVQ" secondAttribute="bottom" constant="16" id="wBv-5g-obn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="cuC-bo-cdG"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="nameLabel" destination="ax6-Nt-y3x" id="6PM-lr-r21"/>
+            </connections>
+            <point key="canvasLocation" x="112" y="74"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="EditIcon" width="19" height="19"/>
+    </resources>
+</document>
