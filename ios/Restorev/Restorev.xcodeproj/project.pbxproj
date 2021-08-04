@@ -31,6 +31,7 @@
 		0F2FF5B726B95492006FBAC5 /* UsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5B626B95492006FBAC5 /* UsersRouter.swift */; };
 		0F2FF5BB26B95F2E006FBAC5 /* AdminReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5BA26B95F2E006FBAC5 /* AdminReviewTableViewCell.xib */; };
 		0F2FF5BD26B9611A006FBAC5 /* RegularReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2FF5BC26B9611A006FBAC5 /* RegularReviewTableViewCell.xib */; };
+		0F2FF5C026BA6703006FBAC5 /* DZNEmptyDataSet in Frameworks */ = {isa = PBXBuildFile; productRef = 0F2FF5BF26BA6703006FBAC5 /* DZNEmptyDataSet */; };
 		0F6CBADC26B7BA04001D1082 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CBADB26B7BA04001D1082 /* UITextField.swift */; };
 		0F6CBAE026B7EA45001D1082 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */; };
 		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
@@ -255,6 +256,7 @@
 			files = (
 				69C48BC226B5853900550BC9 /* Cosmos in Frameworks */,
 				69C48B7926B2EDEB00550BC9 /* NVActivityIndicatorViewExtended in Frameworks */,
+				0F2FF5C026BA6703006FBAC5 /* DZNEmptyDataSet in Frameworks */,
 				69C48B7726B2EDEB00550BC9 /* NVActivityIndicatorView in Frameworks */,
 				69C48B8326B32AC100550BC9 /* SwiftMessages in Frameworks */,
 				69C48B5C26B2BD1500550BC9 /* Alamofire in Frameworks */,
@@ -298,15 +300,15 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
-		0F2FF59726B864C5006FBAC5 /* PendingReviews */ = {
+		0F2FF59726B864C5006FBAC5 /* PendingRestaurants */ = {
 			isa = PBXGroup;
 			children = (
+				0F2FF59C26B86CD1006FBAC5 /* PendingRestaurantsRouter.swift */,
 				0F2FF59826B864D3006FBAC5 /* PendingRestsaurantsViewModel.swift */,
 				0F2FF59A26B86715006FBAC5 /* PendingRestaurantsViewController.swift */,
-				0F2FF59C26B86CD1006FBAC5 /* PendingRestaurantsRouter.swift */,
 				0F2FF59E26B86EAB006FBAC5 /* PendingRestaurantsViewController.storyboard */,
 			);
-			path = PendingReviews;
+			path = PendingRestaurants;
 			sourceTree = "<group>";
 		};
 		0F2FF5A026B913AD006FBAC5 /* Users */ = {
@@ -433,7 +435,7 @@
 			children = (
 				0F2FF5AF26B927EB006FBAC5 /* EditUser */,
 				0F2FF5A026B913AD006FBAC5 /* Users */,
-				0F2FF59726B864C5006FBAC5 /* PendingReviews */,
+				0F2FF59726B864C5006FBAC5 /* PendingRestaurants */,
 				0F2FF58C26B84299006FBAC5 /* Comment */,
 				0F2FF58326B821FE006FBAC5 /* AddRestaurant */,
 				0F94B28626B6F16E00DC0C68 /* Review */,
@@ -688,6 +690,7 @@
 				69C48B7826B2EDEB00550BC9 /* NVActivityIndicatorViewExtended */,
 				69C48B8226B32AC100550BC9 /* SwiftMessages */,
 				69C48BC126B5853900550BC9 /* Cosmos */,
+				0F2FF5BF26BA6703006FBAC5 /* DZNEmptyDataSet */,
 			);
 			productName = Restorev;
 			productReference = 69C48AE426B27E1000550BC9 /* Restorev.app */;
@@ -765,6 +768,7 @@
 				69C48B7526B2EDEB00550BC9 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				69C48B8126B32AC100550BC9 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 				69C48BC026B5853900550BC9 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				0F2FF5BE26BA6703006FBAC5 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */,
 			);
 			productRefGroup = 69C48AE526B27E1000550BC9 /* Products */;
 			projectDirPath = "";
@@ -1240,6 +1244,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0F2FF5BE26BA6703006FBAC5 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dzenbot/DZNEmptyDataSet";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		69C48B5A26B2BD1500550BC9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1275,6 +1287,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0F2FF5BF26BA6703006FBAC5 /* DZNEmptyDataSet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F2FF5BE26BA6703006FBAC5 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */;
+			productName = DZNEmptyDataSet;
+		};
 		69C48B5B26B2BD1500550BC9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 69C48B5A26B2BD1500550BC9 /* XCRemoteSwiftPackageReference "Alamofire" */;

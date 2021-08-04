@@ -15,4 +15,7 @@ extension UIFont {
     static func openSansRegular(with size: Int) -> UIFont {
         return UIFont(name: "OpenSans-Regular", size: CGFloat(size))!
     }
+    static func openSansSemiBold(with size: Int) -> UIFont {
+        return UIFont(name: "OpenSans-SemiBold", size: CGFloat(size))!
+    }
 }

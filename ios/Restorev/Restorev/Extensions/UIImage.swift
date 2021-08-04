@@ -48,7 +48,9 @@ extension UIImage {
         return UIImage(named: "UserIconUnselected")!
     }
     
-    
+    static var noRestaurantsFound: UIImage {
+        return UIImage(named: "NoRestaurantsFoundBanner")!
+    }
     
     static var add: UIImage {
         return UIImage(named: "AddIcon")!
@@ -60,5 +62,13 @@ extension UIImage {
     
     static var edit: UIImage {
         return UIImage(named: "EditIcon")!
+    }
+    
+    static var okBanner: UIImage {
+        return UIImage(named: "OkBanner")!
+    }
+    
+    static var confusedBanner: UIImage {
+        return UIImage(named: "ConfusedBanner")!
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class PendingRestaurantsViewController: UIViewController, LoadingIndicatable, MessageDisplayable {
     
@@ -28,6 +29,8 @@ class PendingRestaurantsViewController: UIViewController, LoadingIndicatable, Me
         self.reviewsTableView.delegate = self
         self.reviewsTableView.dataSource = self
         self.reviewsTableView.register(ReviewTableViewCell.nib, forCellReuseIdentifier: ReviewTableViewCell.cellIdentifier)
+        self.reviewsTableView.emptyDataSetDelegate = self
+        self.reviewsTableView.emptyDataSetSource = self
     }
     
     private func bind() {
@@ -43,6 +46,23 @@ class PendingRestaurantsViewController: UIViewController, LoadingIndicatable, Me
             self.hideLoading()
             self.showError(with: Strings.failure, message: error.displayString)
         }
+    }
+}
+
+extension PendingRestaurantsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage.okBanner
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
+        return 24.0
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let font = UIFont.openSansSemiBold(with: 21)
+        let color = UIColor.neutralBlack.withAlphaComponent(0.2)
+        let attributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: font]
+        return NSAttributedString(string: Strings.noPendingReviews, attributes: attributes)
     }
 }
 

@@ -110,6 +110,20 @@ class RoleManager {
         }
     }
     
+    func noRestaurantsFoundString() -> String {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            return Strings.noRestaurantsFoundRegular
+        case .admin:
+            return Strings.noRestaurantsFoundAdmin
+        case .owner:
+            return Strings.noRestaurantsFoundOwner
+        }
+    }
+    
     func nibNameForReviewTableViewCell() -> String {
         guard let role = self.cache.user?.role else {
             fatalError("User is not logged in. Use this method only after the user has logged in.")

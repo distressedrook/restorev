@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class UsersViewController: UIViewController, LoadingIndicatable, MessageDisplayable {
     var viewModel: UsersViewModel!
@@ -29,6 +30,8 @@ class UsersViewController: UIViewController, LoadingIndicatable, MessageDisplaya
         self.usersTableView.delegate = self
         self.usersTableView.dataSource = self
         self.usersTableView.register(UserTableViewCell.nib, forCellReuseIdentifier: UserTableViewCell.cellIdentifier)
+        self.usersTableView.emptyDataSetSource = self
+        self.usersTableView.emptyDataSetDelegate = self
     }
     
     private func bind() {
@@ -76,5 +79,22 @@ extension UsersViewController: EditUserViewControllerDelegate {
     func didCompleteActionIn(editUserViewController: EditUserViewController) {
         self.showLoading()
         self.viewModel.getUsers()
+    }
+}
+
+extension UsersViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage.confusedBanner
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
+        return 24.0
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let font = UIFont.openSansSemiBold(with: 21)
+        let color = UIColor.neutralBlack.withAlphaComponent(0.2)
+        let attributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: font]
+        return NSAttributedString(string: Strings.noUsers, attributes: attributes)
     }
 }

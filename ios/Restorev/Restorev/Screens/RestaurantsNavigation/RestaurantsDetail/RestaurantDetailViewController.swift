@@ -7,6 +7,7 @@
 
 import UIKit
 import Cosmos
+import DZNEmptyDataSet
 
 class RestaurantDetailViewController: UIViewController, MessageDisplayable, LoadingIndicatable {
     var viewModel: RestaurantDetailViewModel!
@@ -42,7 +43,12 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
     
     private func populateLabels() {
         self.restaurantNameLabel.text = self.viewModel.restaurantName
-        self.averageRatingLabel.text = String(format: "%.2f", self.viewModel.averageRating) + " " + Strings.averageRating
+        if self.viewModel.averageRating == 0.0 {
+            self.averageRatingLabel.text = Strings.noAverageRating
+        } else {
+            self.averageRatingLabel.text = String(format: "%.2f", self.viewModel.averageRating) + " " + Strings.averageRating
+        }
+        
     }
     
     private func bind() {
@@ -74,6 +80,8 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
         self.reviewsTableView.delegate = self
         self.reviewsTableView.dataSource = self
         self.reviewsTableView.register(ReviewTableViewCell.nib, forCellReuseIdentifier: ReviewTableViewCell.cellIdentifier)
+        self.reviewsTableView.emptyDataSetDelegate = self
+        self.reviewsTableView.emptyDataSetSource = self
     }
     
     @objc func didTapReviewButton(sender: UIBarButtonItem) {
@@ -276,3 +284,21 @@ extension RestaurantDetailViewController: ReviewTableViewCellDelegate {
         }
     }
 }
+
+extension RestaurantDetailViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage.confusedBanner
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
+        return 24.0
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let font = UIFont.openSansSemiBold(with: 21)
+        let color = UIColor.neutralBlack.withAlphaComponent(0.2)
+        let attributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: font]
+        return NSAttributedString(string: Strings.noReviews, attributes: attributes)
+    }
+}
+

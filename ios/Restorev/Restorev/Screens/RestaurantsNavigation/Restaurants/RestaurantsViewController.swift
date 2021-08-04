@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDisplayable {
     
@@ -27,11 +28,13 @@ class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDi
         self.setupTableView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.alpha = 0.0
         self.showLoading()
         self.getRestaurants()
+        super.viewWillAppear(animated)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let id = sender as? String else {
@@ -61,6 +64,8 @@ extension RestaurantsViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(RestaurantTableViewCell.nib, forCellReuseIdentifier: RestaurantTableViewCell.cellIdentifier)
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
     }
     
     private func addAddButton() {
@@ -89,6 +94,19 @@ extension RestaurantsViewController {
         self.roleManager.restaurantsServiceFor(viewModel: self.viewModel)()
     }
     
+}
+
+extension RestaurantsViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage.noRestaurantsFound
+    }
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let font = UIFont.openSansSemiBold(with: 21)
+        let color = UIColor.neutralBlack.withAlphaComponent(0.2)
+        let attributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: font]
+        return NSAttributedString(string: self.roleManager.noRestaurantsFoundString(), attributes: attributes)
+        
+    }
 }
 
 extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource {
