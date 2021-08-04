@@ -66,7 +66,7 @@ export class RestaurantController {
         return restaurantJSON;
       });
       restaurantsJSON.sort(function (a, b) {
-        if (a.averageRating > b.averageRating) {
+        if (a.averageRating < b.averageRating) {
           return 1;
         }
         return 0;

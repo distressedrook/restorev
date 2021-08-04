@@ -190,6 +190,7 @@ export class ReviewDao {
     })
       .exec()
       .catch(function (error) {
+        console.log(error);
         return cThis.getGenericReject(error);
       });
   }

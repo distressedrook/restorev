@@ -45,10 +45,13 @@ export class UserController {
   }
 
   private async deleteRestaurantInfo(user: IUser) {
-    await this.restaurantDao.deleteOwnerRestaurants(user._id);
-    for (let restaurant in user.ownedRestaurants) {
+    console.log("Deleting resturant info for user " + user);
+    for (let restaurant of user.ownedRestaurants) {
+      console.log("Owned restaurant resturant info for user " + restaurant);
       await this.reviewDao.deleteReviewsForRestaurant(restaurant);
     }
+    console.log(user._id);
+    await this.restaurantDao.deleteOwnerRestaurants(user._id);
   }
 
   public async edit(id: string, name: string, role: string): Promise<any> {
