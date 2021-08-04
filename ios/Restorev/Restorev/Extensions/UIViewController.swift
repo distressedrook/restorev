@@ -92,6 +92,13 @@ extension UIViewController {
         return viewController
     }
     
+    static func editCommentViewControllerWith(review: Review, delegate: CommentViewControllerDelegate? = nil) -> UIViewController {
+        let viewController = UIStoryboard.comment.instantiateInitialViewController() as! CommentViewController
+        viewController.viewModel = AdminCommentViewModeImp(review: review)
+        viewController.delegate = delegate
+        return viewController
+    }
+    
     static func editUserViewControllerWith(userId: String, delegate: EditUserViewControllerDelegate? = nil) -> UIViewController {
         let viewController = UIStoryboard.editUser.instantiateInitialViewController() as! EditUserViewController
         viewController.viewModel = EditUserViewModelImp(userId: userId)

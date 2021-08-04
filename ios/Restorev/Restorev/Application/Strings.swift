@@ -37,9 +37,16 @@ class Strings {
     static let restaurantEdited = "this restaurant was successfully edited"
     static let restaurantDeleted = "this restaurant was successfully deleted"
     static let commentAdded = "your comment was successfully added"
+    static let commentEdited = "the comment was successfully edited"
     static let userDeleted = "the user was successfully deleted"
     static let userEdited = "the user information was successfully edited"
     
     static let addRestaurant = "add restaurant"
     static let editRestaurant = "edit restaurant"
+    
+    static let addReview = "add review"
+    static let editReview = "edit review"
+    
+    static let addComment = "add comment"
+    static let editComment = "edit comment"
 }

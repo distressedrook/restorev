@@ -163,11 +163,11 @@ final class RestaurantDetailViewModelImp: RestaurantDetailViewModel {
             var mostCriticalReview: Review!
             var mostCritialRating: Int = 5
             for review in restaurant.reviews ?? [] {
-                if topRating < review.rating {
+                if topRating <= review.rating {
                     topRating = review.rating
                     topRatedReview = review
                 }
-                if mostCritialRating > review.rating {
+                if mostCritialRating >= review.rating {
                     mostCriticalReview = review
                     mostCritialRating = review.rating
                 }
@@ -180,7 +180,6 @@ final class RestaurantDetailViewModelImp: RestaurantDetailViewModel {
             self?.didGetRestaurantDetailFail?(error)
         }
     }
-    
 }
 
 

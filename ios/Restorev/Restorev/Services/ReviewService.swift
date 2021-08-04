@@ -14,6 +14,8 @@ protocol ReviewService {
     func editReviewWith(reviewId: String, rating: Int, visitedDate: Int, review: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
     func deleteReviewWith(reviewId: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
     func getReview(with reviewId: String, success: @escaping (Review) -> (), failure: @escaping (ApplicationError) -> ())
+    func editCommentToReviewWith(reviewId: String, comment:String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
+    func deleteCommentToReviewWith(reviewId: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
 }
 
 final class ReviewServiceImp: ReviewService {
@@ -32,6 +34,22 @@ final class ReviewServiceImp: ReviewService {
     
     func commentToReviewWith(reviewId: String, comment:String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ()) {
         self.serviceManager.post(with: URL + "/\(reviewId)/comment", parameters: [COMMENT: comment], headers: authTokenHeader()) { response in
+            success()
+        } failure: { error in
+            failure(error)
+        }
+    }
+    
+    func editCommentToReviewWith(reviewId: String, comment:String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ()) {
+        self.serviceManager.put(with: URL + "/\(reviewId)/editComment", parameters: [COMMENT: comment], headers: authTokenHeader()) { response in
+            success()
+        } failure: { error in
+            failure(error)
+        }
+    }
+    
+    func deleteCommentToReviewWith(reviewId: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ()) {
+        self.serviceManager.delete(with: URL + "/\(reviewId)/deleteComment", parameters: [String: String](), headers: authTokenHeader()) { response in
             success()
         } failure: { error in
             failure(error)

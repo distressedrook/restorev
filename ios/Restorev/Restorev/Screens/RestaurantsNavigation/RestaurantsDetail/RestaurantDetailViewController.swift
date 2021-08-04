@@ -252,7 +252,15 @@ extension RestaurantDetailViewController: ReviewTableViewCellDelegate {
     }
     
     func didTapEditCommentButtonIn(reviewTableViewCell: ReviewTableViewCell) {
-        
+        if let indexPath = self.reviewsTableView.indexPath(for: reviewTableViewCell) {
+            if indexPath.section == 0 {
+                self.router.moveToEditCommentWith(review: self.viewModel.topRatedReview, delegate: self)
+            } else if indexPath.section == 1 {
+                self.router.moveToEditCommentWith(review: self.viewModel.mostCriticalReview, delegate: self)
+            } else if indexPath.section == 2 {
+                self.router.moveToEditCommentWith(review: self.viewModel.mReview(at: indexPath.row), delegate: self)
+            }
+        }
     }
     
     func didTapEditReviewButtonIn(reviewTableViewCell: ReviewTableViewCell) {

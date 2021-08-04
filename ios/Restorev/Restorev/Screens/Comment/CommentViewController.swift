@@ -16,6 +16,8 @@ class CommentViewController: UIViewController, MessageDisplayable, LoadingIndica
     @IBOutlet var visitedDateLabel: UILabel!
     @IBOutlet var reviewLabel: UILabel!
     @IBOutlet var commentTextView: UITextView!
+    @IBOutlet var deleteButton: UIButton!
+    let roleManager = RoleManager()
     
     weak var delegate: CommentViewControllerDelegate?
     
@@ -28,6 +30,7 @@ class CommentViewController: UIViewController, MessageDisplayable, LoadingIndica
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.registerForNotifications()
+        self.deleteButton.isHidden = !self.roleManager.shouldShowDeleteButton()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -62,7 +65,7 @@ extension CommentViewController {
     private func bind() {
         self.viewModel.didPostComment = {
             self.hideLoading()
-            self.showSuccess(with: Strings.success, message: Strings.commented)
+            self.showSuccess(with: Strings.success, message: self.roleManager.addCommentSuccessMessage())
             self.dismiss(animated: true, completion: nil)
             self.delegate?.didPostCommentIn(commentViewController: self)
         }
@@ -77,6 +80,7 @@ extension CommentViewController {
         self.reviewLabel.text = self.viewModel.review
         self.ratingLabel.text = "\(self.viewModel.reviewRating)"
         self.reviewerNameLabel.text = self.viewModel.reviewerName
+        self.commentTextView.text = self.viewModel.comment
     }
 }
 
@@ -88,6 +92,10 @@ extension CommentViewController {
     @IBAction func didTapDoneButton(sender: AnyObject) {
         self.showLoading()
         self.viewModel.postComment(comment: self.commentTextView.text!)
+    }
+    
+    @IBAction func didTapDeleteButton(sender: AnyObject) {
+        self.viewModel.deleteComment()
     }
 }
 

@@ -82,13 +82,41 @@ class RoleManager {
         }
     }
     
+    func addCommentTitle() -> String {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            return Strings.addComment
+        case .admin:
+            return Strings.editComment
+        case .owner:
+            return Strings.addComment
+        }
+    }
+    
+    func addCommentSuccessMessage() -> String {
+        guard let role = self.cache.user?.role else {
+            fatalError("User is not logged in. Use this method only after the user has logged in.")
+        }
+        switch role {
+        case .regular:
+            return Strings.commentAdded
+        case .admin:
+            return Strings.commentEdited
+        case .owner:
+            return Strings.commentAdded
+        }
+    }
+    
     func nibNameForReviewTableViewCell() -> String {
         guard let role = self.cache.user?.role else {
             fatalError("User is not logged in. Use this method only after the user has logged in.")
         }
         switch role {
         case .regular:
-            return "ReguarReviewTableViewCell"
+            return "RegularReviewTableViewCell"
         case .admin:
             return "AdminReviewTableViewCell"
         case .owner:

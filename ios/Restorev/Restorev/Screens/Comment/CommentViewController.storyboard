@@ -122,8 +122,8 @@
                                     <constraint firstAttribute="trailing" secondItem="9eD-iL-exR" secondAttribute="trailing" constant="16" id="zrb-Mb-Q1E"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8r-ru-O4L">
-                                <rect key="frame" x="16" y="288.5" width="162" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8r-ru-O4L">
+                                <rect key="frame" x="16" y="288.5" width="106" height="30"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -142,13 +142,38 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-BD-ePX">
+                                <rect key="frame" x="16" y="492.5" width="382" height="70"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="XVI-Fs-CZe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="21"/>
+                                <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="delete comment">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapDeleteButtonWithSender:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kcu-WJ-05w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aOG-BD-ePX" firstAttribute="leading" secondItem="GSp-Vl-vwn" secondAttribute="leading" id="1bN-FO-ZPQ"/>
                             <constraint firstItem="MO6-cV-0gH" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="9wo-8F-7gG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xId-DD-S8C" secondAttribute="trailing" constant="16" id="DJu-D2-P3v"/>
                             <constraint firstItem="E8r-ru-O4L" firstAttribute="top" secondItem="xId-DD-S8C" secondAttribute="bottom" constant="16" id="Jlt-OT-I4E"/>
+                            <constraint firstItem="aOG-BD-ePX" firstAttribute="trailing" secondItem="GSp-Vl-vwn" secondAttribute="trailing" id="Pu5-aO-50h"/>
                             <constraint firstItem="MO6-cV-0gH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TqK-WZ-KTB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xId-DD-S8C" secondAttribute="trailing" constant="16" id="WTd-3G-v2l"/>
                             <constraint firstItem="E8r-ru-O4L" firstAttribute="leading" secondItem="xId-DD-S8C" secondAttribute="leading" id="Ymo-0a-87O"/>
@@ -157,12 +182,14 @@
                             <constraint firstItem="xId-DD-S8C" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="cvL-nv-JLO"/>
                             <constraint firstItem="xId-DD-S8C" firstAttribute="top" secondItem="MO6-cV-0gH" secondAttribute="bottom" constant="24" id="oyn-7j-WfB"/>
                             <constraint firstItem="GSp-Vl-vwn" firstAttribute="trailing" secondItem="xId-DD-S8C" secondAttribute="trailing" id="u5d-W5-lUv"/>
+                            <constraint firstItem="aOG-BD-ePX" firstAttribute="top" secondItem="GSp-Vl-vwn" secondAttribute="bottom" constant="16" id="xyH-Ax-W4O"/>
                             <constraint firstItem="xId-DD-S8C" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="yeX-Vk-2hQ"/>
                             <constraint firstItem="GSp-Vl-vwn" firstAttribute="top" secondItem="E8r-ru-O4L" secondAttribute="bottom" constant="8" id="zOz-9T-4LH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="commentTextView" destination="GSp-Vl-vwn" id="m7R-KA-ddK"/>
+                        <outlet property="deleteButton" destination="aOG-BD-ePX" id="hOf-ll-XsG"/>
                         <outlet property="ratingLabel" destination="Eww-nR-wqp" id="WlH-hg-Um2"/>
                         <outlet property="reviewContainerView" destination="xId-DD-S8C" id="DHR-i3-vfD"/>
                         <outlet property="reviewLabel" destination="rC2-z8-gna" id="Jc1-fw-EKn"/>
@@ -179,6 +206,9 @@
         <image name="AverageRatingIcon" width="14" height="13"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
