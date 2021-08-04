@@ -26,11 +26,18 @@ export class ReviewController {
   public async deleteReview(id: string): Promise<any> {
     let review = await this.reviewDao.findById(id);
     let restaurant = await this.restaurantDao.findById(review.restaurantId);
-    restaurant.reviews = restaurant.reviews.filter(
-      (reviewId) => reviewId != id
+    await this.restaurantDao.updateReviews(
+      restaurant._id,
+      restaurant.reviews.filter((reviewId) => reviewId != id)
     );
-    await restaurant.save();
     await this.reviewDao.deleteReview(id);
+    return "OK";
+  }
+
+  public async editComment(reviewId: string, comment: string): Promise<any> {
+    let review = await this.reviewDao.findById(reviewId);
+    review.ownerComment = comment;
+    await review.save();
     return "OK";
   }
 

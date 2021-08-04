@@ -104,7 +104,11 @@ export class UserDao {
 
   public async findAll(): Promise<IUser[]> {
     let cThis = this;
-    return User.find({})
+    return User.find({
+      role: {
+        $ne: Role.Ghost,
+      },
+    })
       .exec()
       .catch(function (err) {
         return cThis.getGenericReject(err);

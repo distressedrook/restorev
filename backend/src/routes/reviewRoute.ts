@@ -27,14 +27,6 @@ let commentValidators = [
   body(COMMENT).isString(),
 ];
 
-let editReviewValidators = [
-  body(REVIEW).isLength({
-    min: 2,
-  }),
-  body(RATING).isInt(),
-  body(VISITED_DATE).isInt(),
-];
-
 function comment(req, res, next) {
   let reviewController = new ReviewController();
   reviewController
@@ -92,6 +84,18 @@ function deleteReview(req, res, next) {
     });
 }
 
+function editComment(req, res, next) {
+  let reviewController = new ReviewController();
+  reviewController
+    .editComment(req.params.id, req.body.comment)
+    .then(function (response) {
+      res.send(wrapSuccess(response));
+    })
+    .catch(function (error) {
+      res.send(wrapError([error]));
+    });
+}
+
 function deleteComment(req, res, next) {
   let reviewController = new ReviewController();
   reviewController
@@ -115,15 +119,10 @@ router.post(
 );
 
 router.get("/pending", isOwner, getPendingReviews);
-router.put(
-  "/:id/edit",
-  isAdmin,
-  editReviewValidators,
-  requestValidator,
-  editReview
-);
+router.put("/:id/edit", isAdmin, editReview);
 
 router.delete("/:id/delete", isAdmin, deleteReview);
+router.put("/:id/editComment", isAdmin, editComment);
 router.delete("/:id/deleteComment", isAdmin, deleteComment);
 
 export default router;

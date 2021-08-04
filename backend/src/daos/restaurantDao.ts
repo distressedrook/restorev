@@ -39,6 +39,21 @@ export class RestaurantDao {
       });
   }
 
+  public async updateReviews(restaurantId: string, reviews: any[]) {
+    return Restaurant.updateOne(
+      { _id: restaurantId },
+      {
+        $set: {
+          reviews: reviews,
+        },
+      }
+    )
+      .exec()
+      .then(function (doc) {
+        return;
+      });
+  }
+
   public async delete(restaurantId: string) {
     return Restaurant.deleteOne({ _id: restaurantId })
       .exec()
@@ -133,7 +148,6 @@ export class RestaurantDao {
   }
 
   public async addReview(reviewId: string, restaurantId: string) {
-    print("Adding review " + reviewId);
     let cThis = this;
     return Restaurant.updateOne(
       { _id: restaurantId },

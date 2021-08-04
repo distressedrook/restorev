@@ -70,7 +70,7 @@ export class ReviewDao {
       },
       {
         $set: {
-          comment: null,
+          ownerComment: null,
         },
       }
     )
@@ -151,6 +151,9 @@ export class ReviewDao {
           rating: rating,
           visitedDate: visitedDate,
         },
+      },
+      {
+        omitUndefined: true,
       }
     )
       .exec()

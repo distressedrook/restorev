@@ -11,6 +11,7 @@ export function wrapSuccess(body: any): any {
 }
 
 export function wrapError(err: any[]): any {
+  console.log(err);
   return {
     errors: err,
   };
