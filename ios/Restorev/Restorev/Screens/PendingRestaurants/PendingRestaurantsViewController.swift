@@ -21,6 +21,10 @@ class PendingRestaurantsViewController: UIViewController, LoadingIndicatable, Me
         self.showLoading()
         self.setupTableView()
         self.bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.reviewsTableView.alpha = 0.0
         self.viewModel.getPendingRestaurants()
     }
@@ -103,6 +107,7 @@ extension PendingRestaurantsViewController: UITableViewDelegate, UITableViewData
         cell.ratingLabel.text = String(self.viewModel.reviewAt(restaurantIndex: indexPath.section, reviewIndex: indexPath.row).rating)
         cell.reviewerLabel.text = self.viewModel.reviewAt(restaurantIndex: indexPath.section, reviewIndex: indexPath.row).reviewer!.name
         cell.reviewLabel.text = self.viewModel.reviewAt(restaurantIndex: indexPath.section, reviewIndex: indexPath.row).review
+        cell.visitedOnLabel.text = Strings.visitedOn + Date(timeIntervalSince1970: TimeInterval(self.viewModel.reviewAt(restaurantIndex: indexPath.section, reviewIndex: indexPath.row).visitedDate)).toString().components(separatedBy: ",")[0]
     }
 }
 

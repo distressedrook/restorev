@@ -80,6 +80,7 @@ extension CommentViewController {
         self.reviewLabel.text = self.viewModel.review
         self.ratingLabel.text = "\(self.viewModel.reviewRating)"
         self.reviewerNameLabel.text = self.viewModel.reviewerName
+        self.visitedDateLabel.text = Strings.visitedOn + Date(timeIntervalSince1970: TimeInterval(self.viewModel.reviewerVisitedDate)).toString().components(separatedBy: ",")[0]
         self.commentTextView.text = self.viewModel.comment
     }
 }

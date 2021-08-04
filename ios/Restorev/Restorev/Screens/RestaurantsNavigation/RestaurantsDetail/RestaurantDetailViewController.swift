@@ -8,6 +8,7 @@
 import UIKit
 import Cosmos
 import DZNEmptyDataSet
+import DateHelper
 
 class RestaurantDetailViewController: UIViewController, MessageDisplayable, LoadingIndicatable {
     var viewModel: RestaurantDetailViewModel!
@@ -150,6 +151,7 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
         cell.ratingLabel.text = String(self.viewModel.ratingAt(index: indexPath.row))
         cell.reviewerLabel.text = self.viewModel.reviewerNameAt(index: indexPath.row)
         cell.reviewLabel.text = self.viewModel.reviewAt(index: indexPath.row)
+        cell.visitedOnLabel.text = Strings.visitedOn + Date(timeIntervalSince1970: TimeInterval(self.viewModel.visitedDateAt(index: indexPath.row))).toString().components(separatedBy: ",")[0]
     }
     
     func configureTopRated(cell: ReviewTableViewCell) {
@@ -169,6 +171,7 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
         cell.ratingLabel.text = String(self.viewModel.topRatedRating)
         cell.reviewerLabel.text = self.viewModel.topReviewerName
         cell.reviewLabel.text = self.viewModel.topRatedReviewString
+        cell.visitedOnLabel.text = Strings.visitedOn + Date(timeIntervalSince1970: TimeInterval(self.viewModel.topRatedVisiteDate)).toString().components(separatedBy: ",")[0]
     }
     
     func configureMostCritical(cell: ReviewTableViewCell) {
@@ -188,6 +191,7 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
         cell.ratingLabel.text = String(self.viewModel.mostCriticalRating)
         cell.reviewerLabel.text = self.viewModel.mostCriticalReviewerName
         cell.reviewLabel.text = self.viewModel.mostCriticalReviewString
+        cell.visitedOnLabel.text = Strings.visitedOn + Date(timeIntervalSince1970: TimeInterval(self.viewModel.mostCriticalVisiteDate)).toString().components(separatedBy: ",")[0]
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "DateHelper",
+        "repositoryURL": "https://github.com/melvitax/DateHelper.git",
+        "state": {
+          "branch": null,
+          "revision": "8dfbbea6e285d6f63d4dd39a15466809e2cc28f9",
+          "version": "4.5.3"
+        }
+      },
+      {
         "package": "DZNEmptyDataSet",
         "repositoryURL": "https://github.com/dzenbot/DZNEmptyDataSet",
         "state": {
