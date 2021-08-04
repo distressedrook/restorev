@@ -11,6 +11,7 @@ import DZNEmptyDataSet
 class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDisplayable {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var filterControl: UISegmentedControl!
     
     var viewModel: RestaurantsViewModel!
     var router: RestaurantsRouter!
@@ -56,6 +57,12 @@ class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDi
         self.router.moveToAddRestaurantViewController(delegate: self)
     }
     
+    @IBAction func segmentControlDidChangeValue(sender: UISegmentedControl) {
+        let ratings = [0,5,4,3,2,1]
+        self.viewModel.filterRating = ratings[sender.selectedSegmentIndex]
+        self.tableView.reloadData()
+    }
+    
 }
 
 extension RestaurantsViewController {
@@ -76,6 +83,7 @@ extension RestaurantsViewController {
     private func bind() {
         self.viewModel.didGetRestaurants = {
             self.hideLoading()
+            self.viewModel.filterRating = 0
             self.tableView.reloadData()
             UIView.animate(withDuration: Constants.ANIMATION_TIME) {
                 self.tableView.alpha = 1.0

@@ -71,7 +71,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="l3D-0m-gXn" secondAttribute="trailing" constant="20" id="F4s-CG-A9I"/>
                             <constraint firstItem="nLW-hJ-Q5W" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Hf0-Kp-iKn"/>
                             <constraint firstItem="nLW-hJ-Q5W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Hnx-E3-ArM"/>
-                            <constraint firstItem="nLW-hJ-Q5W" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="kqu-x3-bbT"/>
+                            <constraint firstItem="nLW-hJ-Q5W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-44" id="kqu-x3-bbT"/>
                         </constraints>
                     </view>
                 </viewController>

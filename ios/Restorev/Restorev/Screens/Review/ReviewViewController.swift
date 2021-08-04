@@ -31,6 +31,7 @@ class ReviewViewController: UIViewController, LoadingIndicatable, MessageDisplay
         self.cosmosView.rating = Double(self.viewModel.rating)
         self.reviewTextView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         self.deleteButton.isHidden = !self.roleManager.shouldShowDeleteButton()
+        self.datePicker.maximumDate = Date()
     }
     
     override func viewWillAppear(_ animated: Bool) {

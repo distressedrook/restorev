@@ -44,7 +44,7 @@ class Strings {
     static let noRestaurantsFoundRegular = "uh oh, no restaurants found in your area"
     static let noPendingReviews = "yay! you have commented on all of your pending reviews"
     static let noRestaurantsFoundAdmin = "uh oh, no restaurants found in the system."
-    static let noRestaurantsFoundOwner = "uh oh, you have not created any restaurants. tap on the \"+\" button to get started"
+    static let noRestaurantsFoundOwner = "uh oh, no restaurants found"
     static let noReviews = "uh oh, no one has reviewed this restaurant yet"
     static let noUsers = "*crickets* there are no users in the system"
     static let visitedOn = "visited on "

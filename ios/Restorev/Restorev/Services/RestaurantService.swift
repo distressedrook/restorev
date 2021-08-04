@@ -68,7 +68,9 @@ final class RestaurantServiceImp: RestaurantService {
             }
             do {
                 let restaurants = try parse(with: data, to: Restaurant.self)
-                success(restaurants)
+                success(restaurants.sorted { l, r in
+                    l.averageRating > r.averageRating
+                })
             } catch {
                 fatalError("API is not behaving as expected")
             }
@@ -87,7 +89,9 @@ final class RestaurantServiceImp: RestaurantService {
             }
             do {
                 let restaurants = try parse(with: data, to: Restaurant.self)
-                success(restaurants)
+                success(restaurants.sorted { l, r in
+                    l.averageRating > r.averageRating
+                })
             } catch {
                 fatalError("API is not behaving as expected")
             }
@@ -124,7 +128,10 @@ final class RestaurantServiceImp: RestaurantService {
                 fatalError("API is not behaving as expected")
             }
             do {
-                let restaurant = try map(json: data, to: Restaurant.self)
+                var restaurant = try map(json: data, to: Restaurant.self)
+                restaurant.reviews = restaurant.reviews?.sorted(by: { l, r in
+                    l.visitedDate > r.visitedDate
+                })
                 success(restaurant)
             } catch {
                 fatalError("API is not behaving as expected")

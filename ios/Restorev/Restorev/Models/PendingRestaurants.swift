@@ -9,5 +9,5 @@ import Foundation
 
 struct PendingRestaurants: Codable {
     let restaurantName: String
-    let pendingReviews: [Review]
+    var pendingReviews: [Review]
 }

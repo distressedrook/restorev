@@ -46,22 +46,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TtK-52-GoW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="57" width="414" height="717"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdL-6U-3du">
+                                <rect key="frame" x="16" y="16" width="38" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="zZf-xz-C1t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="filter">
+                                    <color key="titleColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Irr-Kd-lQs">
+                                <rect key="frame" x="62" y="17" width="336" height="32"/>
+                                <segments>
+                                    <segment title="⭐ All"/>
+                                    <segment title="⭐ 5"/>
+                                    <segment title="⭐ 4"/>
+                                    <segment title="⭐ 3"/>
+                                    <segment title="⭐ 2"/>
+                                    <segment title="⭐ 1"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.96862745098039216" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="segmentControlDidChangeValueWithSender:" destination="D9y-2K-Ymd" eventType="valueChanged" id="7dg-6K-RKW"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rd8-aW-Gke"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="HdL-6U-3du" firstAttribute="top" secondItem="Rd8-aW-Gke" secondAttribute="top" constant="16" id="5lM-ZC-hIu"/>
                             <constraint firstAttribute="bottomMargin" secondItem="TtK-52-GoW" secondAttribute="bottom" id="CuQ-yK-DZS"/>
+                            <constraint firstItem="TtK-52-GoW" firstAttribute="top" secondItem="HdL-6U-3du" secondAttribute="bottom" constant="8" id="McL-Yo-EDk"/>
+                            <constraint firstItem="Irr-Kd-lQs" firstAttribute="centerY" secondItem="HdL-6U-3du" secondAttribute="centerY" id="SS8-LL-Cb6"/>
                             <constraint firstItem="TtK-52-GoW" firstAttribute="leading" secondItem="Rd8-aW-Gke" secondAttribute="leading" id="hAs-oe-fUE"/>
-                            <constraint firstItem="TtK-52-GoW" firstAttribute="top" secondItem="Rd8-aW-Gke" secondAttribute="top" id="hWi-bU-TUN"/>
+                            <constraint firstItem="Rd8-aW-Gke" firstAttribute="trailing" secondItem="Irr-Kd-lQs" secondAttribute="trailing" constant="16" id="kKs-gU-WUb"/>
+                            <constraint firstItem="Irr-Kd-lQs" firstAttribute="leading" secondItem="HdL-6U-3du" secondAttribute="trailing" constant="8" id="lNk-LS-o4K"/>
                             <constraint firstItem="TtK-52-GoW" firstAttribute="trailing" secondItem="Rd8-aW-Gke" secondAttribute="trailing" id="v5Y-91-KdV"/>
+                            <constraint firstItem="HdL-6U-3du" firstAttribute="leading" secondItem="Rd8-aW-Gke" secondAttribute="leading" constant="16" id="xOq-eQ-yF8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="restaurants" id="JEM-UE-Y6L"/>
                     <connections>
+                        <outlet property="filterControl" destination="Irr-Kd-lQs" id="fen-v0-4wB"/>
                         <outlet property="tableView" destination="TtK-52-GoW" id="vkV-nC-Ysh"/>
                         <segue destination="UAF-G7-daW" kind="show" identifier="showRestaurantDetail" id="jrp-kr-PR5"/>
                     </connections>
