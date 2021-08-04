@@ -12,7 +12,7 @@ class EditUserViewController: UIViewController, LoadingIndicatable, MessageDispl
     var viewModel: EditUserViewModel!
     
     @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var roleTextField: UITextField!
+    @IBOutlet var rolePicker: UIPickerView!
     @IBOutlet var deleteButton: UIButton!
     
     weak var delegate: EditUserViewControllerDelegate?
@@ -25,9 +25,11 @@ class EditUserViewController: UIViewController, LoadingIndicatable, MessageDispl
     
     private func getUser() {
         self.nameTextField.alpha = 0.0
-        self.roleTextField.alpha = 0.0
         self.deleteButton.alpha = 0
+        self.rolePicker.alpha = 0
         self.showLoading()
+        self.rolePicker.delegate = self
+        self.rolePicker.dataSource = self
         self.viewModel.getUser()
     }
     
@@ -57,9 +59,6 @@ class EditUserViewController: UIViewController, LoadingIndicatable, MessageDispl
                 if validationError.type == .name {
                     self.nameTextField.shake()
                 }
-                if validationError.type == .role {
-                    self.roleTextField.shake()
-                }
                 return
             }
             self.showError(with: Strings.failure, message: error.displayString)
@@ -69,18 +68,48 @@ class EditUserViewController: UIViewController, LoadingIndicatable, MessageDispl
             self.hideLoading()
             UIView.animate(withDuration: Constants.ANIMATION_TIME) {
                 self.nameTextField.alpha = 1.0
-                self.roleTextField.alpha = 1.0
+                self.rolePicker.alpha = 1.0
                 self.deleteButton.alpha = 1.0
             }
             self.nameTextField.text = self.viewModel.userName
-            self.roleTextField.text = self.viewModel.role
+            var row = 0
+            if self.viewModel.role == Strings.regular {
+                row = 0
+            } else if self.viewModel.role == Strings.owner {
+                row = 1
+            } else if self.viewModel.role == Strings.admin {
+                row = 2
+            }
+            self.rolePicker.selectRow(row, inComponent: 0, animated: false)
         }
     }
 }
 
+extension EditUserViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if row == 0 {
+            return Strings.regular
+        } else if row == 1 {
+            return Strings.owner
+        }
+        return Strings.admin
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    
+}
+
 extension EditUserViewController {
     @IBAction func didTapDoneButton(sender: UIButton) {
-        self.viewModel.editUser(name: self.nameTextField.text!, role: self.roleTextField.text!)
+        let roles = [Strings.regular, Strings.owner, Strings.admin]
+        self.viewModel.editUser(name: self.nameTextField.text!, role: roles[self.rolePicker.selectedRow(inComponent: 0)])
     }
     
     @IBAction func didTapDeleteButton(sender: UIButton) {

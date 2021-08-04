@@ -57,4 +57,8 @@ class Strings {
     
     static let addComment = "add comment"
     static let editComment = "edit comment"
+    
+    static let admin = "admin"
+    static let regular = "regular"
+    static let owner = "owner"
 }

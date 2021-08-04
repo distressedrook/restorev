@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLW-hJ-Q5W">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                                <rect key="frame" x="0.0" y="-6" width="414" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdc-c2-x6R">
                                         <rect key="frame" x="173" y="61" width="68" height="24"/>
@@ -41,7 +41,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3D-0m-gXn">
-                                <rect key="frame" x="20" y="119" width="374" height="70"/>
+                                <rect key="frame" x="20" y="113" width="374" height="70"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="AxA-t8-Ecm"/>
@@ -71,7 +71,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="l3D-0m-gXn" secondAttribute="trailing" constant="20" id="F4s-CG-A9I"/>
                             <constraint firstItem="nLW-hJ-Q5W" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Hf0-Kp-iKn"/>
                             <constraint firstItem="nLW-hJ-Q5W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Hnx-E3-ArM"/>
-                            <constraint firstItem="nLW-hJ-Q5W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-44" id="kqu-x3-bbT"/>
+                            <constraint firstItem="nLW-hJ-Q5W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-50" id="kqu-x3-bbT"/>
                         </constraints>
                     </view>
                 </viewController>

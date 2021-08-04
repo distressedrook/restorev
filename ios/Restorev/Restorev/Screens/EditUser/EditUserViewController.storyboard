@@ -83,23 +83,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="role" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7F-dg-9uZ" customClass="TextField" customModule="Restorev" customModuleProvider="target">
-                                <rect key="frame" x="16" y="200" width="382" height="60"/>
-                                <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="FR1-6B-lAh"/>
-                                </constraints>
-                                <color key="textColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhZ-cr-WWu">
-                                <rect key="frame" x="16" y="276" width="382" height="70"/>
+                                <rect key="frame" x="16" y="375" width="382" height="70"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="aDN-82-R0y"/>
@@ -121,28 +106,42 @@
                                     <action selector="didTapDeleteButtonWithSender:" destination="1zL-LY-K0G" eventType="touchUpInside" id="5Cr-o3-5hJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-nB-bZz">
+                                <rect key="frame" x="16" y="200" width="42" height="29"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Si1-Iy-MPy">
+                                <rect key="frame" x="16" y="205" width="180" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="4d2-33-oD7"/>
+                                    <constraint firstAttribute="width" constant="180" id="bbM-c4-0Ze"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mCZ-WY-7CK"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="j7F-dg-9uZ" firstAttribute="top" secondItem="hKk-kD-i2G" secondAttribute="bottom" constant="16" id="0I5-lA-hbo"/>
-                            <constraint firstItem="j7F-dg-9uZ" firstAttribute="trailing" secondItem="hKk-kD-i2G" secondAttribute="trailing" id="3T6-Gz-Txi"/>
+                            <constraint firstItem="Vin-nB-bZz" firstAttribute="leading" secondItem="hKk-kD-i2G" secondAttribute="leading" id="76e-gs-rqR"/>
                             <constraint firstItem="mCZ-WY-7CK" firstAttribute="trailing" secondItem="hKk-kD-i2G" secondAttribute="trailing" constant="16" id="CvR-0E-ZmA"/>
+                            <constraint firstItem="Vin-nB-bZz" firstAttribute="top" secondItem="hKk-kD-i2G" secondAttribute="bottom" constant="16" id="Dh0-ul-8Yn"/>
+                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="top" secondItem="Si1-Iy-MPy" secondAttribute="bottom" id="E2H-dP-lbn"/>
                             <constraint firstItem="hKk-kD-i2G" firstAttribute="leading" secondItem="mCZ-WY-7CK" secondAttribute="leading" constant="16" id="FtJ-XW-aEt"/>
-                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="trailing" secondItem="j7F-dg-9uZ" secondAttribute="trailing" id="KNg-VY-dB2"/>
+                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="leading" secondItem="Si1-Iy-MPy" secondAttribute="leading" id="QZT-Tx-ZKC"/>
                             <constraint firstAttribute="trailing" secondItem="w6v-z6-IAM" secondAttribute="trailing" id="Xp7-u6-EWH"/>
                             <constraint firstItem="w6v-z6-IAM" firstAttribute="top" secondItem="sOO-18-kdh" secondAttribute="top" id="XxR-Fn-JUm"/>
-                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="top" secondItem="j7F-dg-9uZ" secondAttribute="bottom" constant="16" id="aEr-hA-9gb"/>
+                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="trailing" secondItem="hKk-kD-i2G" secondAttribute="trailing" id="fq0-eX-yiI"/>
                             <constraint firstItem="w6v-z6-IAM" firstAttribute="leading" secondItem="mCZ-WY-7CK" secondAttribute="leading" id="ib1-wu-l2l"/>
-                            <constraint firstItem="j7F-dg-9uZ" firstAttribute="leading" secondItem="hKk-kD-i2G" secondAttribute="leading" id="nGP-pq-03t"/>
-                            <constraint firstItem="jhZ-cr-WWu" firstAttribute="leading" secondItem="j7F-dg-9uZ" secondAttribute="leading" id="s8r-Yb-Z31"/>
+                            <constraint firstItem="Si1-Iy-MPy" firstAttribute="top" secondItem="Vin-nB-bZz" secondAttribute="bottom" constant="-24" id="qkC-EQ-Qb6"/>
+                            <constraint firstItem="Si1-Iy-MPy" firstAttribute="leading" secondItem="hKk-kD-i2G" secondAttribute="leading" id="xOI-cb-oIA"/>
                             <constraint firstItem="hKk-kD-i2G" firstAttribute="top" secondItem="w6v-z6-IAM" secondAttribute="bottom" constant="24" id="ynb-Qc-SaC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="deleteButton" destination="jhZ-cr-WWu" id="9vh-qO-EPA"/>
                         <outlet property="nameTextField" destination="hKk-kD-i2G" id="CVN-St-neJ"/>
-                        <outlet property="roleTextField" destination="j7F-dg-9uZ" id="y12-jq-tnC"/>
+                        <outlet property="rolePicker" destination="Si1-Iy-MPy" id="s2B-xu-4Ou"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCN-em-AWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -153,9 +152,6 @@
     <designables>
         <designable name="hKk-kD-i2G">
             <size key="intrinsicContentSize" width="56" height="30.5"/>
-        </designable>
-        <designable name="j7F-dg-9uZ">
-            <size key="intrinsicContentSize" width="38.5" height="30.5"/>
         </designable>
     </designables>
     <resources>
