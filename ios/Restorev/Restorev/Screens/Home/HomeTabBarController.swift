@@ -7,13 +7,19 @@
 
 import UIKit
 
-class HomeTabBarController: UITabBarController {
+class HomeTabBarController: UITabBarController, MessageDisplayable {
     private let BAR_HEIGHT: CGFloat = 70
+    var cache: Cache = CacheImp()
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.showSuccess(with:  Strings.loggedIn + "\(cache.user!.name)", message: "")
     }
     
     override func viewDidLayoutSubviews() {

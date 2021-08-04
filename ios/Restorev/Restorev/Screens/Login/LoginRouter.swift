@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginRouter: Router {
-    func moveToHome()
+    func moveToHome(completion: () -> ())
 }
 
 final class LoginRouterImp: LoginRouter {
@@ -16,7 +16,7 @@ final class LoginRouterImp: LoginRouter {
         self.navigatable = navigatable
     }
     
-    func moveToHome() {
+    func moveToHome(completion: () -> ()) {
         let viewController = RoleManager().viewControllerForPostLogin()
         viewController.modalPresentationStyle = .fullScreen
         self.navigatable?.present(viewController, animated: true, completion: nil)
