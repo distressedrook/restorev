@@ -47,15 +47,6 @@
         }
       },
       {
-        "package": "iOSDropDown",
-        "repositoryURL": "https://github.com/jriosdev/iOSDropDown.git",
-        "state": {
-          "branch": "master",
-          "revision": "b10ab2d6dae54df330641c22dd34735668b0b5e8",
-          "version": null
-        }
-      },
-      {
         "package": "NVActivityIndicatorView",
         "repositoryURL": "https://github.com/ninjaprox/NVActivityIndicatorView.git",
         "state": {

@@ -15,6 +15,10 @@ class ServiceManagerImp: ServiceManager {
     let CODE = "code"
     
     func get<T: Encodable>(with url: String, parameters: T?, headers: [String : String]?, success: @escaping ([String : Any]) -> Void, failure: @escaping (ApplicationError) -> Void) {
+        if !InternetConnectionManager.isConnectedToNetwork() {
+            failure(ApplicationError(code: ErrorCode.noInternet))
+            return
+        }
         AF.request(url, method: .get, parameters: parameters, headers: HTTPHeaders(headers ?? [:])).responseJSON { [weak self] response in
             guard let self = self else {
                 return
@@ -24,18 +28,30 @@ class ServiceManagerImp: ServiceManager {
     }
     
     func post<T: Encodable>(with url: String, parameters: T?, headers: [String : String]?, success: @escaping ([String : Any]) -> Void, failure: @escaping (ApplicationError) -> Void) {
+        if !InternetConnectionManager.isConnectedToNetwork() {
+            failure(ApplicationError(code: ErrorCode.noInternet))
+            return
+        }
         AF.request(url, method: .post, parameters: parameters, headers: HTTPHeaders(headers ?? [:])).responseJSON { response in
             self.dispatchConditionally(with: response, success: success, failure: failure)
         }
     }
     
     func put<T: Encodable>(with url: String, parameters: T?, headers: [String : String]?, success: @escaping ([String : Any]) -> Void, failure: @escaping (ApplicationError) -> Void) {
+        if !InternetConnectionManager.isConnectedToNetwork() {
+            failure(ApplicationError(code: ErrorCode.noInternet))
+            return
+        }
         AF.request(url, method: .put, parameters: parameters, headers: HTTPHeaders(headers ?? [:])).responseJSON { response in
             self.dispatchConditionally(with: response, success: success, failure: failure)
         }
     }
     
     func delete<T: Encodable>(with url: String, parameters: T?, headers: [String : String]?, success: @escaping ([String : Any]) -> Void, failure: @escaping (ApplicationError) -> Void) {
+        if !InternetConnectionManager.isConnectedToNetwork() {
+            failure(ApplicationError(code: ErrorCode.noInternet))
+            return
+        }
         AF.request(url, method: .delete, parameters: parameters, headers: HTTPHeaders(headers ?? [:])).responseJSON { response in
             self.dispatchConditionally(with: response, success: success, failure: failure)
         }

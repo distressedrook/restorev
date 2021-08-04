@@ -21,6 +21,8 @@ enum ErrorCode: String {
     case userDoesNotExist = "002"
     case passwordMismatch = "003"
     
+    case noInternet = "0100"
+    
     // MARK: _ Unknown
     case unknown
 }
@@ -29,5 +31,6 @@ let errorDisplayMap: [ErrorCode: String] = [
     .unknown: Strings.oops,
     .userAlreadyExists: Strings.userExists,
     .userDoesNotExist: Strings.userDoesNotExist,
-    .passwordMismatch: Strings.passwordMismatch
+    .passwordMismatch: Strings.passwordMismatch,
+    .noInternet: Strings.noInternet
 ]

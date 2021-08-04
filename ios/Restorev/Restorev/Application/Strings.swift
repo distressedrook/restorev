@@ -20,6 +20,7 @@ class Strings {
     static let userExists = "uh oh, this email already exists. Please try again with a different email"
     static let userDoesNotExist = "an account with this email does not exist"
     static let passwordMismatch = "uh oh, you have entered the wrong passsword. Please try again."
+    static let noInternet = "uh oh, no internet connection"
     static let loggedIn = "Hi, "
     static let restaurants = "restaurants"
     static let review = "review"
