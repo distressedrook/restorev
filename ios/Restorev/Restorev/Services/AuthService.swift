@@ -53,8 +53,6 @@ final class AuthServiceImp: AuthService {
 }
 
 protocol AuthService {
-    init()
-    init(manager: ServiceManager)
     func register(name: String, email: String, password: String, success: @escaping () -> (), failure: @escaping (ApplicationError) -> ())
     func login(email: String, password: String, success: @escaping (User) -> (), failure: @escaping (ApplicationError) -> ())
 }

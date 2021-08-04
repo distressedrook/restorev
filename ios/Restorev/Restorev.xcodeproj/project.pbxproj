@@ -120,6 +120,7 @@
 		0F756E2726BAFF8300E5E183 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BB526B5249E00550BC9 /* RestaurantTableViewCell.swift */; };
 		0F756E2826BAFF8300E5E183 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5A926B91A41006FBAC5 /* UserTableViewCell.swift */; };
 		0F756E2A26BB131C00E5E183 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E2926BB131C00E5E183 /* Reachability.swift */; };
+		0F756E2B26BB17D600E5E183 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E2926BB131C00E5E183 /* Reachability.swift */; };
 		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
 		0F94B28326B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28226B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift */; };
 		0F94B28526B6EF0800DC0C68 /* RestaurantDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28426B6EF0800DC0C68 /* RestaurantDetailRouter.swift */; };
@@ -1049,6 +1050,7 @@
 				0F756E2526BAFF6E00E5E183 /* SettingsViewController.swift in Sources */,
 				0F756DF826BAFA6500E5E183 /* RestaurantDetailViewController.swift in Sources */,
 				0F756DD126BAFA2200E5E183 /* LoginViewController.swift in Sources */,
+				0F756E2B26BB17D600E5E183 /* Reachability.swift in Sources */,
 				0F756DF626BAFA5E00E5E183 /* RestaurantsViewController.swift in Sources */,
 				0F756DDB26BAFA3100E5E183 /* UITextField.swift in Sources */,
 				0F756DEB26BAFA4600E5E183 /* CommentViewController.swift in Sources */,
