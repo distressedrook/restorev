@@ -121,7 +121,9 @@
 		0F756E2826BAFF8300E5E183 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5A926B91A41006FBAC5 /* UserTableViewCell.swift */; };
 		0F756E2A26BB131C00E5E183 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E2926BB131C00E5E183 /* Reachability.swift */; };
 		0F756E2B26BB17D600E5E183 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E2926BB131C00E5E183 /* Reachability.swift */; };
-		0F756E6726BC0C1F00E5E183 /* EditReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E6626BC0C1F00E5E183 /* EditReviewTests.swift */; };
+		0F756E6726BC0C1F00E5E183 /* RestaurantDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E6626BC0C1F00E5E183 /* RestaurantDetailTests.swift */; };
+		0F756E6A26BC152200E5E183 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E6926BC152200E5E183 /* MockViewModel.swift */; };
+		0F756E6C26BC158200E5E183 /* MockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E6B26BC158200E5E183 /* MockRouter.swift */; };
 		0F94B28126B6CB8000DC0C68 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28026B6CB8000DC0C68 /* Review.swift */; };
 		0F94B28326B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28226B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift */; };
 		0F94B28526B6EF0800DC0C68 /* RestaurantDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28426B6EF0800DC0C68 /* RestaurantDetailRouter.swift */; };
@@ -251,7 +253,9 @@
 		0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		0F756DCE26BAF7B300E5E183 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 		0F756E2926BB131C00E5E183 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		0F756E6626BC0C1F00E5E183 /* EditReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReviewTests.swift; sourceTree = "<group>"; };
+		0F756E6626BC0C1F00E5E183 /* RestaurantDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTests.swift; sourceTree = "<group>"; };
+		0F756E6926BC152200E5E183 /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
+		0F756E6B26BC158200E5E183 /* MockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRouter.swift; sourceTree = "<group>"; };
 		0F94B28026B6CB8000DC0C68 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		0F94B28226B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewModel.swift; sourceTree = "<group>"; };
 		0F94B28426B6EF0800DC0C68 /* RestaurantDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailRouter.swift; sourceTree = "<group>"; };
@@ -440,6 +444,15 @@
 			path = EditUser;
 			sourceTree = "<group>";
 		};
+		0F756E6826BC150E00E5E183 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0F756E6926BC152200E5E183 /* MockViewModel.swift */,
+				0F756E6B26BC158200E5E183 /* MockRouter.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		0F94B28626B6F16E00DC0C68 /* Review */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,9 +504,10 @@
 		69C48AFD26B27E1E00550BC9 /* RestorevTests */ = {
 			isa = PBXGroup;
 			children = (
-				0F756DCE26BAF7B300E5E183 /* ValidationTests.swift */,
 				69C48B0026B27E1E00550BC9 /* Info.plist */,
-				0F756E6626BC0C1F00E5E183 /* EditReviewTests.swift */,
+				0F756E6826BC150E00E5E183 /* Mocks */,
+				0F756DCE26BAF7B300E5E183 /* ValidationTests.swift */,
+				0F756E6626BC0C1F00E5E183 /* RestaurantDetailTests.swift */,
 			);
 			path = RestorevTests;
 			sourceTree = "<group>";
@@ -1061,6 +1075,7 @@
 				0F756DE226BAFA3B00E5E183 /* UsersViewModel.swift in Sources */,
 				0F756E2826BAFF8300E5E183 /* UserTableViewCell.swift in Sources */,
 				0F756DE626BAFA4000E5E183 /* PendingRestaurantsRouter.swift in Sources */,
+				0F756E6C26BC158200E5E183 /* MockRouter.swift in Sources */,
 				0F756DCF26BAF7B300E5E183 /* ValidationTests.swift in Sources */,
 				0F756E2126BAFF6400E5E183 /* RegisterViewModel.swift in Sources */,
 				0F756E0626BAFA9B00E5E183 /* Restaurant.swift in Sources */,
@@ -1076,7 +1091,7 @@
 				0F756E1526BAFABB00E5E183 /* TextField.swift in Sources */,
 				0F756DFA26BAFA6C00E5E183 /* ReviewService.swift in Sources */,
 				0F756E2226BAFF6900E5E183 /* HomeTabBarController.swift in Sources */,
-				0F756E6726BC0C1F00E5E183 /* EditReviewTests.swift in Sources */,
+				0F756E6726BC0C1F00E5E183 /* RestaurantDetailTests.swift in Sources */,
 				0F756DFE26BAFA6C00E5E183 /* AuthService.swift in Sources */,
 				0F756E1826BAFABB00E5E183 /* Utils.swift in Sources */,
 				0F756E2426BAFF6E00E5E183 /* SettingsRouter.swift in Sources */,
@@ -1086,6 +1101,7 @@
 				0F756E1F26BAFF6400E5E183 /* RegisterRouter.swift in Sources */,
 				0F756E0F26BAFAAD00E5E183 /* ValidationError.swift in Sources */,
 				0F756E0826BAFA9B00E5E183 /* RestaurantDetail.swift in Sources */,
+				0F756E6A26BC152200E5E183 /* MockViewModel.swift in Sources */,
 				0F756DF126BAFA5000E5E183 /* ReviewViewController.swift in Sources */,
 				0F756E1326BAFAB600E5E183 /* AppDelegate.swift in Sources */,
 				0F756E0726BAFA9B00E5E183 /* PendingRestaurants.swift in Sources */,
