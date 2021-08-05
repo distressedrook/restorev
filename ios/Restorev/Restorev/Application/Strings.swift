@@ -34,6 +34,7 @@ class Strings {
     static let mostCriticalReview = "most critical review"
     static let reviewAdded = "your review was succesfully added"
     static let reviewDeleted = "this review was succesfully deleted"
+    static let unauthorised = "you are not allowed to access this resource, you have been logged out"
     
     static let restaurantCreated = "your restauranant was successfully created"
     static let restaurantEdited = "this restaurant was successfully edited"

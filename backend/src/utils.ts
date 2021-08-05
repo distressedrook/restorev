@@ -21,6 +21,7 @@ export function sendForbidden(res) {
   let error = new ApplicationError();
   error.status = "" + StatusCodes.FORBIDDEN;
   error.message = "This user is not allowed to access this resource";
+  error.code = "" + StatusCodes.FORBIDDEN;
   res.status(StatusCodes.FORBIDDEN);
   res.send(wrapError([error]));
 }

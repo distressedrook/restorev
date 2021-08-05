@@ -38,3 +38,19 @@ func parse<T: Decodable>(with jsons: [Any], to type: T.Type) throws -> [T] {
     }
     return objects
 }
+
+protocol NotificationName {
+    var name: Notification.Name { get }
+}
+
+extension RawRepresentable where RawValue == String, Self: NotificationName {
+    var name: Notification.Name {
+        get {
+            return Notification.Name(self.rawValue)
+        }
+    }
+}
+
+enum Notifications: String, NotificationName {
+    case forbidden
+}

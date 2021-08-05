@@ -32,5 +32,6 @@ let errorDisplayMap: [ErrorCode: String] = [
     .userAlreadyExists: Strings.userExists,
     .userDoesNotExist: Strings.userDoesNotExist,
     .passwordMismatch: Strings.passwordMismatch,
-    .noInternet: Strings.noInternet
+    .noInternet: Strings.noInternet,
+    .httpForbidden: Strings.unauthorised
 ]
