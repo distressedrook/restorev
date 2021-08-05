@@ -263,13 +263,7 @@ extension RestaurantDetailViewController: AddRestaurantViewControllerDelegate {
 extension RestaurantDetailViewController: ReviewTableViewCellDelegate {
     func didTapCommentButtonIn(reviewTableViewCell: ReviewTableViewCell) {
         if let indexPath = self.reviewsTableView.indexPath(for: reviewTableViewCell) {
-            if indexPath.section == 0 {
-                self.router.moveToComment(review: self.viewModel.topRatedReview, delegate: self)
-            } else if indexPath.section == 1 {
-                self.router.moveToComment(review: self.viewModel.mostCriticalReview, delegate: self)
-            } else if indexPath.section == 2 {
-                self.router.moveToComment(review: self.viewModel.mReview(at: indexPath.row), delegate: self)
-            }
+            self.moveToCommentIn(section: indexPath.section, row: indexPath.row)
         }
     }
     
@@ -287,14 +281,27 @@ extension RestaurantDetailViewController: ReviewTableViewCellDelegate {
     
     func didTapEditReviewButtonIn(reviewTableViewCell: ReviewTableViewCell) {
         if let indexPath = self.reviewsTableView.indexPath(for: reviewTableViewCell) {
-            if indexPath.section == 0 {
-                self.router.moveToEditReviewWith(restaurantId: self.viewModel.restaurantId, restaurantName: self.viewModel.restaurantName, review: self.viewModel.topRatedReview, delegate: self)
-            } else if indexPath.section == 1 {
-                self.router.moveToEditReviewWith(restaurantId: self.viewModel.restaurantId, restaurantName: self.viewModel.restaurantName, review: self.viewModel.mostCriticalReview, delegate: self)
-            } else if indexPath.section == 2 {
-                self.router.moveToEditReviewWith(restaurantId: self.viewModel.restaurantId, restaurantName: self.viewModel.restaurantName, review: self.viewModel.mReview(at: indexPath.row), delegate: self)
-                self.router.moveToComment(review: self.viewModel.mReview(at: indexPath.row), delegate: self)
-            }
+            self.moveToEditIn(section: indexPath.section, row: indexPath.row)
+        }
+    }
+    
+    func moveToEditIn(section: Int, row: Int) {
+        if section == 0 {
+            self.router.moveToEditReviewWith(restaurantId: self.viewModel.restaurantId, restaurantName: self.viewModel.restaurantName, review: self.viewModel.topRatedReview, delegate: self)
+        } else if section == 1 {
+            self.router.moveToEditReviewWith(restaurantId: self.viewModel.restaurantId, restaurantName: self.viewModel.restaurantName, review: self.viewModel.mostCriticalReview, delegate: self)
+        } else if section == 2 {
+            self.router.moveToEditReviewWith(restaurantId: self.viewModel.restaurantId, restaurantName: self.viewModel.restaurantName, review: self.viewModel.mReview(at: row), delegate: self)
+        }
+    }
+    
+    func moveToCommentIn(section: Int, row: Int) {
+        if section == 0 {
+            self.router.moveToComment(review: self.viewModel.topRatedReview, delegate: self)
+        } else if section == 1 {
+            self.router.moveToComment(review: self.viewModel.mostCriticalReview, delegate: self)
+        } else if section == 2 {
+            self.router.moveToComment(review: self.viewModel.mReview(at: row), delegate: self)
         }
     }
 }

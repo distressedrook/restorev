@@ -51,6 +51,5 @@ final class RestaurantDetailRouterImp: RestaurantDetailRouter {
     }
     
     var navigatable: Navigatable?
-    
-    
 }
+

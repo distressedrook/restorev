@@ -9,7 +9,7 @@ import XCTest
 import Restorev
 
 class ValidationTests: XCTestCase {
-    private let IMMEDIATE = 1.0
+    private let IMMEDIATE = 0.1
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -24,7 +24,6 @@ class ValidationTests: XCTestCase {
         viewModelImp.didRegisterFail = { error in
             if let error = error as? ValidationError {
                 if error.type == .email {
-                    print("Asserting true")
                     promise.fulfill()
                 }
             }

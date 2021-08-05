@@ -18,6 +18,38 @@
             endingLineNumber = "70"
             landmarkName = "bind()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ACE8F08B-E6DD-47F9-A2A0-AEF61BF86456 - 1e44b543484f9ba6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "partial apply forwarder for closure #1 () -&gt; () in Restorev.CommentViewController.bind() -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Comment/CommentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "ACE8F08B-E6DD-47F9-A2A0-AEF61BF86456 - d562d10ab29ecd69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "partial apply forwarder for closure #1 () -&gt; () in RestorevTests.CommentViewController.bind() -&gt; ()"
+                  moduleName = "RestorevTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Comment/CommentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -57,6 +89,36 @@
                   continueAfterRunningActions = "No"
                   symbolName = "partial apply forwarder for closure #1 () -&gt; () in Restorev.OwnerReviewViewModelImp.postReview(review: Swift.String, rating: Swift.Int, visitedDate: Foundation.Date) -&gt; ()"
                   moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Review/ReviewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "634156A7-AA5A-4341-B8AD-97DF8BB6D751 - b1ee34d68d638420"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestorevTests.OwnerReviewViewModelImp.postReview(review: Swift.String, rating: Swift.Int, visitedDate: Foundation.Date) -&gt; ()"
+                  moduleName = "RestorevTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Review/ReviewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "634156A7-AA5A-4341-B8AD-97DF8BB6D751 - cf81839737c0115d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "partial apply forwarder for closure #1 () -&gt; () in RestorevTests.OwnerReviewViewModelImp.postReview(review: Swift.String, rating: Swift.Int, visitedDate: Foundation.Date) -&gt; ()"
+                  moduleName = "RestorevTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Review/ReviewViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
@@ -113,6 +175,36 @@
                   endingLineNumber = "67"
                   offsetFromSymbolStart = "20">
                </Location>
+               <Location
+                  uuid = "5442DCD5-55A8-45CE-9DA2-383361BB87CF - dfafb57d51da9ddc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestorevTests.ReviewViewModelImp.postReview(review: Swift.String, rating: Swift.Int, visitedDate: Foundation.Date) -&gt; ()"
+                  moduleName = "RestorevTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Review/ReviewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "5442DCD5-55A8-45CE-9DA2-383361BB87CF - 91e9873bcc5529fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "partial apply forwarder for closure #1 () -&gt; () in RestorevTests.ReviewViewModelImp.postReview(review: Swift.String, rating: Swift.Int, visitedDate: Foundation.Date) -&gt; ()"
+                  moduleName = "RestorevTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Review/ReviewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "20">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -130,38 +222,38 @@
             endingLineNumber = "64"
             landmarkName = "segmentControlDidChangeValue(sender:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EAEFCF68-DF2C-462F-8ABE-676470D85D0F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RestorevTests/ValidationTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "testValidInput()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B5CC82A3-E4DC-4D94-9656-C1F165732B41"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RestorevTests/ValidationTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "login(email:password:success:failure:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "384275FF-40C6-42AC-BC65-7F2B8EF20960 - 540d8492180e140c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Restorev.RestaurantsViewController.segmentControlDidChangeValue(sender: __C.UISegmentedControl) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/Restaurants/RestaurantsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "384275FF-40C6-42AC-BC65-7F2B8EF20960 - 1405dad80bcc88ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestorevTests.RestaurantsViewController.segmentControlDidChangeValue(sender: __C.UISegmentedControl) -&gt; ()"
+                  moduleName = "RestorevTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/Restaurants/RestaurantsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -201,6 +293,36 @@
                   continueAfterRunningActions = "No"
                   symbolName = "partial apply forwarder for closure #1 (Restorev.User) -&gt; () in Restorev.LoginViewModelImp.login(email: Swift.String, password: Swift.String) -&gt; ()"
                   moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Login/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "929165C6-85E1-45AC-BDC7-A3AAB3C42A8D - fde4d8788d538b86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestorevTests.LoginViewModelImp.login(email: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "RestorevTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Login/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "929165C6-85E1-45AC-BDC7-A3AAB3C42A8D - f26e468e61187329"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "partial apply forwarder for closure #1 (RestorevTests.User) -&gt; () in RestorevTests.LoginViewModelImp.login(email: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "RestorevTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/Login/LoginViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
@@ -257,7 +379,53 @@
                   endingLineNumber = "114"
                   offsetFromSymbolStart = "32">
                </Location>
+               <Location
+                  uuid = "57BA88F1-1C20-4828-8C9A-5C20295C1CD9 - a419a3ff266d0120"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestorevTests.RestaurantDetailViewController.getDetail(sender: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "RestorevTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "57BA88F1-1C20-4828-8C9A-5C20295C1CD9 - e5089d6a02886f17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc RestorevTests.RestaurantDetailViewController.getDetail(sender: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "RestorevTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/toptal/interview/ios/Restorev/Restorev/Screens/RestaurantsNavigation/RestaurantsDetail/RestaurantDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "32">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F16AFC9-889E-435A-9D4F-83CB1A9ED733"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestorevTests/EditReviewTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "testMoveToComment()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -33,8 +33,8 @@ class UsersViewController: UIViewController, LoadingIndicatable, MessageDisplaya
         self.usersTableView.register(UserTableViewCell.nib, forCellReuseIdentifier: UserTableViewCell.cellIdentifier)
         self.usersTableView.emptyDataSetSource = self
         self.usersTableView.emptyDataSetDelegate = self
-        refreshControl.tintColor = UIColor.brandBlue
-        refreshControl.addTarget(self, action: #selector(UsersViewController.getUsers(sender:)), for: .valueChanged)
+        self.refreshControl.tintColor = UIColor.brandBlue
+        self.refreshControl.addTarget(self, action: #selector(UsersViewController.getUsers(sender:)), for: .valueChanged)
         self.usersTableView.addSubview(refreshControl)
     }
     

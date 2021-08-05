@@ -8,8 +8,6 @@
 import Foundation
 
 protocol RestaurantDetailViewModel {
-    init(id: String, service: RestaurantService)
-    init(id: String)
     
     var didGetRestaurantDetail: (() -> ())? { get set }
     var didGetRestaurantDetailFail:((ApplicationError) -> ())? { get set }
