@@ -8,6 +8,8 @@ import { ReviewDao } from "../daos/reviewDao";
 import { RestaurantDao } from "../daos/restaurantDao";
 import { print } from "../utils";
 import { IUser, Role } from "../models/user";
+import { IRestaurant } from "../models/restaurant";
+import { IReview } from "../models/review";
 
 export class UserController {
   private userDao = new UserDao();
@@ -129,9 +131,16 @@ export class UserController {
   public async findPendingReviews(ownerId: string): Promise<any[]> {
     let user = await this.userDao.findById(ownerId);
     let response: any[] = [];
-    for (let restaurantId of user.ownedRestaurants) {
-      let restaurant = await this.restaurantDao.findById(restaurantId);
-      let reviews = await this.reviewDao.findPendingReviews(restaurantId);
+    let restaurant: IRestaurant;
+    let reviews: IReview[];
+    for (var restaurantId of user.ownedRestaurants) {
+      try {
+        restaurant = await this.restaurantDao.findById(restaurantId);
+        reviews = await this.reviewDao.findPendingReviews(restaurantId);
+      } catch {
+        continue;
+      }
+
       if (reviews.length == 0) {
         continue;
       }
