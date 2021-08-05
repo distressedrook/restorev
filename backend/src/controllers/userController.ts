@@ -58,12 +58,6 @@ export class UserController {
 
   public async edit(id: string, name: string, role: string): Promise<any> {
     let user = await this.userDao.findById(id);
-    if (user.role == Role.Admin) {
-      let err = new ApplicationError();
-      err.code = ApplicationErrorCodes.CANNOT_DELETE_ADMIN;
-      err.title = "You cannot delete an admin";
-      return Promise.reject(err);
-    }
     var roleEnum: Role;
     if (role == Role.Admin) {
       await this.deleteRestaurantInfo(user);
@@ -80,12 +74,6 @@ export class UserController {
 
   public async delete(id: string): Promise<any> {
     let user = await this.userDao.findById(id);
-    if (user.role == Role.Admin) {
-      let err = new ApplicationError();
-      err.code = ApplicationErrorCodes.CANNOT_DELETE_ADMIN;
-      err.title = "You cannot delete an admin";
-      return Promise.reject(err);
-    }
     for (var restaurant of user.ownedRestaurants) {
       await this.reviewDao.deleteReviewsForRestaurant(restaurant._id);
     }
