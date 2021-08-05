@@ -67,6 +67,4 @@ class ValidationTests: XCTestCase {
         viewModel.login(email: "correct@gmail.com", password: "password")
         waitForExpectations(timeout: IMMEDIATE, handler: nil)
     }
-
-
 }

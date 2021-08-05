@@ -16,6 +16,7 @@ class RestaurantsViewController: UIViewController, LoadingIndicatable, MessageDi
     var viewModel: RestaurantsViewModel!
     var router: RestaurantsRouter!
     let roleManager = RoleManager()
+    let refreshControl = UIRefreshControl()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -73,6 +74,9 @@ extension RestaurantsViewController {
         self.tableView.register(RestaurantTableViewCell.nib, forCellReuseIdentifier: RestaurantTableViewCell.cellIdentifier)
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
+        refreshControl.tintColor = UIColor.brandBlue
+        refreshControl.addTarget(self, action: #selector(RestaurantsViewController.getRestaurants(sender:)), for: .valueChanged)
+        tableView.addSubview(refreshControl) // not required
     }
     
     private func addAddButton() {
@@ -83,6 +87,7 @@ extension RestaurantsViewController {
     private func bind() {
         self.viewModel.didGetRestaurants = {
             self.hideLoading()
+            self.refreshControl.endRefreshing()
             self.viewModel.filterRating = 0
             self.tableView.reloadData()
             UIView.animate(withDuration: Constants.ANIMATION_TIME) {
@@ -91,14 +96,19 @@ extension RestaurantsViewController {
         }
         
         self.viewModel.didGetRestaurantFail = { error in
+            self.refreshControl.endRefreshing()
             self.showError(with: Strings.failure, message: error.displayString)
             self.roleManager.restaurantsServiceFor(viewModel: self.viewModel)()
         }
     }
     
-    private func getRestaurants() {
+    @objc func getRestaurants() {
         self.showLoading()
         self.tableView.alpha = 0.0
+        self.roleManager.restaurantsServiceFor(viewModel: self.viewModel)()
+    }
+    
+    @objc func getRestaurants(sender: AnyObject?) {
         self.roleManager.restaurantsServiceFor(viewModel: self.viewModel)()
     }
     

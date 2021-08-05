@@ -11,6 +11,7 @@ import DZNEmptyDataSet
 class UsersViewController: UIViewController, LoadingIndicatable, MessageDisplayable {
     var viewModel: UsersViewModel!
     var router: UsersRouter!
+    let refreshControl = UIRefreshControl()
     
     @IBOutlet var usersTableView: UITableView!
     
@@ -32,10 +33,14 @@ class UsersViewController: UIViewController, LoadingIndicatable, MessageDisplaya
         self.usersTableView.register(UserTableViewCell.nib, forCellReuseIdentifier: UserTableViewCell.cellIdentifier)
         self.usersTableView.emptyDataSetSource = self
         self.usersTableView.emptyDataSetDelegate = self
+        refreshControl.tintColor = UIColor.brandBlue
+        refreshControl.addTarget(self, action: #selector(UsersViewController.getUsers(sender:)), for: .valueChanged)
+        self.usersTableView.addSubview(refreshControl)
     }
     
     private func bind() {
         self.viewModel.didGetUsers = {
+            self.refreshControl.endRefreshing()
             self.hideLoading()
             self.usersTableView.reloadData()
             UIView.animate(withDuration: Constants.ANIMATION_TIME) {
@@ -44,6 +49,7 @@ class UsersViewController: UIViewController, LoadingIndicatable, MessageDisplaya
         }
         
         self.viewModel.didGetUsersFail = { error in
+            self.refreshControl.endRefreshing()
             self.hideLoading()
             self.showError(with: Strings.failure, message: error.displayString)
         }
@@ -78,6 +84,10 @@ extension UsersViewController: UserTableViewCellDelegate {
 extension UsersViewController: EditUserViewControllerDelegate {
     func didCompleteActionIn(editUserViewController: EditUserViewController) {
         self.showLoading()
+        self.viewModel.getUsers()
+    }
+    
+    @objc func getUsers(sender: AnyObject?) {
         self.viewModel.getUsers()
     }
 }

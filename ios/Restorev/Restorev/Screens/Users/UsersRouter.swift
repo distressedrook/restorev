@@ -21,5 +21,4 @@ class UsersRouterImp: UsersRouter {
         let viewController = UIViewController.editUserViewControllerWith(userId: userId, delegate: delegate)
         self.navigatable?.present(viewController, animated: true, completion: nil)
     }
-    
 }

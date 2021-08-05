@@ -14,6 +14,7 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
     var viewModel: RestaurantDetailViewModel!
     var router: RestaurantDetailRouter!
     let roleManager = RoleManager()
+    let refreshControl = UIRefreshControl()
     
     @IBOutlet var restaurantNameLabel: UILabel!
     @IBOutlet var averageRatingLabel: UILabel!
@@ -58,10 +59,12 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
             self.reviewsTableView.reloadData()
             self.showViewAnimated()
             self.hideLoading()
+            self.refreshControl.endRefreshing()
         }
         self.viewModel.didGetRestaurantDetailFail = { error in
             self.hideLoading()
             self.showError(with: Strings.failure, message: error.displayString)
+            self.refreshControl.endRefreshing()
         }
     }
     
@@ -83,6 +86,9 @@ class RestaurantDetailViewController: UIViewController, MessageDisplayable, Load
         self.reviewsTableView.register(ReviewTableViewCell.nib, forCellReuseIdentifier: ReviewTableViewCell.cellIdentifier)
         self.reviewsTableView.emptyDataSetDelegate = self
         self.reviewsTableView.emptyDataSetSource = self
+        refreshControl.tintColor = UIColor.brandBlue
+        refreshControl.addTarget(self, action: #selector(RestaurantDetailViewController.getDetail(sender:)), for: .valueChanged)
+        self.reviewsTableView.addSubview(refreshControl)
     }
     
     @objc func didTapReviewButton(sender: UIBarButtonItem) {
@@ -102,6 +108,10 @@ extension RestaurantDetailViewController: ReviewViewControllerDelegate {
         self.showLoading()
         self.viewModel.getDetail()
         self.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    @objc func getDetail(sender: AnyObject?) {
+        self.viewModel.getDetail()
     }
 }
 
