@@ -11,4 +11,5 @@ module.exports = function (app: express.Express) {
   app.use(jwt());
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, "public")));
+  app.disable("etag");
 };

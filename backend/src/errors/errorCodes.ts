@@ -9,5 +9,5 @@ export class ApplicationErrorCodes {
   static ID_DOES_NOT_EXIST = "004";
   static OWNER_DOES_NOT_EXIST = "007";
   static INVALID_RATING = "008";
-  static CANNOT_DELETE_ADMIN = "011";
+  static CANNOT_DELETE = "011";
 }
