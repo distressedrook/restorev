@@ -1,5 +1,5 @@
 # Restorev
-A production quality, non-trivial, educational project on iOS and node.js
+A production quality, non-trivial, collection of educational projects on various platforms.
 
 ## Requirements
 
