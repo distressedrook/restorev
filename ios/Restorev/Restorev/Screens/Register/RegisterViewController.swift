@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController, LoadingIndicatable, MessageDispl
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var confirmPasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,10 @@ extension RegisterViewController {
         case .email: self.emailTextField.shake()
         case .name: self.nameTextField.shake()
         case .password: self.passwordTextField.shake()
+        case .confirmPassword: self.confirmPasswordTextField.shake()
+        case .passwordConfirmPassword:
+            self.passwordTextField.shake()
+            self.confirmPasswordTextField.shake()
         default: return
         }
     }
@@ -57,11 +62,11 @@ extension RegisterViewController {
 
 extension RegisterViewController {
     @IBAction func didTapRegisterButton(sender: AnyObject) {
-        guard let name = self.nameTextField.text, let email = self.emailTextField.text, let password = self.passwordTextField.text else {
+        guard let name = self.nameTextField.text, let email = self.emailTextField.text, let password = self.passwordTextField.text, let confirmPassword = self.confirmPasswordTextField.text else {
             fatalError("These items cannot be null")
         }
         self.showLoading()
-        self.viewModel.register(name: name, email: email, password: password)
+        self.viewModel.register(name: name, email: email, password: password, confirmPassword: confirmPassword)
     }
 }
 

@@ -20,10 +20,14 @@ function getAllUsers(req, res, next) {
 
 function isSameUser(req, res, next) {
   if (req.params.id == req.user.sub) {
-    res.send(wrapError([{
-      code: ApplicationErrorCodes.CANNOT_DELETE
-    }]))
-    return
+    res.send(
+      wrapError([
+        {
+          code: ApplicationErrorCodes.CANNOT_DELETE,
+        },
+      ])
+    );
+    return;
   }
   next();
 }

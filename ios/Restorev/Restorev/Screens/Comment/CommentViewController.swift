@@ -72,6 +72,10 @@ extension CommentViewController {
         
         self.viewModel.didPostCommentFail = { error in
             self.hideLoading()
+            if error is ValidationError {
+                self.commentTextView.shake()
+                return
+            }
             self.showError(with: Strings.failure, message: error.displayString)
         }
     }

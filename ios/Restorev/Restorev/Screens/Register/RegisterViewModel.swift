@@ -13,7 +13,7 @@ protocol RegisterViewModel {
     init()
     init(service: AuthService)
     
-    func register(name: String, email: String, password: String)
+    func register(name: String, email: String, password: String, confirmPassword: String)
 }
 
 final class RegisterViewModelImp: RegisterViewModel {
@@ -30,8 +30,8 @@ final class RegisterViewModelImp: RegisterViewModel {
         self.service = service
     }
     
-    func register(name: String, email: String, password: String) {
-        if !validate(name: name, email: email, password: password) { return }
+    func register(name: String, email: String, password: String, confirmPassword: String) {
+        if !validate(name: name, email: email, password: password, confirmPassword: confirmPassword) { return }
         
         self.service.register(name: name, email: email, password: password) { [weak self] in
             self?.didRegister?()
@@ -40,8 +40,18 @@ final class RegisterViewModelImp: RegisterViewModel {
         }
     }
     
-    private func validate(name: String, email:String, password: String) -> Bool {
+    private func validate(name: String, email:String, password: String, confirmPassword: String) -> Bool {
         var validated = true
+        
+        if password != confirmPassword {
+            didRegisterFail?(ValidationError(fieldType: .passwordConfirmPassword))
+            validated = false
+        }
+        
+        if confirmPassword.isEmpty {
+            didRegisterFail?(ValidationError(fieldType: .confirmPassword))
+        }
+        
         if name.isEmpty {
             didRegisterFail?(ValidationError(fieldType: .name))
             validated = false

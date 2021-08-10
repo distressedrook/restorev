@@ -55,6 +55,10 @@ final class OwnerCommentViewModeImp: CommentViewModel {
         guard let reviewId = self.mReview.id else {
             fatalError("reviewId should exist")
         }
+        if comment.isEmpty {
+            self.didPostCommentFail?(ValidationError(fieldType: .comment))
+            return
+        }
         self.service.commentToReviewWith(reviewId: reviewId, comment: comment) {
             self.didPostComment?()
         } failure: { error in

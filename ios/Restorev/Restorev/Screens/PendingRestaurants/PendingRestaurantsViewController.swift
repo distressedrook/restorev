@@ -79,6 +79,10 @@ extension PendingRestaurantsViewController: UITableViewDelegate, UITableViewData
         self.viewModel.numberOfPendingReviews(at: section)
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return headerLabelWith(restaurantName: self.viewModel.restaurantName(at: section))
     }

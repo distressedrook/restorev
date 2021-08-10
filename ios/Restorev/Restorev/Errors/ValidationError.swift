@@ -11,7 +11,7 @@ class ValidationError: ApplicationError {
     let type: FieldType
     
     enum FieldType {
-        case name, password, email, date, review, rating, role
+        case name, password, email, date, review, rating, role, comment, passwordConfirmPassword, confirmPassword
     }
     
     init(fieldType: FieldType) {

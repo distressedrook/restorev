@@ -20,8 +20,10 @@ enum ErrorCode: String {
     case userAlreadyExists = "001"
     case userDoesNotExist = "002"
     case passwordMismatch = "003"
+    case cannotDelete = "011"
     
     case noInternet = "0100"
+    case passwordConfirmPasswordMismatch = "0101"
     
     // MARK: _ Unknown
     case unknown
@@ -33,5 +35,7 @@ let errorDisplayMap: [ErrorCode: String] = [
     .userDoesNotExist: Strings.userDoesNotExist,
     .passwordMismatch: Strings.passwordMismatch,
     .noInternet: Strings.noInternet,
-    .httpForbidden: Strings.unauthorised
+    .httpForbidden: Strings.unauthorised,
+    .cannotDelete: Strings.cannotDeleteYourself,
+    .passwordConfirmPasswordMismatch: Strings.passwordsDoNotMatch
 ]
