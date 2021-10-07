@@ -54,3 +54,14 @@ A role-based restaurant manager application where
 ## Design
 
 The UI/UX design for the entire application can be found [here](https://scene.zeplin.io/project/60fbf0795231ef10efd6441a). 
+
+## Backend Setup
+
+You might need to get the backend up and running for this task; to do so: 
+
+1. Install node
+2. `cd <download_path>/backend`
+3. `npm install`
+4. `npm start`
+
+The server should be up and running locally on port `3001`
