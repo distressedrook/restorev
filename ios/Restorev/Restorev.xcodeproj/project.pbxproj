@@ -97,12 +97,8 @@
 		0F756E0C26BAFAA900E5E183 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6B26B2CD0400550BC9 /* Cache.swift */; };
 		0F756E0D26BAFAA900E5E183 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6926B2CAE200550BC9 /* Log.swift */; };
 		0F756E0E26BAFAA900E5E183 /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B8B26B3F5BE00550BC9 /* RoleManager.swift */; };
-		0F756E0F26BAFAAD00E5E183 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B7A26B2F6CB00550BC9 /* ValidationError.swift */; };
-		0F756E1026BAFAAD00E5E183 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B5F26B2BE4D00550BC9 /* ErrorCode.swift */; };
-		0F756E1126BAFAAD00E5E183 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B7126B2DB5A00550BC9 /* ApplicationError.swift */; };
 		0F756E1226BAFAB600E5E183 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48AE926B27E1000550BC9 /* SceneDelegate.swift */; };
 		0F756E1326BAFAB600E5E183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48AE726B27E1000550BC9 /* AppDelegate.swift */; };
-		0F756E1426BAFAB600E5E183 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6626B2BFA900550BC9 /* Strings.swift */; };
 		0F756E1526BAFABB00E5E183 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B5326B2AA8700550BC9 /* TextField.swift */; };
 		0F756E1626BAFABB00E5E183 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6F26B2D9B400550BC9 /* Constants.swift */; };
 		0F756E1726BAFABB00E5E183 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B5526B2ACE100550BC9 /* KeyboardLayoutConstraint.swift */; };
@@ -119,8 +115,6 @@
 		0F756E2626BAFF8300E5E183 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BC326B5C98900550BC9 /* ReviewTableViewCell.swift */; };
 		0F756E2726BAFF8300E5E183 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48BB526B5249E00550BC9 /* RestaurantTableViewCell.swift */; };
 		0F756E2826BAFF8300E5E183 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FF5A926B91A41006FBAC5 /* UserTableViewCell.swift */; };
-		0F756E2A26BB131C00E5E183 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E2926BB131C00E5E183 /* Reachability.swift */; };
-		0F756E2B26BB17D600E5E183 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E2926BB131C00E5E183 /* Reachability.swift */; };
 		0F756E6726BC0C1F00E5E183 /* RestaurantDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E6626BC0C1F00E5E183 /* RestaurantDetailTests.swift */; };
 		0F756E6A26BC152200E5E183 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E6926BC152200E5E183 /* MockViewModel.swift */; };
 		0F756E6C26BC158200E5E183 /* MockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756E6B26BC158200E5E183 /* MockRouter.swift */; };
@@ -130,6 +124,11 @@
 		0F94B28826B6F63000DC0C68 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28726B6F63000DC0C68 /* ReviewViewController.swift */; };
 		0F94B28A26B6F66A00DC0C68 /* ReviewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F94B28926B6F66A00DC0C68 /* ReviewViewController.storyboard */; };
 		0F94B28C26B6F69300DC0C68 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94B28B26B6F69300DC0C68 /* ReviewViewModel.swift */; };
+		0FB53A1A2963066C0023AE5F /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB53A172963066B0023AE5F /* ApplicationError.swift */; };
+		0FB53A1B2963066C0023AE5F /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB53A182963066B0023AE5F /* ValidationError.swift */; };
+		0FB53A1C2963066C0023AE5F /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB53A192963066C0023AE5F /* ErrorCode.swift */; };
+		0FB53A1E2963068B0023AE5F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB53A1D2963068B0023AE5F /* Reachability.swift */; };
+		0FB53A3A29646CEA0023AE5F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB53A3929646CEA0023AE5F /* Strings.swift */; };
 		693C437526B65E600042840D /* RestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C437426B65E600042840D /* RestaurantDetail.swift */; };
 		69C48AE826B27E1000550BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48AE726B27E1000550BC9 /* AppDelegate.swift */; };
 		69C48AEA26B27E1000550BC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48AE926B27E1000550BC9 /* SceneDelegate.swift */; };
@@ -166,17 +165,13 @@
 		69C48B5626B2ACE100550BC9 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B5526B2ACE100550BC9 /* KeyboardLayoutConstraint.swift */; };
 		69C48B5926B2BCA700550BC9 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B5826B2BCA700550BC9 /* ServiceManager.swift */; };
 		69C48B5C26B2BD1500550BC9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 69C48B5B26B2BD1500550BC9 /* Alamofire */; };
-		69C48B6326B2BE4D00550BC9 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B5F26B2BE4D00550BC9 /* ErrorCode.swift */; };
-		69C48B6726B2BFA900550BC9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6626B2BFA900550BC9 /* Strings.swift */; };
 		69C48B6A26B2CAE200550BC9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6926B2CAE200550BC9 /* Log.swift */; };
 		69C48B6C26B2CD0400550BC9 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6B26B2CD0400550BC9 /* Cache.swift */; };
 		69C48B6E26B2D99500550BC9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6D26B2D99500550BC9 /* AuthService.swift */; };
 		69C48B7026B2D9B400550BC9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B6F26B2D9B400550BC9 /* Constants.swift */; };
-		69C48B7226B2DB5A00550BC9 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B7126B2DB5A00550BC9 /* ApplicationError.swift */; };
 		69C48B7426B2E5F700550BC9 /* LoadingIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B7326B2E5F700550BC9 /* LoadingIndicatable.swift */; };
 		69C48B7726B2EDEB00550BC9 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 69C48B7626B2EDEB00550BC9 /* NVActivityIndicatorView */; };
 		69C48B7926B2EDEB00550BC9 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 69C48B7826B2EDEB00550BC9 /* NVActivityIndicatorViewExtended */; };
-		69C48B7B26B2F6CB00550BC9 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B7A26B2F6CB00550BC9 /* ValidationError.swift */; };
 		69C48B7D26B2FEAD00550BC9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B7C26B2FEAD00550BC9 /* String.swift */; };
 		69C48B7F26B3147500550BC9 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C48B7E26B3147500550BC9 /* Navigatable.swift */; };
 		69C48B8326B32AC100550BC9 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 69C48B8226B32AC100550BC9 /* SwiftMessages */; };
@@ -252,7 +247,6 @@
 		0F6CBADB26B7BA04001D1082 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		0F6CBADF26B7EA45001D1082 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		0F756DCE26BAF7B300E5E183 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
-		0F756E2926BB131C00E5E183 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0F756E6626BC0C1F00E5E183 /* RestaurantDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTests.swift; sourceTree = "<group>"; };
 		0F756E6926BC152200E5E183 /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
 		0F756E6B26BC158200E5E183 /* MockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRouter.swift; sourceTree = "<group>"; };
@@ -262,6 +256,11 @@
 		0F94B28726B6F63000DC0C68 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		0F94B28926B6F66A00DC0C68 /* ReviewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewViewController.storyboard; sourceTree = "<group>"; };
 		0F94B28B26B6F69300DC0C68 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		0FB53A172963066B0023AE5F /* ApplicationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
+		0FB53A182963066B0023AE5F /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		0FB53A192963066C0023AE5F /* ErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		0FB53A1D2963068B0023AE5F /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		0FB53A3929646CEA0023AE5F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		693C437426B65E600042840D /* RestaurantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetail.swift; sourceTree = "<group>"; };
 		69C48AE426B27E1000550BC9 /* Restorev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restorev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C48AE726B27E1000550BC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -302,15 +301,11 @@
 		69C48B5326B2AA8700550BC9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		69C48B5526B2ACE100550BC9 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		69C48B5826B2BCA700550BC9 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
-		69C48B5F26B2BE4D00550BC9 /* ErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
-		69C48B6626B2BFA900550BC9 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		69C48B6926B2CAE200550BC9 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		69C48B6B26B2CD0400550BC9 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		69C48B6D26B2D99500550BC9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		69C48B6F26B2D9B400550BC9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		69C48B7126B2DB5A00550BC9 /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 		69C48B7326B2E5F700550BC9 /* LoadingIndicatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatable.swift; sourceTree = "<group>"; };
-		69C48B7A26B2F6CB00550BC9 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		69C48B7C26B2FEAD00550BC9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		69C48B7E26B3147500550BC9 /* Navigatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		69C48B8426B32CF200550BC9 /* MessageDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayable.swift; sourceTree = "<group>"; };
@@ -518,7 +513,7 @@
 				69C48AE926B27E1000550BC9 /* SceneDelegate.swift */,
 				69C48AE726B27E1000550BC9 /* AppDelegate.swift */,
 				69C48AF226B27E1E00550BC9 /* LaunchScreen.storyboard */,
-				69C48B6626B2BFA900550BC9 /* Strings.swift */,
+				0FB53A3929646CEA0023AE5F /* Strings.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -612,6 +607,7 @@
 		69C48B5026B29D9F00550BC9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0FB53A1D2963068B0023AE5F /* Reachability.swift */,
 				69C48B5126B29DB300550BC9 /* Router.swift */,
 				69C48B5326B2AA8700550BC9 /* TextField.swift */,
 				69C48B5526B2ACE100550BC9 /* KeyboardLayoutConstraint.swift */,
@@ -636,9 +632,9 @@
 		69C48B5D26B2BE2C00550BC9 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				69C48B5F26B2BE4D00550BC9 /* ErrorCode.swift */,
-				69C48B7126B2DB5A00550BC9 /* ApplicationError.swift */,
-				69C48B7A26B2F6CB00550BC9 /* ValidationError.swift */,
+				0FB53A172963066B0023AE5F /* ApplicationError.swift */,
+				0FB53A192963066C0023AE5F /* ErrorCode.swift */,
+				0FB53A182963066B0023AE5F /* ValidationError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -649,7 +645,6 @@
 				69C48B6B26B2CD0400550BC9 /* Cache.swift */,
 				69C48B6926B2CAE200550BC9 /* Log.swift */,
 				69C48B8B26B3F5BE00550BC9 /* RoleManager.swift */,
-				0F756E2926BB131C00E5E183 /* Reachability.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -722,7 +717,8 @@
 				69C48AF026B27E1E00550BC9 /* Assets.xcassets */,
 				69C48B1E26B28D2000550BC9 /* Fonts */,
 			);
-			path = Resources;
+			name = Resources;
+			path = ../RestorevSUI/RestorevSUI/Resources;
 			sourceTree = "<group>";
 		};
 		69C48BB026B5246700550BC9 /* Views */ = {
@@ -955,7 +951,7 @@
 				69C48B4C26B295A100550BC9 /* LoginViewController.swift in Sources */,
 				69C48B8826B3AFC300550BC9 /* User.swift in Sources */,
 				69C48B9D26B4F37F00550BC9 /* SettingsViewController.swift in Sources */,
-				0F756E2A26BB131C00E5E183 /* Reachability.swift in Sources */,
+				0FB53A1E2963068B0023AE5F /* Reachability.swift in Sources */,
 				69C48B7F26B3147500550BC9 /* Navigatable.swift in Sources */,
 				69C48B6A26B2CAE200550BC9 /* Log.swift in Sources */,
 				69C48B6E26B2D99500550BC9 /* AuthService.swift in Sources */,
@@ -972,29 +968,29 @@
 				69C48B3626B2924300550BC9 /* UIView.swift in Sources */,
 				0F94B28C26B6F69300DC0C68 /* ReviewViewModel.swift in Sources */,
 				0F2FF58E26B842AC006FBAC5 /* CommentViewController.swift in Sources */,
+				0FB53A1C2963066C0023AE5F /* ErrorCode.swift in Sources */,
 				69C48B7426B2E5F700550BC9 /* LoadingIndicatable.swift in Sources */,
 				0F2FF59426B8624D006FBAC5 /* PendingRestaurants.swift in Sources */,
-				69C48B6326B2BE4D00550BC9 /* ErrorCode.swift in Sources */,
 				0F2FF5B326B94CB8006FBAC5 /* EditUserViewController.swift in Sources */,
 				69C48B4B26B295A100550BC9 /* LoginViewModel.swift in Sources */,
-				69C48B7B26B2F6CB00550BC9 /* ValidationError.swift in Sources */,
 				69C48B9926B4F09B00550BC9 /* RestaurantsRouter.swift in Sources */,
+				0FB53A3A29646CEA0023AE5F /* Strings.swift in Sources */,
 				69C48B8F26B463E600550BC9 /* HomeTabBarController.swift in Sources */,
 				0F2FF5B726B95492006FBAC5 /* UsersRouter.swift in Sources */,
 				0F2FF58526B82282006FBAC5 /* AddRestaurantViewController.swift in Sources */,
 				0F94B28526B6EF0800DC0C68 /* RestaurantDetailRouter.swift in Sources */,
 				0F94B28826B6F63000DC0C68 /* ReviewViewController.swift in Sources */,
-				69C48B7226B2DB5A00550BC9 /* ApplicationError.swift in Sources */,
 				0F94B28326B6CCCD00DC0C68 /* RestaurantDetailViewModel.swift in Sources */,
+				0FB53A1B2963066C0023AE5F /* ValidationError.swift in Sources */,
 				69C48AEC26B27E1000550BC9 /* LandingViewController.swift in Sources */,
 				69C48BC526B5C98900550BC9 /* ReviewTableViewCell.swift in Sources */,
 				69C48BB726B5249E00550BC9 /* RestaurantTableViewCell.swift in Sources */,
 				69C48B4F26B29B6300550BC9 /* UIStoryboard.swift in Sources */,
 				69C48BBC26B556B100550BC9 /* RestaurantService.swift in Sources */,
+				0FB53A1A2963066C0023AE5F /* ApplicationError.swift in Sources */,
 				69C48B7D26B2FEAD00550BC9 /* String.swift in Sources */,
 				69C48BA826B4F83200550BC9 /* UINavigationController.swift in Sources */,
 				69C48BAF26B5139500550BC9 /* UIFont.swift in Sources */,
-				69C48B6726B2BFA900550BC9 /* Strings.swift in Sources */,
 				0F2FF59926B864D3006FBAC5 /* PendingRestsaurantsViewModel.swift in Sources */,
 				69C48B8A26B3B23000550BC9 /* Utils.swift in Sources */,
 				0F2FF5A626B918C9006FBAC5 /* UsersViewController.swift in Sources */,
@@ -1051,12 +1047,10 @@
 				0F756E2526BAFF6E00E5E183 /* SettingsViewController.swift in Sources */,
 				0F756DF826BAFA6500E5E183 /* RestaurantDetailViewController.swift in Sources */,
 				0F756DD126BAFA2200E5E183 /* LoginViewController.swift in Sources */,
-				0F756E2B26BB17D600E5E183 /* Reachability.swift in Sources */,
 				0F756DF626BAFA5E00E5E183 /* RestaurantsViewController.swift in Sources */,
 				0F756DDB26BAFA3100E5E183 /* UITextField.swift in Sources */,
 				0F756DEB26BAFA4600E5E183 /* CommentViewController.swift in Sources */,
 				0F756E2626BAFF8300E5E183 /* ReviewTableViewCell.swift in Sources */,
-				0F756E1426BAFAB600E5E183 /* Strings.swift in Sources */,
 				0F756E0A26BAFAA000E5E183 /* Navigatable.swift in Sources */,
 				0F756DE126BAFA3B00E5E183 /* UsersViewController.swift in Sources */,
 				0F756E0526BAFA9B00E5E183 /* Review.swift in Sources */,
@@ -1064,11 +1058,9 @@
 				0F756DE826BAFA4000E5E183 /* PendingRestaurantsViewController.swift in Sources */,
 				0F756DDC26BAFA3100E5E183 /* UIStoryboard.swift in Sources */,
 				0F756E0B26BAFAA000E5E183 /* MessageDisplayable.swift in Sources */,
-				0F756E1126BAFAAD00E5E183 /* ApplicationError.swift in Sources */,
 				0F756E1726BAFABB00E5E183 /* KeyboardLayoutConstraint.swift in Sources */,
 				0F756DFF26BAFA7700E5E183 /* LandingViewController.swift in Sources */,
 				0F756DF926BAFA6500E5E183 /* RestaurantDetailRouter.swift in Sources */,
-				0F756E1026BAFAAD00E5E183 /* ErrorCode.swift in Sources */,
 				0F756DD526BAFA3100E5E183 /* UIView.swift in Sources */,
 				0F756DDD26BAFA3100E5E183 /* UIFont.swift in Sources */,
 				0F756DD726BAFA3100E5E183 /* UITabBarController.swift in Sources */,
@@ -1099,7 +1091,6 @@
 				0F756DF526BAFA5E00E5E183 /* RestaurantsViewModel.swift in Sources */,
 				0F756E2026BAFF6400E5E183 /* RegisterViewController.swift in Sources */,
 				0F756E1F26BAFF6400E5E183 /* RegisterRouter.swift in Sources */,
-				0F756E0F26BAFAAD00E5E183 /* ValidationError.swift in Sources */,
 				0F756E0826BAFA9B00E5E183 /* RestaurantDetail.swift in Sources */,
 				0F756E6A26BC152200E5E183 /* MockViewModel.swift in Sources */,
 				0F756DF126BAFA5000E5E183 /* ReviewViewController.swift in Sources */,
