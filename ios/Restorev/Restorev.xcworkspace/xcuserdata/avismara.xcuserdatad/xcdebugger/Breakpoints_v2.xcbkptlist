@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "19233C10-C5B3-4D07-A601-2A23F6F59086"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06FB1FC7-4825-4EF9-A214-8F6982E95CF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SUIRestorev/SUIRestorev/Screens/Registration/RegistrationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "submit()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C062E03D-D857-4D4C-A8EE-D5B0AB2FC0B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SUIRestorev/SUIRestorev/Network/ServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "get(with:parameters:headers:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C062E03D-D857-4D4C-A8EE-D5B0AB2FC0B5 - 5e33a3ca3fde9d7f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for SUIRestorev.ServiceManagerImp.get&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Encodable&gt;(with: Swift.String, parameters: Swift.Optional&lt;&#x3c4;_0_0&gt;, headers: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) async throws -&gt; Swift.Dictionary&lt;Swift.String, Any&gt;"
+                  moduleName = "SUIRestorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/open_source/restorev/ios/Restorev/SUIRestorev/SUIRestorev/Network/ServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1096">
+               </Location>
+               <Location
+                  uuid = "C062E03D-D857-4D4C-A8EE-D5B0AB2FC0B5 - 4b7d2105bf20948b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for SUIRestorev.ServiceManagerImp.get&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Encodable&gt;(with: Swift.String, parameters: Swift.Optional&lt;&#x3c4;_0_0&gt;, headers: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) async throws -&gt; Swift.Dictionary&lt;Swift.String, Any&gt;"
+                  moduleName = "SUIRestorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/open_source/restorev/ios/Restorev/SUIRestorev/SUIRestorev/Network/ServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "C062E03D-D857-4D4C-A8EE-D5B0AB2FC0B5 - 8390793185f7517d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SUIRestorev.ServiceManagerImp.get&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Encodable&gt;(with: Swift.String, parameters: Swift.Optional&lt;&#x3c4;_0_0&gt;, headers: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) async throws -&gt; Swift.Dictionary&lt;Swift.String, Any&gt;"
+                  moduleName = "SUIRestorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/open_source/restorev/ios/Restorev/SUIRestorev/SUIRestorev/Network/ServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AF7A02E-E555-45EF-B7E3-F06AB67BABDD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SUIRestorev/SUIRestorev/Screens/Registration/RegistrationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "submit()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

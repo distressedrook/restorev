@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RestorevSUI/RestorevSUI.xcodeproj">
+      location = "group:RestorevSUI/../SUIRestorev/SUIRestorev.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Restorev.xcodeproj">

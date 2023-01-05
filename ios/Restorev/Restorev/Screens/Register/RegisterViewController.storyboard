@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpy-bR-pd2">
-                                <rect key="frame" x="44" y="452.33333333333331" width="287" height="69.999999999999943"/>
+                                <rect key="frame" x="44" y="445" width="287" height="70"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="PnG-9U-cBd"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yMr-JR-cBo" customClass="TextField" customModule="Restorev" customModuleProvider="target">
-                                <rect key="frame" x="44" y="164.33333333333334" width="287" height="60"/>
+                                <rect key="frame" x="44" y="157" width="287" height="60"/>
                                 <color key="backgroundColor" red="0.85882352941176465" green="0.88235294117647056" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0ax-yo-N9k"/>
@@ -55,7 +55,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCZ-FN-Pd0" customClass="TextField" customModule="Restorev" customModuleProvider="target">
-                                <rect key="frame" x="44" y="232.33333333333337" width="287" height="60"/>
+                                <rect key="frame" x="44" y="225" width="287" height="60"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="21"/>
@@ -67,7 +67,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WxG-xJ-ez2" customClass="TextField" customModule="Restorev" customModuleProvider="target">
-                                <rect key="frame" x="44" y="300.33333333333331" width="287" height="60"/>
+                                <rect key="frame" x="44" y="293" width="287" height="60"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="JoK-Ur-PBz"/>
@@ -82,13 +82,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76w-Eq-cuF">
-                                <rect key="frame" x="113.66666666666667" y="91" width="147.66666666666663" height="49.333333333333343"/>
+                                <rect key="frame" x="127.66666666666669" y="91" width="120" height="42"/>
                                 <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="36"/>
                                 <color key="textColor" red="0.10980392160000001" green="0.26274509800000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2EQ-Bz-N02" customClass="TextField" customModule="Restorev" customModuleProvider="target">
-                                <rect key="frame" x="44" y="368.33333333333331" width="287" height="60"/>
+                                <rect key="frame" x="44" y="361" width="287" height="60"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.88235294119999996" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="jD8-L4-Ocd"/>
@@ -140,16 +140,16 @@
     </scenes>
     <designables>
         <designable name="2EQ-Bz-N02">
-            <size key="intrinsicContentSize" width="214.66666666666666" height="29"/>
+            <size key="intrinsicContentSize" width="200.66666666666666" height="25"/>
         </designable>
         <designable name="WxG-xJ-ez2">
-            <size key="intrinsicContentSize" width="130" height="29"/>
+            <size key="intrinsicContentSize" width="124" height="25"/>
         </designable>
         <designable name="hCZ-FN-Pd0">
-            <size key="intrinsicContentSize" width="88.333333333333329" height="30.333333333333332"/>
+            <size key="intrinsicContentSize" width="82" height="26.333333333333332"/>
         </designable>
         <designable name="yMr-JR-cBo">
-            <size key="intrinsicContentSize" width="90" height="30.333333333333332"/>
+            <size key="intrinsicContentSize" width="84.666666666666671" height="26.333333333333332"/>
         </designable>
     </designables>
 </document>

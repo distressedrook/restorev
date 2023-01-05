@@ -1,6 +1,6 @@
 import mong from "mongoose";
 export function start(success: () => void) {
-  var dbURI = "mongodb://localhost/restorev"; //when using without docker replace <db:27017> to <localhost>
+  var dbURI = "mongodb://127.0.0.1/restorev"; //when using without docker replace <db:27017> to <localhost>
 
   mong.connect(dbURI, {
     useNewUrlParser: true,
