@@ -226,6 +226,38 @@
             endingLineNumber = "77"
             landmarkName = "dispatchConditionally(with:success:failure:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BC4A4F3A-76AA-40FD-8377-C8077A210E35 - 3c5b8ba0e494d922"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Restorev.ServiceManagerImp.dispatchConditionally(with: Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;, success: (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; (), failure: (Restorev.ApplicationError) -&gt; ()) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/open_source/restorev/ios/Restorev/Restorev/Services/ServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "692">
+               </Location>
+               <Location
+                  uuid = "BC4A4F3A-76AA-40FD-8377-C8077A210E35 - 3c5b8ba0e494d922"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Restorev.ServiceManagerImp.dispatchConditionally(with: Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;, success: (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; (), failure: (Restorev.ApplicationError) -&gt; ()) -&gt; ()"
+                  moduleName = "Restorev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/avismara/Development/open_source/restorev/ios/Restorev/Restorev/Services/ServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "732">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

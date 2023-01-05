@@ -138,18 +138,4 @@
             <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="2EQ-Bz-N02">
-            <size key="intrinsicContentSize" width="200.66666666666666" height="25"/>
-        </designable>
-        <designable name="WxG-xJ-ez2">
-            <size key="intrinsicContentSize" width="124" height="25"/>
-        </designable>
-        <designable name="hCZ-FN-Pd0">
-            <size key="intrinsicContentSize" width="82" height="26.333333333333332"/>
-        </designable>
-        <designable name="yMr-JR-cBo">
-            <size key="intrinsicContentSize" width="84.666666666666671" height="26.333333333333332"/>
-        </designable>
-    </designables>
 </document>

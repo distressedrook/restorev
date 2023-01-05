@@ -38,6 +38,7 @@ struct ReporterView: UIViewRepresentable {
     let message: String
     let title: String
 
+
 }
 
 struct ReporterView_Previews: PreviewProvider {

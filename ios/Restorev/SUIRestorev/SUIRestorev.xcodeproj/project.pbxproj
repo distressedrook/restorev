@@ -47,11 +47,12 @@
 		0F34DFF9296582C20009756A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DFF8296582C20009756A /* Image.swift */; };
 		0F34DFFD296589F10009756A /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DFFC296589F10009756A /* RegistrationView.swift */; };
 		0F34E001296595110009756A /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34E000296595110009756A /* TextField.swift */; };
-		0F34E00329659F160009756A /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34E00229659F160009756A /* RegistrationViewModel.swift */; };
 		0F34E0052965A77B0009756A /* ReporterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34E0042965A77B0009756A /* ReporterView.swift */; };
 		0F34E0072965BF520009756A /* AnimationCompletionObserverModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34E0062965BF520009756A /* AnimationCompletionObserverModifier.swift */; };
 		0F34E00A2965C1E60009756A /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 0F34E0092965C1E60009756A /* SwiftMessages */; };
 		0F34E00C2966B7960009756A /* RegisterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34E00B2966B7960009756A /* RegisterMessage.swift */; };
+		0FA9ED7729675069001BE35D /* MessageDisplayModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7629675069001BE35D /* MessageDisplayModifier.swift */; };
+		0FA9ED7929675C5A001BE35D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7829675C5A001BE35D /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,10 +116,11 @@
 		0F34DFF8296582C20009756A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		0F34DFFC296589F10009756A /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		0F34E000296595110009756A /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		0F34E00229659F160009756A /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		0F34E0042965A77B0009756A /* ReporterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporterView.swift; sourceTree = "<group>"; };
 		0F34E0062965BF520009756A /* AnimationCompletionObserverModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCompletionObserverModifier.swift; sourceTree = "<group>"; };
 		0F34E00B2966B7960009756A /* RegisterMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMessage.swift; sourceTree = "<group>"; };
+		0FA9ED7629675069001BE35D /* MessageDisplayModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayModifier.swift; sourceTree = "<group>"; };
+		0FA9ED7829675C5A001BE35D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				0F34DFF7296580EF0009756A /* Info.plist */,
 				0F34DFAF29657FC50009756A /* Screens */,
+				0FA9ED7529675050001BE35D /* ViewModifiiers */,
 				0F34DFF62965802D0009756A /* Views */,
 				0F34DFC329657FC50009756A /* Application */,
 				0F34DFB229657FC50009756A /* Extensions */,
@@ -226,19 +229,10 @@
 		0F34DFAF29657FC50009756A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0F34DFB029657FC50009756A /* Landing */,
-				0F34DFFA2965899F0009756A /* Registration */,
-				0F34DFFB296589B10009756A /* Login */,
+				0F34DFB129657FC50009756A /* LandingView.swift */,
+				0F34DFFC296589F10009756A /* RegistrationView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		0F34DFB029657FC50009756A /* Landing */ = {
-			isa = PBXGroup;
-			children = (
-				0F34DFB129657FC50009756A /* LandingView.swift */,
-			);
-			path = Landing;
 			sourceTree = "<group>";
 		};
 		0F34DFB229657FC50009756A /* Extensions */ = {
@@ -248,6 +242,7 @@
 				0F34DFB429657FC50009756A /* Color.swift */,
 				0F34DFF8296582C20009756A /* Image.swift */,
 				0F34E000296595110009756A /* TextField.swift */,
+				0FA9ED7829675C5A001BE35D /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,20 +340,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0F34DFFA2965899F0009756A /* Registration */ = {
+		0FA9ED7529675050001BE35D /* ViewModifiiers */ = {
 			isa = PBXGroup;
 			children = (
-				0F34DFFC296589F10009756A /* RegistrationView.swift */,
-				0F34E00229659F160009756A /* RegistrationViewModel.swift */,
+				0FA9ED7629675069001BE35D /* MessageDisplayModifier.swift */,
 			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
-		0F34DFFB296589B10009756A /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
+			path = ViewModifiiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,6 +502,7 @@
 				0F34E001296595110009756A /* TextField.swift in Sources */,
 				0F34DFF029657FC50009756A /* Strings.swift in Sources */,
 				0F34DFE929657FC50009756A /* Cache.swift in Sources */,
+				0FA9ED7729675069001BE35D /* MessageDisplayModifier.swift in Sources */,
 				0F34E0072965BF520009756A /* AnimationCompletionObserverModifier.swift in Sources */,
 				0F34DFEA29657FC50009756A /* Cachable.swift in Sources */,
 				0F34DFED29657FC50009756A /* PendingRestaurants.swift in Sources */,
@@ -524,10 +512,10 @@
 				0F34DFD829657FC50009756A /* LandingView.swift in Sources */,
 				0F34DFF129657FC50009756A /* Log.swift in Sources */,
 				0F34DFFD296589F10009756A /* RegistrationView.swift in Sources */,
-				0F34E00329659F160009756A /* RegistrationViewModel.swift in Sources */,
 				0F34DFDA29657FC50009756A /* Color.swift in Sources */,
 				0F34DFEB29657FC50009756A /* Review.swift in Sources */,
 				0F34DFD929657FC50009756A /* Font.swift in Sources */,
+				0FA9ED7929675C5A001BE35D /* String.swift in Sources */,
 				0F34DFEC29657FC50009756A /* User.swift in Sources */,
 				0F34DFF229657FC50009756A /* Reachability.swift in Sources */,
 				0F34E0052965A77B0009756A /* ReporterView.swift in Sources */,
