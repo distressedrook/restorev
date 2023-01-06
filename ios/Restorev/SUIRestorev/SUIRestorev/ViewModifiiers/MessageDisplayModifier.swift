@@ -23,7 +23,7 @@ struct MessageDisplayModifier: ViewModifier {
             if shouldShow {
                 VStack {
                     ReporterView(type: registerMessage.isFailure ? .failure : .success, message: registerMessage.promptMesssge, title: registerMessage.promptTitle)
-                        .frame(height: 75)
+                        .frame(height: 100)
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                 withAnimation {

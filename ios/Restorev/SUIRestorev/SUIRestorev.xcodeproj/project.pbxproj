@@ -53,6 +53,7 @@
 		0F34E00C2966B7960009756A /* RegisterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F34E00B2966B7960009756A /* RegisterMessage.swift */; };
 		0FA9ED7729675069001BE35D /* MessageDisplayModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7629675069001BE35D /* MessageDisplayModifier.swift */; };
 		0FA9ED7929675C5A001BE35D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7829675C5A001BE35D /* String.swift */; };
+		0FA9ED7B296816EC001BE35D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7A296816EC001BE35D /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		0F34E00B2966B7960009756A /* RegisterMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMessage.swift; sourceTree = "<group>"; };
 		0FA9ED7629675069001BE35D /* MessageDisplayModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayModifier.swift; sourceTree = "<group>"; };
 		0FA9ED7829675C5A001BE35D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0FA9ED7A296816EC001BE35D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			children = (
 				0F34DFB129657FC50009756A /* LandingView.swift */,
 				0F34DFFC296589F10009756A /* RegistrationView.swift */,
+				0FA9ED7A296816EC001BE35D /* LoginView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F34DEC929657C9E0009756A /* SUIRestorevApp.swift in Sources */,
+				0FA9ED7B296816EC001BE35D /* LoginView.swift in Sources */,
 				0F34DFEE29657FC50009756A /* RestaurantDetail.swift in Sources */,
 				0F34E001296595110009756A /* TextField.swift in Sources */,
 				0F34DFF029657FC50009756A /* Strings.swift in Sources */,

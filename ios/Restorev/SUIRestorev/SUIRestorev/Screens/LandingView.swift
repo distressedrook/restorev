@@ -40,7 +40,7 @@ struct LandingView: View {
             RegistrationView(registerMessage: registerMessage, shouldShow: $isRegistrationShown)
         }
         .sheet(isPresented: $isLoginShown) {
-
+            LoginView(shouldShow: $isLoginShown)
         }
         .showMessage(registerMessage: ObservedObject(wrappedValue: registerMessage), shouldShow: $registerMessage.isSuccess) {
 
