@@ -24,17 +24,23 @@ struct LandingView: View {
                 .font(.banner)
                 .foregroundColor(.brand)
                 .padding(.bottom, 44)
-            Button(Strings.register, action: onRegister)
-                .frame(width: 165, height: 70)
-                .background(Color.brand)
-                .foregroundColor(.onBrand)
-                .font(.largeButton)
-                .padding([.bottom,.leading,.trailing], 16)
-            Button(Strings.login, action: onLogin)
-                .frame(width: 165, height: 70)
-                .foregroundColor(.brand)
-                .font(.largeButton)
-                .border(Color.brand)
+            Button(action: onRegister) {
+                Text(Strings.register)
+                    .frame(width: 165, height: 70)
+                    .background(Color.brand)
+                    .foregroundColor(.onBrand)
+                    .font(.largeButton)
+            }
+            .padding([.bottom,.leading,.trailing], 16)
+            Button(action: onLogin) {
+                Text(Strings.login)
+                    .frame(width: 165, height: 70)
+                    .foregroundColor(.brand)
+                    .font(.largeButton)
+                    .border(Color.brand)
+
+            }
+
         }
         .sheet(isPresented: $isRegistrationShown) {
             RegistrationView(registerMessage: registerMessage, shouldShow: $isRegistrationShown)

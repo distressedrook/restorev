@@ -54,6 +54,9 @@
 		0FA9ED7729675069001BE35D /* MessageDisplayModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7629675069001BE35D /* MessageDisplayModifier.swift */; };
 		0FA9ED7929675C5A001BE35D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7829675C5A001BE35D /* String.swift */; };
 		0FA9ED7B296816EC001BE35D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7A296816EC001BE35D /* LoginView.swift */; };
+		0FA9ED7E296846D9001BE35D /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 0FA9ED7D296846D9001BE35D /* NVActivityIndicatorView */; };
+		0FA9ED80296846FD001BE35D /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED7F296846FD001BE35D /* IndicatorView.swift */; };
+		0FA9ED8229684E65001BE35D /* LoadingIndicatorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9ED8129684E65001BE35D /* LoadingIndicatorModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,8 @@
 		0FA9ED7629675069001BE35D /* MessageDisplayModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayModifier.swift; sourceTree = "<group>"; };
 		0FA9ED7829675C5A001BE35D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0FA9ED7A296816EC001BE35D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0FA9ED7F296846FD001BE35D /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		0FA9ED8129684E65001BE35D /* LoadingIndicatorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +137,7 @@
 			files = (
 				0F34E00A2965C1E60009756A /* SwiftMessages in Frameworks */,
 				0F34DFA729657F050009756A /* Alamofire in Frameworks */,
+				0FA9ED7E296846D9001BE35D /* NVActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				0F34E0042965A77B0009756A /* ReporterView.swift */,
+				0FA9ED7F296846FD001BE35D /* IndicatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				0FA9ED7629675069001BE35D /* MessageDisplayModifier.swift */,
+				0FA9ED8129684E65001BE35D /* LoadingIndicatorModifier.swift */,
 			);
 			path = ViewModifiiers;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 			packageProductDependencies = (
 				0F34DFA629657F050009756A /* Alamofire */,
 				0F34E0092965C1E60009756A /* SwiftMessages */,
+				0FA9ED7D296846D9001BE35D /* NVActivityIndicatorView */,
 			);
 			productName = SUIRestorev;
 			productReference = 0F34DEC529657C9E0009756A /* SUIRestorev.app */;
@@ -446,6 +455,7 @@
 			packageReferences = (
 				0F34DFA529657F050009756A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0F34E0082965C1E60009756A /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				0FA9ED7C296846D9001BE35D /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 0F34DEC629657C9E0009756A /* Products */;
 			projectDirPath = "";
@@ -504,9 +514,11 @@
 				0FA9ED7B296816EC001BE35D /* LoginView.swift in Sources */,
 				0F34DFEE29657FC50009756A /* RestaurantDetail.swift in Sources */,
 				0F34E001296595110009756A /* TextField.swift in Sources */,
+				0FA9ED80296846FD001BE35D /* IndicatorView.swift in Sources */,
 				0F34DFF029657FC50009756A /* Strings.swift in Sources */,
 				0F34DFE929657FC50009756A /* Cache.swift in Sources */,
 				0FA9ED7729675069001BE35D /* MessageDisplayModifier.swift in Sources */,
+				0FA9ED8229684E65001BE35D /* LoadingIndicatorModifier.swift in Sources */,
 				0F34E0072965BF520009756A /* AnimationCompletionObserverModifier.swift in Sources */,
 				0F34DFEA29657FC50009756A /* Cachable.swift in Sources */,
 				0F34DFED29657FC50009756A /* PendingRestaurants.swift in Sources */,
@@ -867,6 +879,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		0FA9ED7C296846D9001BE35D /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -879,6 +899,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0F34E0082965C1E60009756A /* XCRemoteSwiftPackageReference "SwiftMessages" */;
 			productName = SwiftMessages;
+		};
+		0FA9ED7D296846D9001BE35D /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FA9ED7C296846D9001BE35D /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

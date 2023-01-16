@@ -15,7 +15,8 @@ struct Cachable<Value> {
             return try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Value
         }
         set {
-            userDefaults.setValue(newValue, forKey: key)
+            let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue as Any, requiringSecureCoding: false)
+            userDefaults.setValue(data, forKey: key)
             userDefaults.synchronize()
         }
     }

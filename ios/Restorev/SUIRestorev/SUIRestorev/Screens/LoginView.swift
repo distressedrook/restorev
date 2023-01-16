@@ -8,27 +8,22 @@
 import SwiftUI
 
 struct LoginView: View {
-
-
     @State private var email: String
     @State private var password: String
 
     @State private var shouldShakeEmailField = false
     @State private var shouldShakePasswordField = false
 
+    @State private var shouldShowLoading = false
 
     @Binding var shouldShow: Bool
-
     @StateObject var registerMessage: RegisterMessage = RegisterMessage()
 
     private let authService: AuthService
-    private let shakeAnimation = Animation.easeInOut(duration: 0.05).repeatCount(10, autoreverses: true)
 
     init(shouldShow: Binding<Bool>, authService: AuthService = AuthServiceImp(), email: String = "", password: String = "") {
-
         _shouldShow = shouldShow
         self.authService = authService
-
 
         _email = State(wrappedValue: email)
         _password = State(wrappedValue: password)
@@ -51,17 +46,20 @@ struct LoginView: View {
                 .animation(Animation.easeInOut(duration: 0.05).repeatCount(10, autoreverses: true), value: shouldShakePasswordField)
                 .offset(x: shouldShakePasswordField ? 10 : 0)
                 .padding(.bottom, 44)
+            Button(action: onLogin) {
+                Text(Strings.login)
+                    .frame(width: 165, height: 70)
+                    .background(Color.brand)
+                    .foregroundColor(.onBrand)
+                    .font(.largeButton)
 
-            Button(Strings.login, action: onLogin)
-                .frame(width: 165, height: 70)
-                .background(Color.brand)
-                .foregroundColor(.onBrand)
-                .font(.largeButton)
-                .padding([.bottom,.leading,.trailing], 16)
+            }
+            .padding([.bottom,.leading,.trailing], 16)
         }
         .showMessage(registerMessage: ObservedObject(wrappedValue: registerMessage), shouldShow: $registerMessage.isFailure) {
 
         }
+        .showLoading(shouldShow: $shouldShowLoading)
     }
 
     private func validate() -> Bool {
@@ -96,10 +94,11 @@ struct LoginView: View {
 
     func onLogin() {
         if !validate() { return }
+        withAnimation { shouldShowLoading = true }
         Task {
             do {
-
                 let user = try await self.authService.login(email: email, password: password)
+                Cache.shared.user = user
                 self.shouldShow = false
             } catch {
                 self.registerMessage.promptTitle = Strings.failure
@@ -109,6 +108,7 @@ struct LoginView: View {
                 }
                 self.registerMessage.promptMesssge = error.displayString
                 withAnimation {
+                    self.shouldShowLoading = false
                     self.registerMessage.isFailure = true
                 }
 

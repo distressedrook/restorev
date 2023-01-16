@@ -7,12 +7,14 @@
 
 import Foundation
 
-class CacheImp: Cache {
+class Cache {
+
+    static var shared = Cache()
+
     @Cachable(key: "user")
     var user: User?
-}
 
-protocol Cache {
-    var user: User? { get set }
+    init() {}
+
 }
 

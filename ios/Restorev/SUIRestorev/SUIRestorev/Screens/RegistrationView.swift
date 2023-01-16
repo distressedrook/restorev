@@ -20,6 +20,7 @@ struct RegistrationView: View {
     @State private var shouldshakeCPasswordfield = false
 
     @Binding var shouldShow: Bool
+    @State private var shouldShowLoading = false
     @ObservedObject var parentRegisterMessage: RegisterMessage
     @StateObject var registerMessage: RegisterMessage = RegisterMessage()
 
@@ -63,16 +64,19 @@ struct RegistrationView: View {
                 .animation(Animation.easeInOut(duration: 0.05).repeatCount(10, autoreverses: true), value: shouldshakeCPasswordfield)
                 .offset(x: shouldshakeCPasswordfield ? 10 : 0)
                 .padding(.bottom, 44)
-            Button(Strings.register, action: onSubmit)
-                .frame(width: 165, height: 70)
-                .background(Color.brand)
-                .foregroundColor(.onBrand)
-                .font(.largeButton)
-                .padding([.bottom,.leading,.trailing], 16)
+            Button(action: onSubmit) {
+                Text(Strings.register)
+                    .frame(width: 165, height: 70)
+                    .background(Color.brand)
+                    .foregroundColor(.onBrand)
+                    .font(.largeButton)
+            }
+            .padding([.bottom,.leading,.trailing], 16)
         }
         .showMessage(registerMessage: ObservedObject(wrappedValue: registerMessage), shouldShow: $registerMessage.isFailure) {
 
         }
+        .showLoading(shouldShow: $shouldShowLoading)
     }
 
     private func validate() -> Bool {
@@ -130,6 +134,7 @@ struct RegistrationView: View {
 
     func onSubmit() {
         if !validate() { return }
+        withAnimation { shouldShowLoading = true }
         Task {
             do {
                 try await self.authService.register(name: self.name, email: self.email, password: self.password)
@@ -145,6 +150,7 @@ struct RegistrationView: View {
                 }
                 self.registerMessage.promptMesssge = error.displayString
                 withAnimation {
+                    self.shouldShowLoading = false
                     self.registerMessage.isFailure = true
                 }
 

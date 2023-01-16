@@ -9,7 +9,7 @@ import Foundation
 
 let AUTHORIZATION = "Authorization"
 
-func authTokenHeader(cache: Cache = CacheImp()) -> [String: String] {
+func authTokenHeader(cache: Cache = Cache()) -> [String: String] {
     let AUTHORIZATION = "Authorization"
     guard cache.user?.token != nil else {
         return [String: String]()
@@ -17,7 +17,7 @@ func authTokenHeader(cache: Cache = CacheImp()) -> [String: String] {
     return [AUTHORIZATION: bearerString(cache: cache)]
 }
 
-func bearerString(cache: Cache = CacheImp()) -> String {
+func bearerString(cache: Cache = Cache()) -> String {
     guard let authToken = cache.user?.token else {
         return ""
     }
